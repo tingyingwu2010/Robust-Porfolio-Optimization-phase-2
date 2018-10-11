@@ -1,0 +1,8 @@
+BTP:
+
+1. Working on approaches related to enhancing robustness by optimizing the portfolio
+performance in worst-case scenarios.  
+2. Currently, implementing robust optimization techniques in the framework of 
+uncertainty sets and comparing it with the Markowitz model.
+3. Future directions: Aim to extend the same to a multi-period model and
+incorporating coherent measures of risk like AVaR.
