@@ -2,7 +2,7 @@
 clc;
 clear all;
 
-table = readtable('./data_related/final_list100.csv');
+table = readtable('./data_related/final_list.csv');
 
 stock_prices = table{:,2:end};
 
@@ -12,6 +12,19 @@ mu = mean(stock_prices);
 mu = mu';
 covariance = cov(stock_prices);
 
+
+%Simulation
+
+rng default  % For reproducibility
+% m=1000;
+m=size(stock_prices,1);
+temp_data = mvnrnd(mu,covariance,m);
+stock_prices=temp_data;
+mu = mean(stock_prices);
+mu = mu';
+covariance = cov(stock_prices);
+
+
 lambda = 1/100;
 maxim = @(x) (lambda*x'*covariance*x - mu'*x);
 
@@ -20,9 +33,17 @@ init = rand(size(stock_prices,2),1);
 init = init./sum(init);
 options = optimoptions(@fmincon,'Algorithm','sqp','MaxIterations',4000);
 options.MaxFunctionEvaluations = 20000;
-[x,fval,exitflag,output] = fmincon(maxim,init,[],[],ones(1,size(stock_prices,2)),1,[],[],[],options);
+%[x,fval,exitflag,output] = fmincon(maxim,init,[],[],ones(1,size(stock_prices,2)),1,[],[],[],options);
+% No short selling constraint
+A=eye(size(stock_prices,2));
+b=zeros(size(stock_prices,2),1);
+A=A.*(-1);
+[x,fval,exitflag,output] = fmincon(maxim,init,A,b,ones(1,size(stock_prices,2)),1,[],[],[],options);
 
-risk_aversion = 100:100:20000;
+%risk_aversion = 100:100:20000;
+%risk_aversion = 0:1:100;
+%risk_aversion = 0:0.01:10;
+risk_aversion=1:0.25:5;
 mean_vals_mark = [];
 sd_vals_mark = [];
 for i=1:size(risk_aversion,2)
@@ -33,7 +54,12 @@ for i=1:size(risk_aversion,2)
     maxim = @(x) (lambda*x'*covariance*x - mu'*x);
     options = optimoptions(@fmincon,'Algorithm','sqp','MaxIterations',4000);
     options.MaxFunctionEvaluations = 20000;
-    [x,fval,exitflag,output] = fmincon(maxim,init,[],[],ones(1,size(stock_prices,2)),1,[],[],[],options);
+    %[x,fval,exitflag,output] = fmincon(maxim,init,[],[],ones(1,size(stock_prices,2)),1,[],[],[],options);
+    % No short selling constraint
+    A=eye(size(stock_prices,2));
+    b=zeros(size(stock_prices,2),1);
+    A=A.*(-1);
+    [x,fval,exitflag,output] = fmincon(maxim,init,A,b,ones(1,size(stock_prices,2)),1,[],[],[],options);
     
     
     mean_vals_mark = [mean_vals_mark, mu'*x];
@@ -61,7 +87,12 @@ for i=1:size(risk_aversion,2)
     maxim = @(x) (lambda*x'*covariance*x - mu'*x + delta'*abs(x));
     options = optimoptions(@fmincon,'Algorithm','sqp','MaxIterations',4000);
     options.MaxFunctionEvaluations = 20000;
-    [x,fval,exitflag,output] = fmincon(maxim,init,[],[],ones(1,size(stock_prices,2)),1,[],[],[],options);
+    %[x,fval,exitflag,output] = fmincon(maxim,init,[],[],ones(1,size(stock_prices,2)),1,[],[],[],options);
+    % No short selling constraint
+    A=eye(size(stock_prices,2));
+    b=zeros(size(stock_prices,2),1);
+    A=A.*(-1);
+    [x,fval,exitflag,output] = fmincon(maxim,init,A,b,ones(1,size(stock_prices,2)),1,[],[],[],options);
     
     
     mean_vals_box = [mean_vals_box, mu'*x];
@@ -91,8 +122,12 @@ for i=1:size(risk_aversion,2)
     maxim = @(x) (lambda*x'*covariance*x - mu'*x + delta*sqrt(x'*covariance*x./(size(stock_prices,1))));
     options = optimoptions(@fmincon,'Algorithm','sqp','MaxIterations',4000);
     options.MaxFunctionEvaluations = 20000;
-    [x,fval,exitflag,output] = fmincon(maxim,init,[],[],ones(1,size(stock_prices,2)),1,[],[],[],options);
-    
+    %[x,fval,exitflag,output] = fmincon(maxim,init,[],[],ones(1,size(stock_prices,2)),1,[],[],[],options);
+    % No short selling constraint
+    A=eye(size(stock_prices,2));
+    b=zeros(size(stock_prices,2),1);
+    A=A.*(-1);
+    [x,fval,exitflag,output] = fmincon(maxim,init,A,b,ones(1,size(stock_prices,2)),1,[],[],[],options);
     
     mean_vals_ellipsoid = [mean_vals_ellipsoid, mu'*x];
     sd_vals_ellipsoid = [sd_vals_ellipsoid, sqrt(x'*covariance*x)];
@@ -155,39 +190,59 @@ for i=1:size(risk_aversion,2)
     maxim = @(x) (lambda*x'*upper_cov*x - lower_mu'*x);
     options = optimoptions(@fmincon,'Algorithm','sqp','MaxIterations',4000);
     options.MaxFunctionEvaluations = 20000;
-    [x,fval,exitflag,output] = fmincon(maxim,init,[],[],ones(1,size(stock_prices,2)),1,[],[],[],options);
-    
+    %[x,fval,exitflag,output] = fmincon(maxim,init,[],[],ones(1,size(stock_prices,2)),1,[],[],[],options);
+    % No short selling constraint
+    A=eye(size(stock_prices,2));
+    b=zeros(size(stock_prices,2),1);
+    A=A.*(-1);
+    [x,fval,exitflag,output] = fmincon(maxim,init,A,b,ones(1,size(stock_prices,2)),1,[],[],[],options);
     
     mean_vals_var = [mean_vals_var, mu'*x];
     sd_vals_var = [sd_vals_var, sqrt(x'*covariance*x)];
     
 end
 
-figure(1), hold on
-plot(sd_vals_mark, mean_vals_mark);
-plot(sd_vals_box, mean_vals_box);
-plot(sd_vals_ellipsoid, mean_vals_ellipsoid);
-plot(sd_vals_var, mean_vals_var);
-legend('Markowitz','With box uncertainty','With ellipsoid uncertainty','Joint Variance');
-ylabel('return');
+mark_size = 5;
+F=figure(1); hold on;
+box on
+grid on
+plot(sd_vals_mark, mean_vals_mark,'-o','markers',mark_size);
+plot(sd_vals_box, mean_vals_box,'-s','markers',mark_size);
+plot(sd_vals_ellipsoid, mean_vals_ellipsoid,'-.','markers',mark_size);
+plot(sd_vals_var, mean_vals_var,'-*','markers',mark_size);
+lgd = legend('Vanilla Markowitz','With Box uncertainty','With Ellipsoid uncertainty', 'With Joint uncertainty');
+lgd.Location = 'southeast';
+ylabel('Return');
 xlabel('Standard Deviation')
+% title('Available "S&P BSE30" market data');
+% title('Simulated "S&P BSE30" 1000 samples');
+title('Simulated "S&P BSE30" exact number of samples');
 hold off
+saveas(F,'./PNGs/bse30_simulated/ef_ideal_range_exact_sim.png');
+saveas(F,'./all_matlab_figs/bse30_simulated/ef_ideal_range_exact_sim.fig');
 
 risk_free = log(1.06)/365;
 mark = (mean_vals_mark - risk_free)./sd_vals_mark;
-box = (mean_vals_box - risk_free)./sd_vals_box;
+box_set = (mean_vals_box - risk_free)./sd_vals_box;
 ellipsoid = (mean_vals_ellipsoid - risk_free)./sd_vals_ellipsoid;
 joint_var = (mean_vals_var - risk_free)./sd_vals_var;
 
-figure(2), hold on
-plot(risk_aversion, mark);
-plot(risk_aversion, box);
-plot(risk_aversion, ellipsoid);
-plot(risk_aversion, joint_var);
-legend('Markowitz','With box uncertainty','With ellipsoid uncertainty', 'Joint Variance');
+F=figure(2); hold on;
+box on
+grid on
+plot(risk_aversion, mark,'-o');
+plot(risk_aversion, box_set,'-s');
+plot(risk_aversion, ellipsoid,'-.');
+plot(risk_aversion, joint_var,'-*');
+lgd = legend('Vanilla Markowitz','With Box uncertainty','With Ellipsoid uncertainty', 'With Joint uncertainty');
+lgd.Location = 'southeast';
 ylabel('Sharpe Ratio');
-xlabel('Risk Aversion')
-
+xlabel('Risk Aversion');
+% title('Available "S&P BSE30" market data');
+% title('Simulated "S&P BSE30" 1000 samples');
+title('Simulated "S&P BSE30" exact number of samples');
+saveas(F,'./PNGs/bse30_simulated/sr_ideal_range_exact_sim.png');
+saveas(F,'./all_matlab_figs/bse30_simulated/sr_ideal_range_exact_sim.fig');
 hold off
 
 % figure(2)
