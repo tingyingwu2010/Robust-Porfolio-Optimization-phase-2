@@ -2,7 +2,7 @@
 clc;
 clear all;
 
-table = readtable('./data_related/final_list100.csv');
+table = readtable('./data_related/final_list.csv');
 
 stock_prices = table{:,2:end};
 
@@ -16,7 +16,7 @@ covariance = cov(stock_prices);
 %Simulation
 
 % rng default  % For reproducibility
-% % m=1000;
+% %m=1000;
 % m=size(stock_prices,1);
 % temp_data = mvnrnd(mu,covariance,m);
 % stock_prices=temp_data;
@@ -220,13 +220,51 @@ xlabel('Standard Deviation')
 hold off
 % saveas(F,'./PNGs/bse100_simulated/ef_ideal_range_exact_sim.png');
 % saveas(F,'./all_matlab_figs/bse100_simulated/ef_ideal_range_exact_sim.fig');
-saveas(F,'./EPSWTs/bse100_market/ef_ideal_range.eps','epsc');
+saveas(F,'./EPSWTs/bse30_market/ef_ideal_range.eps','epsc');
 
 risk_free = log(1.06)/365;
 mark = (mean_vals_mark - risk_free)./sd_vals_mark;
 box_set = (mean_vals_box - risk_free)./sd_vals_box;
 ellipsoid = (mean_vals_ellipsoid - risk_free)./sd_vals_ellipsoid;
 joint_var = (mean_vals_var - risk_free)./sd_vals_var;
+
+%Table Construction
+Tab=zeros(5,14);
+id_ra_range=2:0.5:4;
+[tf,loc]=ismember(risk_aversion,id_ra_range);
+idx=[1:length(risk_aversion)];
+idx=idx(tf);
+idx=idx(loc(tf));
+Tab(1:end,1)=risk_aversion(idx)';
+Tab(1:end,2)=ones(length(id_ra_range),1).*risk_free;
+Tab(1:end,3)=mean_vals_mark(idx)';
+Tab(1:end,4)=sd_vals_mark(idx)';
+Tab(1:end,5)=mean_vals_box(idx)';
+Tab(1:end,6)=sd_vals_box(idx)';
+Tab(1:end,7)=mean_vals_ellipsoid(idx)';
+Tab(1:end,8)=sd_vals_ellipsoid(idx)';
+Tab(1:end,9)=mean_vals_var(idx)';
+Tab(1:end,10)=sd_vals_var(idx)';
+Tab(1:end,11)=mark(idx)';
+Tab(1:end,12)=box_set(idx)';
+Tab(1:end,13)=ellipsoid(idx)';
+Tab(1:end,14)=joint_var(idx)';
+headings={'Risk_aversion','Riskfree','Mark_u','Mark_sig','Box_u','Box_sig','Ellip_u','Ellip_sig','Sep_u','Sep_sig','Mark_SR','Box_SR','Ellip_SR','Sep_SR'};
+fin_table=array2table(Tab,'VariableNames',headings);
+Avg=zeros(1,4);
+Avg(1,1)=mean(Tab(1:end,11));
+Avg(1,2)=mean(Tab(1:end,12));
+Avg(1,3)=mean(Tab(1:end,13));
+Avg(1,4)=mean(Tab(1:end,14));
+Avg(1,5)=Avg(1,4)-Avg(1,1);
+fin_avg=array2table(Avg,'VariableNames',{'Mark','Box','Ellip','Sep','Diff_Sep_Mark'});
+writetable(fin_table,'./tables/bse30_market/tab_ideal_range.csv');
+writetable(fin_avg,'./tables/bse30_market/avg_ideal_range.csv');
+
+
+
+
+%risk_aversion(idx)
 
 F=figure(2); hold on;
 box on
@@ -244,7 +282,7 @@ xlabel('Risk Aversion');
 % title('Simulated "S&P BSE100" exact number of samples');
 % saveas(F,'./PNGs/bse100_simulated/sr_ideal_range_exact_sim.png');
 % saveas(F,'./all_matlab_figs/bse100_simulated/sr_ideal_range_exact_sim.fig');
-saveas(F,'./EPSWTs/bse100_market/sr_ideal_range.eps','epsc');
+saveas(F,'./EPSWTs/bse30_market/sr_ideal_range.eps','epsc');
 hold off
 
 % figure(2)

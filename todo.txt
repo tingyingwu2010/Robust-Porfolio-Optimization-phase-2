@@ -1,13 +1,13 @@
 ToDo:
 
 1. Ensure that the report is in proper format as per the guidelines given in the BTPGuidelines.pdf (Bilal) Deadline: Oct 12 2018.
-2. Generate all figs in .eps format (Bilal) Deadline: 11 Oct 2018.
+2. Generate all figs in .eps format (Bilal) Deadline: 11 Oct 2018 -Completed.
 3. non-negativity of the weights, Section 3 of the report which includes explaining SR ratios varaitions with respect to various parameters.
 	i. BSE30
 	ii. BSE100
-explanation for every SR graph presented in report for i, ii and do the tables also for the same. Deadline: Oct 17 2018.
+explanation for every SR graph presented in report for i, ii and do the tables also for the same. (Shashank) Deadline: Oct 17 2018.
 
-4. Code for the tables. Deadline: Oct 12 2018.
+4. Code for the tables. (Shashank) Deadline: Oct 12 2018 -Completed.
 5. Overall pictures. (Bilal) Deadline: 16 oct  2018.
 6. Rectify the mistakes from Turnitin report. (Shashank) Deadline: Oct 13 2018.
 
