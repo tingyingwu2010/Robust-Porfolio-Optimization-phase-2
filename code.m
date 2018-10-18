@@ -2,7 +2,7 @@
 clc;
 clear all;
 
-table = readtable('./data_related/final_list.csv');
+table = readtable('./data_related/final_list100.csv');
 
 stock_prices = table{:,2:end};
 
@@ -16,8 +16,8 @@ covariance = cov(stock_prices);
 %Simulation
 
 % rng default  % For reproducibility
-% %m=1000;
-% m=size(stock_prices,1);
+% m=1000;
+% % m=size(stock_prices,1);
 % temp_data = mvnrnd(mu,covariance,m);
 % stock_prices=temp_data;
 % mu = mean(stock_prices);
@@ -118,8 +118,10 @@ for i=1:size(risk_aversion,2)
     lambda = risk_aversion(1,i)
     init = rand(size(stock_prices,2),1);
     init = init./sum(init);
-    delta = sqrt(chi2inv(alpha,size(stock_prices,2)));
-    maxim = @(x) (lambda*x'*covariance*x - mu'*x + delta*sqrt(x'*covariance*x./(size(stock_prices,1))));
+    delta = sqrt(chi2inv(1-alpha,size(stock_prices,2)));
+    cov_err=covariance./size(stock_prices,1);
+%     maxim = @(x) (lambda*x'*covariance*x - mu'*x + delta*sqrt(x'*covariance*x./(size(stock_prices,1))));
+    maxim = @(x) (lambda*x'*covariance*x - mu'*x + delta*sqrt(x'*cov_err*x));
     options = optimoptions(@fmincon,'Algorithm','sqp','MaxIterations',4000);
     options.MaxFunctionEvaluations = 20000;
     %[x,fval,exitflag,output] = fmincon(maxim,init,[],[],ones(1,size(stock_prices,2)),1,[],[],[],options);
@@ -208,7 +210,7 @@ box on
 grid on
 plot(sd_vals_mark, mean_vals_mark,'-o','markers',mark_size);
 plot(sd_vals_box, mean_vals_box,'-s','markers',mark_size);
-plot(sd_vals_ellipsoid, mean_vals_ellipsoid,'-.','markers',mark_size);
+plot(sd_vals_ellipsoid, mean_vals_ellipsoid,'k-.','markers',mark_size);
 plot(sd_vals_var, mean_vals_var,'-*','markers',mark_size);
 lgd = legend('Vanilla Markowitz','With Box uncertainty','With Ellipsoid uncertainty', 'With Separable uncertainty');
 lgd.Location = 'southeast';
@@ -220,7 +222,7 @@ xlabel('Standard Deviation')
 hold off
 % saveas(F,'./PNGs/bse100_simulated/ef_ideal_range_exact_sim.png');
 % saveas(F,'./all_matlab_figs/bse100_simulated/ef_ideal_range_exact_sim.fig');
-saveas(F,'./EPSWTs/bse30_market/ef_ideal_range.eps','epsc');
+saveas(F,'./EPSWTs/bse100_market/ef_ideal_range.eps','epsc');
 
 risk_free = log(1.06)/365;
 mark = (mean_vals_mark - risk_free)./sd_vals_mark;
@@ -258,8 +260,8 @@ Avg(1,3)=mean(Tab(1:end,13));
 Avg(1,4)=mean(Tab(1:end,14));
 Avg(1,5)=Avg(1,4)-Avg(1,1);
 fin_avg=array2table(Avg,'VariableNames',{'Mark','Box','Ellip','Sep','Diff_Sep_Mark'});
-writetable(fin_table,'./tables/bse30_market/tab_ideal_range.csv');
-writetable(fin_avg,'./tables/bse30_market/avg_ideal_range.csv');
+writetable(fin_table,'./tables/bse100_market/tab_ideal_range.csv');
+writetable(fin_avg,'./tables/bse100_market/avg_ideal_range.csv');
 
 
 
@@ -271,7 +273,7 @@ box on
 grid on
 plot(risk_aversion, mark,'-o');
 plot(risk_aversion, box_set,'-s');
-plot(risk_aversion, ellipsoid,'-.');
+plot(risk_aversion, ellipsoid,'k-.');
 plot(risk_aversion, joint_var,'-*');
 lgd = legend('Vanilla Markowitz','With Box uncertainty','With Ellipsoid uncertainty', 'With Separable uncertainty');
 lgd.Location = 'southeast';
@@ -282,7 +284,7 @@ xlabel('Risk Aversion');
 % title('Simulated "S&P BSE100" exact number of samples');
 % saveas(F,'./PNGs/bse100_simulated/sr_ideal_range_exact_sim.png');
 % saveas(F,'./all_matlab_figs/bse100_simulated/sr_ideal_range_exact_sim.fig');
-saveas(F,'./EPSWTs/bse30_market/sr_ideal_range.eps','epsc');
+saveas(F,'./EPSWTs/bse100_market/sr_ideal_range.eps','epsc');
 hold off
 
 % figure(2)
