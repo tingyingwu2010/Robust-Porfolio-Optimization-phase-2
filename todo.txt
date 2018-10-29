@@ -5,11 +5,11 @@ ToDo:
 3. non-negativity of the weights, Section 3 of the report which includes explaining SR ratios varaitions with respect to various parameters.
 	i. BSE30
 	ii. BSE100
-explanation for every SR graph presented in report for i, ii and do the tables also for the same. (Shashank) Deadline: Oct 17 2018.
+explanation for every SR graph presented in report for i, ii and do the tables also for the same. (Shashank) Deadline: Oct 17 2018. - completed
 
 4. Code for the tables. (Shashank) Deadline: Oct 12 2018 -Completed.
-5. Overall pictures. (Bilal) Deadline: 16 oct  2018.
-6. Rectify the mistakes from Turnitin report. (Shashank) Deadline: Oct 13 2018.
+5. Overall pictures. (Bilal) Deadline: 16 oct  2018. -completed
+6. Rectify the mistakes from Turnitin report. (Shashank) Deadline: Oct 13 2018. - completed
 
 
-Deadline: 21 Oct 2018.
+Deadline: 21 Oct 2018. - completed
