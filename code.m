@@ -2,7 +2,7 @@
 clc;
 clear all;
 
-table = readtable('./data_related/final_list100.csv');
+table = readtable('./data_related/final_list.csv');
 
 stock_prices = table{:,2:end};
 
@@ -222,7 +222,7 @@ xlabel('Standard Deviation')
 hold off
 % saveas(F,'./PNGs/bse100_simulated/ef_ideal_range_exact_sim.png');
 % saveas(F,'./all_matlab_figs/bse100_simulated/ef_ideal_range_exact_sim.fig');
-%saveas(F,'./EPSWTs/bse100_market/ef_ideal_range.eps','epsc');
+saveas(F,'./EPSWTs/bse30_market/ef_ideal_range.eps','epsc');
 
 risk_free = log(1.06)/365;
 mark = (mean_vals_mark - risk_free)./sd_vals_mark;
@@ -278,7 +278,7 @@ Avg(1,6)=Avg(1,4)-Avg(1,1);
 %writetable(fin_table,'./tables/bse30_simulated/tab_ideal_range_1000_sim.csv');
 %writetable(fin_avg,'./tables/bse30_simulated/avg_ideal_range_1000_sim.csv');
 
-tab_loc='./tables/bse100_market/tab_ideal_range.csv';
+tab_loc='./tables/bse30_market/tab_ideal_range.csv';
 headings=strjoin(headings, ',');
 fid_tab=fopen(tab_loc,'w'); 
 fprintf(fid_tab,'%s\n',headings);
@@ -288,7 +288,7 @@ dlmwrite(tab_loc,Tab,'-append','delimiter', ',', 'precision', 3);
 
 
 avg_headings={'Mark','Box','Ellip','Sep','Diff_Ellip_Mark','Diff_Sep_Mark'};
-avg_loc='./tables/bse100_market/avg_ideal_range.csv';
+avg_loc='./tables/bse30_market/avg_ideal_range.csv';
 avg_headings = strjoin(avg_headings, ',');
 fid_avg = fopen(avg_loc,'w'); 
 fprintf(fid_avg,'%s\n',avg_headings);
@@ -321,7 +321,7 @@ xlabel('Risk Aversion');
 % title('Simulated "S&P BSE100" exact number of samples');
 % saveas(F,'./PNGs/bse100_simulated/sr_ideal_range_exact_sim.png');
 % saveas(F,'./all_matlab_figs/bse100_simulated/sr_ideal_range_exact_sim.fig');
-%saveas(F,'./EPSWTs/bse100_market/sr_ideal_range.eps','epsc');
+saveas(F,'./EPSWTs/bse30_market/sr_ideal_range.eps','epsc');
 hold off
 
 % figure(2)
