@@ -1,0 +1,60 @@
+\chapter{Conclusions and Comments}
+
+In this chapter, we analyze the trend of the Sharpe ratios in different kind of scenarios. We have taken the \say{Adjusted Close Price} of S\&P BSE30 and S\&P BSE100 stocks into consideration. In order to analyze the performance of robust models, we have simulated the data using true mean and covariance matrices. Again, as the number of instances in real data we could get for all the stocks was very less, we simulated two types of environments, one where the number of samples in the simulated data matches the number of instances of real market data available, say $\zeta$ and another environment where the number of simulations in simulated data is very large, a constant, irrespective of the number of stocks. The sole motivation behind this kind of setup was to understand if the market data we obtained (which was very less) was able to capture the trends and give the better portfolios.
+
+\section{From the Standpoint of Number of Stocks}
+\begin{table}[!h]
+    \centering
+    \captionsetup{justification=centering}
+   \begin{tabular}{||p{6cm}|p{3cm}|p{3cm}||}
+   \hline
+  & \#stocks = 31 & \#stocks = 98 \\
+  \hline
+ \#generated\textunderscore simulations = 1000  & 0.2    &0.244\\
+ \#generated\textunderscore simulations = $\zeta$ & 0.218  & 0.233 \\
+ Market data & 0.2 & 0.194 \\
+ \hline
+\end{tabular}
+    \caption{The maximum average Sharpe ratio compared by varying the number of stocks in different kinds of scenarios.}
+    \label{tab:no_stocks}
+\end{table}
+
+At first, we describe the tabulation in Table \ref{tab:no_stocks}. For a particular row and a column, we picked the maximum possible Sharpe Ratio we could get in that particular scenario. For example, in order to fill the entry for S\&P BSE100 where we simulated $\zeta$ instances using true mean vector and true covariance matrix, we refer to Table \ref{tab:5} (which explains the experiment corresponding S\&P BSE100 with $\zeta$ simulated instances) and take the maximum of last row \textit{i.e.}, maximum of average Sharpe ratios that can attained using the available models.
+
+Accordingly, from Table \ref{tab:no_stocks}, the conclusion that can be drawn is that more the number of stocks, the better is the performance of the portfolios constructed using robust optimization. This claim can be supported via both qualitative and quantitative approaches. Qualitatively, stocks in a portfolio represent its diversification. According to Modern Portfolio Theory (MPT), investors get the benefit of better performance from diversifying their portfolios as it reduces the risk of relying on only one security to generate returns. Value Research Online \cite{vro} provides us with the information that on an average basis, large-cap funds hold around 38 shares, mid-cap funds around 50 and 52 for balanced funds in which around 65-70\% of their assets are in equity. From the above table, we can quantitatively justify by observing that the Sharpe ratio was more for portfolios with larger number of stocks when compared to portfolios with smaller number of stocks. On the contrary, we believe that the reason for the opposite behaviour when it comes to real market is the insufficient available data, when it comes to larger number of stocks. This will be made more clear in the subsequent sections. One can argue about the second case where the number of simulations is equal to available market instances, in which case our simulated data follows multivariate normal distribution whereas the real market data need not to follow any kind of distribution.
+\section{From the Standpoint of Number of Samples Generated}
+In this section, we solely focus on the performance when different number of samples were generated. We tabulated Table \ref{tab:no_samples} in the same way as we described in the preceding section. Here, we notice some interesting performance trends. One can observe that in the case of smaller number of stocks, the performance when same number of instances ($\zeta$) are simulated is better than the scenario when large (1000) number of simulations were generated. On the contrary, exactly opposite trend can be observed when higher number of stocks are taken into consideration. We explain this type of behaviour as follow (as mentioned above): In the available real market data, the number of instances available for larger number of stocks is relatively low. So, when  more number of samples were generated, we observe higher Sharpe ratios when compared to $\zeta$ number of simulations. We are yet to explore the reason behind such type of behaviour when smaller number of stocks are considered.
+\begin{table}[!h]
+    \centering
+    \captionsetup{justification=centering}
+   \begin{tabular}{||p{4cm}|p{4cm}|p{4cm}||}
+   \hline
+  & \#samples = 1000 & \#samples = $\zeta$ \\
+  \hline
+  \#stocks = 31  & 0.2    &0.218\\
+ \#stocks = 98 &   0.244  & 0.233 \\
+ \hline
+\end{tabular}
+    \caption{The maximum average Sharpe ratio compared by varying the number of stocks in different kinds of scenarios.}
+    \label{tab:no_samples}
+\end{table}
+
+\section{From the Standpoint of Type of the Data}
+In this final section, we focus on the type of data which we are dealing with. Again, Table \ref{tab:data_type} is tabulated as explained in the preceding sections. Here the behaviour is straight forward. In both the cases, the performance in the case of simulated data is better than the real market data. This is clear from the fact that the real market data are difficult to model and hardly may follow any distribution, whereas the simulated data simply follows multivariate normal distribution with mean and covariances as the true values obtained from the data. 
+\begin{table}[!h]
+    \centering
+    \captionsetup{justification=centering}
+   \begin{tabular}{||p{4cm}|p{4cm}|p{4cm}||}
+   \hline
+  & Simulated data & Real Market data \\
+  \hline
+  \#stocks = 31  & 0.218    &0.2\\
+ \#stocks = 98 &   0.244  & 0.194  \\
+ \hline
+\end{tabular}
+    \caption{The maximum average Sharpe ratio compared by varying the type of the data in different kinds of scenarios.}
+    \label{tab:data_type}
+\end{table}
+
+% \section{Conclusions}
+% Finally, we conclude by saying that robust models outperform plain vanilla Markowitz model by a significant margin.
