@@ -1,0 +1,4197 @@
+@charset "UTF-8";
+/* CSS written by Academic Design
+
+29/07/2016
+
+*/
+/* line 8, sass/cup-academic-core-JATS-NLM.scss */
+#contentContainer {
+  padding-top: 2.5em;
+  /*------------------------------------*\
+   CAMBRIDGE CORE REVISIONS
+  \*------------------------------------*/
+  /*
+  
+  25/09/2015
+  ------------------------
+  Versioning will start when we have a complete set of transforms.
+  
+  */
+  /* Basic styles
+  ========================================================================== */
+  /* RESET - Defaults.
+  ========================================================================== */
+  /*------------------------------------*\
+   RESET STYLES
+  \*------------------------------------*/
+  /* http://meyerweb.com/eric/tools/css/reset/ 
+     v2.0 | 20110126
+     License: none (public domain) 
+  */
+  /* HTML5 display-role reset for older browsers */
+  /* End of RESET */
+  /* BASE - Base Variable file along with starting point Mixins and Placeholders.
+  ========================================================================== */
+}
+/* line 10, sass/base/_normalize.scss */
+#contentContainer html, #contentContainer body, #contentContainer div, #contentContainer span, #contentContainer applet, #contentContainer object, #contentContainer iframe,
+#contentContainer h1, #contentContainer h2, #contentContainer h3, #contentContainer h4, #contentContainer h5, #contentContainer h6, #contentContainer p, #contentContainer blockquote, #contentContainer pre,
+#contentContainer a, #contentContainer abbr, #contentContainer acronym, #contentContainer address, #contentContainer big, #contentContainer cite, #contentContainer code,
+#contentContainer del, #contentContainer dfn, #contentContainer em, #contentContainer img, #contentContainer ins, #contentContainer kbd, #contentContainer q, #contentContainer s, #contentContainer samp,
+#contentContainer small, #contentContainer strike, #contentContainer strong, #contentContainer sub, #contentContainer sup, #contentContainer tt, #contentContainer var,
+#contentContainer b, #contentContainer u, #contentContainer i, #contentContainer center,
+#contentContainer dl, #contentContainer dt, #contentContainer dd, #contentContainer ol, #contentContainer ul, #contentContainer li,
+#contentContainer fieldset, #contentContainer form, #contentContainer label, #contentContainer legend,
+#contentContainer table, #contentContainer caption, #contentContainer tbody, #contentContainer tfoot, #contentContainer thead, #contentContainer tr, #contentContainer th, #contentContainer td,
+#contentContainer article, #contentContainer aside, #contentContainer canvas, #contentContainer details, #contentContainer embed,
+#contentContainer figure, #contentContainer figcaption, #contentContainer footer, #contentContainer header, #contentContainer hgroup,
+#contentContainer menu, #contentContainer nav, #contentContainer output, #contentContainer ruby, #contentContainer section, #contentContainer summary,
+#contentContainer time, #contentContainer mark, #contentContainer audio, #contentContainer video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* line 30, sass/base/_normalize.scss */
+#contentContainer article, #contentContainer aside, #contentContainer details, #contentContainer figcaption, #contentContainer figure,
+#contentContainer footer, #contentContainer header, #contentContainer hgroup, #contentContainer menu, #contentContainer nav, #contentContainer section {
+  display: block;
+}
+/* line 34, sass/base/_normalize.scss */
+#contentContainer body {
+  line-height: 1;
+}
+/* line 37, sass/base/_normalize.scss */
+#contentContainer ol, #contentContainer ul {
+  list-style: none;
+}
+/* line 40, sass/base/_normalize.scss */
+#contentContainer blockquote, #contentContainer q {
+  quotes: none;
+}
+/* line 43, sass/base/_normalize.scss */
+#contentContainer blockquote:before, #contentContainer blockquote:after,
+#contentContainer q:before, #contentContainer q:after {
+  content: '';
+  content: none;
+}
+/* line 48, sass/base/_normalize.scss */
+#contentContainer table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*------------------------------------*\
+ VARIABLES
+\*------------------------------------*/
+/*------------------------------------*\
+ MIXINS
+\*------------------------------------*/
+/*------------------------------------*\
+ PLACEHOLDERS
+\*------------------------------------*/
+/* line 34, sass/cup-academic-core-JATS-NLM.scss */
+#contentContainer {
+  /* MODULES - Re-usable site elements.
+  ========================================================================== */
+  /*------------------------------------*\
+   GLOBAL
+  \*------------------------------------*/
+  /*------------------------------------*\
+  01 BASIC TEXT STYLES
+  \*------------------------------------*/
+  /*------------------------------------*\
+  02 HEADINGS
+  \*------------------------------------*/
+  /*------------------------------------*\
+  03 LISTS
+  \*------------------------------------*/
+  /*------------------------------------*\
+  04 NOTES
+  \*------------------------------------*/
+  /*------------------------------------*\
+  05 FIGURES AND IMAGES
+  \*------------------------------------*/
+  /*------------------------------------*\
+  06 TABLES
+  \*------------------------------------*/
+  /*------------------------------------*\
+  07 MATHS, LOGIC, LINGUISTICS AND PHILOSOPHY
+  \*------------------------------------*/
+  /*------------------------------------*\
+  08 CONTAINER MARKERS
+  \*------------------------------------*/
+  /*------------------------------------*\
+  09 LINKING ELEMENTS
+  \*------------------------------------*/
+  /*------------------------------------*\
+  10 MEDIA
+  \*------------------------------------*/
+  /*------------------------------------*\
+  11 COVERS AND FRONTMATTER
+  \*------------------------------------*/
+  /* The following styles are FIXES for incorrect markup from typesetters. I inlcude them for the sake of stability. */
+  /* END FIX */
+  /* GENERAL FRONT MATTER */
+  /* HALF TITLE PAGE */
+  /* SERIES PAGE */
+  /* TITLE PAGE */
+  /* IMPRINTS PAGE */
+  /* DEDICATION PAGE */
+  /* EPIGRAPH PAGE */
+  /* TOC PAGE */
+  /* GLOSSARY PAGE */
+  /* CONTRIBUTORS PAGE */
+  /*------------------------------------*\
+  12 PART OPENERS
+  \*------------------------------------*/
+  /*------------------------------------*\
+  13 CHAPTER OPENERS
+  \*------------------------------------*/
+  /*------------------------------------*\
+  14 ENDMATTER
+  \*------------------------------------*/
+  /* The following styles are FIXES for incorrect markup from typesetters. I inlcude them for the sake of stability. */
+  /* END FIX */
+  /*------------------------------------*\
+  15 EDITIONS
+  \*------------------------------------*/
+  /*------------------------------------*\
+  16 DICTIONARIES
+  \*------------------------------------*/
+  /*------------------------------------*\
+  17 ILR
+  \*------------------------------------*/
+  /* Cambridge Core - Styling for Academic Books and Journals content
+  ========================================================================== */
+}
+/* line 5, sass/modules/_global.scss */
+#contentContainer body {
+  font-size: 1em;
+}
+/* line 9, sass/modules/_global.scss */
+#contentContainer sup {
+  font-size: 0.750em;
+  line-height: 0.750em !important;
+  vertical-align: super !important;
+}
+/* line 15, sass/modules/_global.scss */
+#contentContainer sub {
+  font-size: 0.750em;
+  line-height: 0.750em !important;
+  vertical-align: sub !important;
+}
+/* line 21, sass/modules/_global.scss */
+#contentContainer h1, #contentContainer h2, #contentContainer h3, #contentContainer h4, #contentContainer h5, #contentContainer h6 {
+  font-size: 1em;
+  line-height: 1.3;
+  page-break-after: avoid;
+  text-align: left;
+}
+/* line 28, sass/modules/_global.scss */
+#contentContainer em,
+#contentContainer .italic {
+  /* Italic shouldn’t be a class. It’s stylistic -- should use <em> */
+  font-style: italic;
+}
+/* line 33, sass/modules/_global.scss */
+#contentContainer strong,
+#contentContainer .bold {
+  /* Bold shouldn’t be a class. It’s stylistic -- should use <strong> */
+  font-weight: bold;
+}
+/* line 38, sass/modules/_global.scss */
+#contentContainer .roman {
+  font-style: normal !important;
+}
+/* line 42, sass/modules/_global.scss */
+#contentContainer abbr {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9444em;
+}
+/* line 48, sass/modules/_global.scss */
+#contentContainer .sc {
+  font-size: 0.7500em;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: 0.2em;
+}
+/* line 55, sass/modules/_global.scss */
+#contentContainer .underline {
+  text-decoration: underline;
+}
+/* line 59, sass/modules/_global.scss */
+#contentContainer .dotted-underline {
+  text-decoration: none;
+  border-bottom: 1px dotted #000;
+}
+/* line 64, sass/modules/_global.scss */
+#contentContainer .double-underline {
+  text-decoration: none;
+  border-bottom: 3px double #000;
+}
+/* line 69, sass/modules/_global.scss */
+#contentContainer .triple-underline {
+  text-decoration: underline;
+  border-bottom: 3px double #000;
+}
+/* line 74, sass/modules/_global.scss */
+#contentContainer .overline {
+  text-decoration: overline;
+}
+/* line 78, sass/modules/_global.scss */
+#contentContainer .strike {
+  text-decoration: line-through;
+}
+/* line 82, sass/modules/_global.scss */
+#contentContainer a {
+  text-decoration: underline;
+}
+/* line 86, sass/modules/_global.scss */
+#contentContainer .noindent {
+  text-indent: 0 !important;
+}
+/* line 40, sass/modules/_01-basic-text-styles.scss */
+#contentContainer p,
+#contentContainer .p {
+  font-size: 1em;
+  line-height: 1.6;
+  text-indent: 2em;
+  -ms-word-break: normal;
+  word-break: normal;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -epub-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  text-align: justify;
+  widows: 2;
+  orphans: 2;
+}
+/* line 53, sass/modules/_01-basic-text-styles.scss */
+#contentContainer h1 + p, #contentContainer h1 + .p, #contentContainer h2 + p, #contentContainer h2 + .p, #contentContainer h3 + p, #contentContainer h3 + .p, #contentContainer h4 + p, #contentContainer h4 + .p, #contentContainer h5 + p, #contentContainer h5 + .p, #contentContainer h6 + p, #contentContainer h6 + .p,
+#contentContainer header + p,
+#contentContainer header + .p,
+#contentContainer .header + p,
+#contentContainer .header + .p {
+  text-indent: 0;
+}
+/* line 61, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .named-book-part-body p:first-child, #contentContainer .body p:first-child {
+  text-indent: 0;
+}
+/* line 72, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .disp-quote {
+  margin: 1em 1em 1em 1em;
+}
+/* line 75, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .disp-quote p, #contentContainer .disp-quote .p {
+  font-size: 0.9375em;
+  line-height: 1.6;
+  text-align: left;
+  text-indent: 0;
+  -ms-word-break: normal;
+  word-break: normal;
+  word-break: break-word;
+  -webkit-hyphens: none;
+  -epub-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+/* line 82, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .disp-quote p + p, #contentContainer .disp-quote p + .p, #contentContainer .disp-quote .p + p, #contentContainer .disp-quote .p + .p {
+  text-indent: 1em;
+}
+/* line 88, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .disp-quote.epigraph + p, #contentContainer .disp-quote.epigraph + .p {
+  text-indent: 0;
+}
+/* line 93, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .disp-quote .attrib {
+  text-align: right;
+  margin: 0.5em 1em 0 0;
+  font-size: 0.9375em;
+  line-height: 1.6;
+}
+/* line 101, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .disp-quote .disp-quote {
+  margin: 1em 0 1em 1em;
+}
+/* line 108, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .verse-group {
+  margin: 1em 0 1em 1em;
+}
+/* line 112, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .verse-group .verse-line {
+  font-size: 0.9375em;
+  margin: 0 1em 0 1em;
+  text-indent: -1em;
+  line-height: 1.6;
+  padding: 0 1em 0 0;
+  white-space: pre-wrap;
+}
+/* line 121, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .verse-group .attrib {
+  font-size: 0.9375em;
+  text-align: right;
+  margin-right: 1em;
+}
+/* line 129, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .marginal-number, #contentContainer .line-number {
+  float: right;
+  display: block;
+  width: 6em;
+  text-align: right;
+}
+/* line 136, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .marginal-number {
+  margin: 0 -1.95em 0 1em;
+}
+/* line 141, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .line-number {
+  margin: 0 0 0 1em;
+}
+/* line 151, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .speech {
+  margin: 0.5em 0 0.5em 0;
+  text-align: left;
+}
+/* line 155, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .speech p,
+#contentContainer .speech .p {
+  margin: 0 0 0 2em;
+  text-indent: 0;
+  text-align: left;
+  -ms-word-break: normal;
+  word-break: normal;
+  word-break: break-word;
+  -webkit-hyphens: none;
+  -epub-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+/* line 162, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .speech p:first-child,
+#contentContainer .speech .p:first-child {
+  text-indent: -2em;
+}
+/* line 166, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .speech p + p, #contentContainer .speech p + .p,
+#contentContainer .speech .p + p,
+#contentContainer .speech .p + .p {
+  text-indent: 1em;
+}
+/* line 177, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .speech .speaker {
+  font-size: 0.7500em;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: 0.2em;
+  padding: 0 0.29em 0 0;
+}
+/* line 181, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .speech .speaker .sc {
+  font-size: 1em;
+}
+/* line 187, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .part-line-middle {
+  padding: 0 0 0 10em !important;
+}
+/* line 191, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .part-line-end {
+  padding: 0 0 0 14em !important;
+}
+/* line 195, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .hidden {
+  display: none;
+}
+/* line 201, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .stage-direction,
+#contentContainer .stage-direction-enter,
+#contentContainer .stage-direction-exit {
+  font-style: italic;
+  line-height: 1.6;
+  text-indent: 0;
+  margin: 0.5em 0 0.5em 0;
+}
+/* line 210, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .stage-direction,
+#contentContainer .stage-direction-enter {
+  text-align: center !important;
+}
+/* line 215, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .stage-direction-exit {
+  text-align: right !important;
+}
+/* line 220, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .explanation {
+  text-align: left;
+  text-indent: 0;
+  margin: 1em;
+  font-size: 0.9375em;
+}
+/* line 229, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .question {
+  text-align: left;
+  margin: 0.5em 0 0.5em 0;
+}
+/* line 233, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .question p,
+#contentContainer .question .p {
+  text-align: left;
+  text-indent: 0;
+}
+/* line 238, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .question p + p, #contentContainer .question p + .p,
+#contentContainer .question .p + p,
+#contentContainer .question .p + .p {
+  text-indent: 1em;
+}
+/* line 246, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .answer {
+  text-align: left;
+  margin: 0.5em 0 1em 1em;
+}
+/* line 250, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .answer p,
+#contentContainer .answer .p {
+  text-align: left;
+  text-indent: 0;
+}
+/* line 255, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .answer p + p, #contentContainer .answer p + .p,
+#contentContainer .answer .p + p,
+#contentContainer .answer .p + .p {
+  text-indent: 1em;
+}
+/* line 264, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .attrib {
+  text-align: right;
+  margin: 0.5em 1em 0 0;
+}
+/* line 270, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .end-author {
+  font-weight: bold;
+}
+/* line 276, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .end-author-loc,
+#contentContainer .end-author-date {
+  font-style: italic;
+  margin: 0 0 0 0 !important;
+}
+/* line 283, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .trans {
+  font-style: italic;
+}
+/* line 286, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .trans .italic {
+  font-style: normal;
+}
+/* line 290, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .trans .line-number,
+#contentContainer .trans .marginal-number {
+  font-style: normal;
+}
+/* line 296, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .sig-block {
+  margin: 1em 1em 1em 1em;
+}
+/* line 299, sass/modules/_01-basic-text-styles.scss */
+#contentContainer .sig-block .sig {
+  font-style: italic;
+  line-height: 1.6;
+}
+/* line 22, sass/modules/_02-headings.scss */
+#contentContainer .A, #contentContainer .A-plus,
+#contentContainer .def-list h1,
+#contentContainer h1.list-title {
+  text-align: center;
+  margin: 2em 1em 0.5em 1em;
+  font-weight: bold;
+  font-weight: 900;
+  font-size: 1.3750em;
+}
+/* line 31, sass/modules/_02-headings.scss */
+#contentContainer .A-plus {
+  font-size: 1.5000em;
+}
+/* line 37, sass/modules/_02-headings.scss */
+#contentContainer .B,
+#contentContainer .def-list h2,
+#contentContainer h2.list-title {
+  text-align: center;
+  margin: 2em 1em 0.5em 1em;
+  font-weight: bold;
+}
+/* line 43, sass/modules/_02-headings.scss */
+#contentContainer .sec .A + .sec .B, #contentContainer .sec .A-plus + .sec .B {
+  margin: 1em 1em 0.5em 1em;
+}
+/* line 48, sass/modules/_02-headings.scss */
+#contentContainer .C,
+#contentContainer .def-list h3,
+#contentContainer h3.list-title {
+  text-align: center;
+  margin: 2em 1em 0.5em 1em;
+  font-weight: bold;
+  font-style: italic;
+}
+/* line 55, sass/modules/_02-headings.scss */
+#contentContainer .sec .B + .sec .C {
+  margin: 1em 1em 0.5em 1em;
+}
+/* line 60, sass/modules/_02-headings.scss */
+#contentContainer .D,
+#contentContainer .def-list h4,
+#contentContainer h4.list-title {
+  text-align: center;
+  font-weight: normal;
+  margin: 1em 0 0.25em 0;
+}
+/* line 69, sass/modules/_02-headings.scss */
+#contentContainer .E,
+#contentContainer .def-list h5,
+#contentContainer h5.list-title {
+  text-align: center;
+  margin: 2em 1em 0.5em 1em;
+  font-weight: bold;
+  font-style: italic;
+  font-weight: normal;
+  margin: 1em 0 0.25em 0;
+}
+/* line 79, sass/modules/_02-headings.scss */
+#contentContainer .F,
+#contentContainer .def-list h6,
+#contentContainer h6.list-title {
+  font-style: italic;
+  font-weight: normal;
+  margin: 1em 0 0.25em 0;
+}
+/* line 89, sass/modules/_02-headings.scss */
+#contentContainer .G {
+  font-size: 0.7500em;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: 0.2em;
+  margin: 1.5em 0 0.5em 0;
+}
+/* line 95, sass/modules/_02-headings.scss */
+#contentContainer .H {
+  font-weight: bold;
+  margin: 0.5em 0 0 0;
+}
+/* line 101, sass/modules/_02-headings.scss */
+#contentContainer .I {
+  font-style: italic;
+  margin: 0.5em 0 0 0;
+}
+/* line 107, sass/modules/_02-headings.scss */
+#contentContainer .title.NHS {
+  margin: 1em 1em 1em 1em;
+  display: block;
+  text-align: center;
+}
+/* line 114, sass/modules/_02-headings.scss */
+#contentContainer .title {
+  font-weight: bold;
+  margin: 1em 0 0 1em;
+  text-indent: 0;
+  line-height: 1.3;
+  text-align: left;
+}
+/* line 123, sass/modules/_02-headings.scss */
+#contentContainer .kwd-group .title {
+  margin: 0 0 0 0;
+}
+/* line 128, sass/modules/_02-headings.scss */
+#contentContainer .title.run-in:after {
+  display: inline;
+  content: " ·";
+  /* UTF8 &middot; \a0\b7 ( \b7 is a middot, \a0 is a space ) */
+}
+/* line 134, sass/modules/_02-headings.scss */
+#contentContainer .break {
+  text-indent: 0 !important;
+  text-align: center;
+  border: 0;
+  margin: 0.7em 0 1em 0;
+  padding: 0;
+  height: 1em;
+  page-break-before: avoid;
+  line-height: 1.6;
+}
+/* line 144, sass/modules/_02-headings.scss */
+#contentContainer .break + p {
+  text-indent: 0 !important;
+}
+/* line 150, sass/modules/_02-headings.scss */
+#contentContainer .label {
+  font-weight: bold;
+}
+/* line 155, sass/modules/_02-headings.scss */
+#contentContainer .kwd {
+  font-weight: bold;
+}
+/* line 17, sass/modules/_03-lists.scss */
+#contentContainer .list {
+  margin: 0.5em 1em 0.5em 1em;
+}
+/* line 20, sass/modules/_03-lists.scss */
+#contentContainer .list .list {
+  margin: 0.5em 0 0.5em 1em;
+}
+/* line 24, sass/modules/_03-lists.scss */
+#contentContainer .list + .list {
+  margin: 1.25em 1em 1.25em 1em;
+}
+/* line 30, sass/modules/_03-lists.scss */
+#contentContainer .list-item {
+  line-height: 1.6;
+  margin: 0.5em 0 0.5em 0;
+  text-align: left;
+}
+/* line 35, sass/modules/_03-lists.scss */
+#contentContainer .list-item p,
+#contentContainer .list-item .p {
+  text-align: left;
+  text-indent: 0;
+}
+/* line 40, sass/modules/_03-lists.scss */
+#contentContainer .list-item p + p, #contentContainer .list-item p + .p,
+#contentContainer .list-item .p + p,
+#contentContainer .list-item .p + .p {
+  text-indent: 1em;
+}
+/* line 51, sass/modules/_03-lists.scss */
+#contentContainer .bullet {
+  padding-left: 1em;
+  text-indent: 0;
+  margin: 0.5em 1em 0.5em 0;
+}
+/* line 56, sass/modules/_03-lists.scss */
+#contentContainer .bullet .list-item {
+  position: relative;
+}
+/* line 59, sass/modules/_03-lists.scss */
+#contentContainer .bullet .list-item p,
+#contentContainer .bullet .list-item .p {
+  text-align: left;
+}
+/* line 64, sass/modules/_03-lists.scss */
+#contentContainer .bullet .list-item:before {
+  content: '·';
+  position: absolute;
+  top: 0;
+  left: -0.5em;
+  font-weight: bold;
+}
+/* line 72, sass/modules/_03-lists.scss */
+#contentContainer .bullet .list-item .label {
+  width: 0;
+  height: 0;
+}
+/* line 86, sass/modules/_03-lists.scss */
+#contentContainer .def-list {
+  text-align: left;
+  margin: 1em 0 1em 0;
+}
+/* line 90, sass/modules/_03-lists.scss */
+#contentContainer .def-list .term {
+  font-weight: bold;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 0.9375em;
+  padding: 0.5em 0.5em 0 0.5em;
+}
+/* line 98, sass/modules/_03-lists.scss */
+#contentContainer .def-list .def {
+  text-align: left;
+  line-height: 1.6;
+  font-size: 0.9375em;
+  padding: 0 0.5em 0.5em 0.5em;
+}
+/* line 104, sass/modules/_03-lists.scss */
+#contentContainer .def-list .def:last-child {
+  border-bottom: 0;
+}
+/* line 109, sass/modules/_03-lists.scss */
+#contentContainer .def-list .def .p,
+#contentContainer .def-list .def p {
+  text-align: left;
+  font-size: 1em;
+  text-indent: 0;
+}
+/* line 116, sass/modules/_03-lists.scss */
+#contentContainer .def-list .def .p + .p,
+#contentContainer .def-list .def p + p {
+  text-indent: 1em;
+}
+/* line 123, sass/modules/_03-lists.scss */
+#contentContainer .def-list .def-list .term {
+  font-size: 1em;
+}
+/* line 127, sass/modules/_03-lists.scss */
+#contentContainer .def-list .def-list .def {
+  font-size: 1em;
+}
+/* line 130, sass/modules/_03-lists.scss */
+#contentContainer .def-list .def-list .def:last-child {
+  border-bottom: 0;
+}
+/* line 19, sass/modules/_04-notes.scss */
+#contentContainer .fn-group {
+  margin: 0.5em 0 1em 0;
+}
+/* line 23, sass/modules/_04-notes.scss */
+#contentContainer .fn {
+  margin: 0 0 0 0;
+  padding: 0.5em 0 0.5em 0;
+}
+/* line 27, sass/modules/_04-notes.scss */
+#contentContainer .fn:first-child {
+  border-top: 0;
+}
+/* line 31, sass/modules/_04-notes.scss */
+#contentContainer .fn p {
+  padding: 0 0.5em 0 0.5em;
+  text-indent: 0;
+  font-size: 0.9375em;
+  line-height: 1.6;
+  text-align: left;
+}
+/* line 38, sass/modules/_04-notes.scss */
+#contentContainer .fn p + p {
+  text-indent: 1em;
+}
+/* line 42, sass/modules/_04-notes.scss */
+#contentContainer .fn p a.xref.fn {
+  vertical-align: baseline;
+  font-size: 1em;
+  font-weight: normal;
+  border-top: 0;
+}
+/* line 50, sass/modules/_04-notes.scss */
+#contentContainer .fn .list {
+  margin: 0.5em 1.5em 0.5em 1.5em;
+}
+/* line 53, sass/modules/_04-notes.scss */
+#contentContainer .fn .list .list-item {
+  font-size: 0.9375em;
+  margin: 0.25em 0 0.25em 0;
+}
+/* line 57, sass/modules/_04-notes.scss */
+#contentContainer .fn .list .list-item p {
+  font-size: 1em;
+  padding: 0 0 0 0;
+}
+/* line 63, sass/modules/_04-notes.scss */
+#contentContainer .fn .list .list {
+  margin: 0.5em 1em 0.5em 1em;
+}
+/* line 66, sass/modules/_04-notes.scss */
+#contentContainer .fn .list .list .list-item {
+  font-size: 1em;
+}
+/* line 72, sass/modules/_04-notes.scss */
+#contentContainer .fn .verse-group {
+  margin: 1em 0 1em 1.5em;
+}
+/* line 84, sass/modules/_04-notes.scss */
+#contentContainer .textual-notes .textual-note .title {
+  margin: 0 0 0 0;
+}
+/* line 89, sass/modules/_04-notes.scss */
+#contentContainer .textual-notes .margin-note {
+  float: right;
+  width: 30%;
+  padding: 0 0 0.5em 0;
+  margin: 0 0 0 1em;
+  border-bottom: 0;
+}
+/* line 96, sass/modules/_04-notes.scss */
+#contentContainer .textual-notes .margin-note p {
+  line-height: 1.3;
+}
+/* line 103, sass/modules/_04-notes.scss */
+#contentContainer .boxed-text.admonishment {
+  background-color: transparent;
+}
+/* line 108, sass/modules/_04-notes.scss */
+#contentContainer .boxed-text.admonishment p:first-child {
+  text-indent: 0;
+}
+/* line 115, sass/modules/_04-notes.scss */
+#contentContainer .boxed-text.update {
+  background-color: transparent;
+  border: 0;
+  margin: 1em 1em 1em 1em;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+/* line 123, sass/modules/_04-notes.scss */
+#contentContainer .boxed-text.update p:first-child {
+  text-indent: 0;
+}
+/* line 130, sass/modules/_04-notes.scss */
+#contentContainer .ack-fn {
+  border-bottom: 0;
+}
+/* line 20, sass/modules/_05-figures-and-images.scss */
+#contentContainer .fig {
+  margin: 1em 0 1em 0;
+  padding: 0 0.5em 0 0.5em;
+  page-break-inside: avoid;
+}
+/* line 25, sass/modules/_05-figures-and-images.scss */
+#contentContainer .fig .label {
+  font-size: 0.9375em;
+}
+/* line 29, sass/modules/_05-figures-and-images.scss */
+#contentContainer .fig img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* line 35, sass/modules/_05-figures-and-images.scss */
+#contentContainer .fig p {
+  font-size: 0.9375em;
+  text-align: left;
+  line-height: 1.5;
+  text-indent: 0;
+}
+/* line 42, sass/modules/_05-figures-and-images.scss */
+#contentContainer .fig .attrib {
+  font-size: 0.9375em;
+  line-height: 1.5;
+}
+/* line 47, sass/modules/_05-figures-and-images.scss */
+#contentContainer .fig .fn {
+  border-bottom: 0;
+}
+/* line 51, sass/modules/_05-figures-and-images.scss */
+#contentContainer .fig .inline-graphic {
+  height: 1em;
+  width: auto;
+  display: inline;
+}
+/* line 59, sass/modules/_05-figures-and-images.scss */
+#contentContainer .caption {
+  font-size: 0.9375em;
+  text-indent: 0;
+  line-height: 1.5;
+  margin: 0.5em 0 0.5em 0;
+  text-align: left;
+}
+/* line 66, sass/modules/_05-figures-and-images.scss */
+#contentContainer .caption p {
+  font-size: 1em;
+  text-indent: 0;
+  text-align: left;
+}
+/* line 72, sass/modules/_05-figures-and-images.scss */
+#contentContainer .caption .label {
+  font-size: 1em;
+}
+/* line 76, sass/modules/_05-figures-and-images.scss */
+#contentContainer .caption .label + p,
+#contentContainer .caption .label + .p {
+  display: inline;
+}
+/* line 82, sass/modules/_05-figures-and-images.scss */
+#contentContainer .caption .title {
+  margin: 0 0 0 0;
+  line-height: 1.5;
+}
+/* line 87, sass/modules/_05-figures-and-images.scss */
+#contentContainer .caption .attrib {
+  font-size: 1em;
+  text-align: right;
+}
+/* line 92, sass/modules/_05-figures-and-images.scss */
+#contentContainer .caption + .attrib {
+  margin: 0 1em 0 0;
+}
+/* line 98, sass/modules/_05-figures-and-images.scss */
+#contentContainer .fig-group {
+  padding: 0 0.5em 0 0.5em;
+  page-break-inside: avoid;
+}
+/* line 102, sass/modules/_05-figures-and-images.scss */
+#contentContainer .fig-group .fig {
+  padding: 0 0 0 0;
+}
+/* line 112, sass/modules/_05-figures-and-images.scss */
+#contentContainer .inline-graphic {
+  height: 1em;
+  width: auto;
+}
+/* line 119, sass/modules/_05-figures-and-images.scss */
+#contentContainer .inline-formula img {
+  height: auto;
+  width: auto;
+  display: inline;
+}
+/* line 23, sass/modules/_06-tables.scss */
+#contentContainer .table-wrap {
+  margin: 1em 0;
+}
+/* line 29, sass/modules/_06-tables.scss */
+#contentContainer .table-wrap .caption .title {
+  font-weight: normal;
+  font-size: inherit;
+}
+/* line 35, sass/modules/_06-tables.scss */
+#contentContainer .table-wrap table {
+  margin: 0 0;
+}
+/* line 39, sass/modules/_06-tables.scss */
+#contentContainer .table-wrap table p,
+#contentContainer .table-wrap table .p {
+  font-size: 1em;
+  text-align: inherit !important;
+  text-indent: 0;
+}
+/* line 45, sass/modules/_06-tables.scss */
+#contentContainer .table-wrap table p + p,
+#contentContainer .table-wrap table .p + p {
+  text-indent: 1em;
+}
+/* line 51, sass/modules/_06-tables.scss */
+#contentContainer .table-wrap .attrib {
+  font-size: 0.9375em;
+  margin: 0.5em 1em;
+  text-align: right;
+  text-indent: 0;
+  line-height: 1.5;
+}
+/* line 60, sass/modules/_06-tables.scss */
+#contentContainer table {
+  width: 100%;
+  margin: 1em 0;
+  border-top: 0.0625em solid #000000 !important;
+  border-bottom: 0.0625em solid #000000 !important;
+}
+/* line 70, sass/modules/_06-tables.scss */
+#contentContainer table th, #contentContainer table td {
+  font-size: 0.9375em;
+  line-height: 1.3 !important;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+}
+/* line 76, sass/modules/_06-tables.scss */
+#contentContainer table th.stub, #contentContainer table td.stub {
+  font-weight: bold;
+}
+/* line 83, sass/modules/_06-tables.scss */
+#contentContainer table th .list .list-item p, #contentContainer table td .list .list-item p {
+  line-height: 1.3;
+}
+/* line 88, sass/modules/_06-tables.scss */
+#contentContainer table th.char, #contentContainer table td.char {
+  width: auto;
+}
+/* line 91, sass/modules/_06-tables.scss */
+#contentContainer table th.char .char-left, #contentContainer table td.char .char-left {
+  float: left;
+  text-align: right;
+  width: 50%;
+}
+/* line 97, sass/modules/_06-tables.scss */
+#contentContainer table th.char .char-right, #contentContainer table td.char .char-right {
+  float: right;
+  text-align: left;
+  width: 50%;
+}
+/* line 106, sass/modules/_06-tables.scss */
+#contentContainer table th {
+  font-weight: bold;
+}
+/* line 115, sass/modules/_06-tables.scss */
+#contentContainer table thead tr + tr th {
+  /*font-weight: normal;*/
+}
+/* line 124, sass/modules/_06-tables.scss */
+#contentContainer table td .title {
+  font-weight: bold;
+  margin: 0 0 0 0;
+}
+/* line 133, sass/modules/_06-tables.scss */
+#contentContainer table tfoot th, #contentContainer table tfoot td {
+  font-style: italic;
+}
+/* line 142, sass/modules/_06-tables.scss */
+#contentContainer .table-wrap-foot .fn-group {
+  margin: 0.5em 0.5em 1em 0.5em;
+}
+/* line 146, sass/modules/_06-tables.scss */
+#contentContainer .table-wrap-foot .fn p,
+#contentContainer .table-wrap-foot .fn .p,
+#contentContainer .table-wrap-foot p,
+#contentContainer .table-wrap-foot .p {
+  font-size: 0.9375em;
+  margin: 0 0 0 0;
+  text-align: left;
+  line-height: 1.5;
+  text-indent: 0;
+}
+/* line 156, sass/modules/_06-tables.scss */
+#contentContainer .table-wrap-foot .fn p + p,
+#contentContainer .table-wrap-foot .fn .p + p,
+#contentContainer .table-wrap-foot p + p,
+#contentContainer .table-wrap-foot .p + p {
+  text-indent: 1em;
+}
+/* line 165, sass/modules/_06-tables.scss */
+#contentContainer .informal table {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+/* line 169, sass/modules/_06-tables.scss */
+#contentContainer .informal table th, #contentContainer .informal table td {
+  background-color: transparent;
+  border-bottom: 0;
+}
+/* line 176, sass/modules/_06-tables.scss */
+#contentContainer table.array {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  width: auto;
+}
+/* line 181, sass/modules/_06-tables.scss */
+#contentContainer table.array th, #contentContainer table.array td {
+  background-color: initial;
+  border-bottom: 0;
+}
+/* line 23, sass/modules/_07-maths-logic-linguistics-and-philosophy.scss */
+#contentContainer .disp-formula {
+  margin: 1em 4em 1em 1em;
+}
+/* line 26, sass/modules/_07-maths-logic-linguistics-and-philosophy.scss */
+#contentContainer .disp-formula p {
+  text-indent: 0;
+  margin: 0 2em 0 0;
+}
+/* line 32, sass/modules/_07-maths-logic-linguistics-and-philosophy.scss */
+#contentContainer .disp-formula .label {
+  float: right;
+  font-weight: normal;
+  display: block;
+  width: 6em;
+  margin: 0 -4em 0 1em;
+  text-align: right;
+}
+/* line 47, sass/modules/_07-maths-logic-linguistics-and-philosophy.scss */
+#contentContainer .chem-struct {
+  margin: 1em 0 1em 0;
+}
+/* line 51, sass/modules/_07-maths-logic-linguistics-and-philosophy.scss */
+#contentContainer .chem-struct-wrap {
+  margin: 1em 0 1em 0;
+}
+/* line 57, sass/modules/_07-maths-logic-linguistics-and-philosophy.scss */
+#contentContainer .theorem,
+#contentContainer .definition,
+#contentContainer .proof {
+  padding: 0 1em 0 1em;
+}
+/* line 65, sass/modules/_07-maths-logic-linguistics-and-philosophy.scss */
+#contentContainer pre {
+  display: block;
+  font-family: monospace;
+  white-space: pre-wrap;
+  margin: 1em 0 1em 0;
+}
+/* line 72, sass/modules/_07-maths-logic-linguistics-and-philosophy.scss */
+#contentContainer .monospace, #contentContainer .code {
+  font-family: monospace;
+  text-align: left;
+  font-size: 1.125em;
+}
+/* line 78, sass/modules/_07-maths-logic-linguistics-and-philosophy.scss */
+#contentContainer .code {
+  white-space: pre-wrap;
+  /* CSM-1037 */
+}
+/* line 92, sass/modules/_07-maths-logic-linguistics-and-philosophy.scss */
+#contentContainer .disp-quote .example {
+  margin: 1em 1em 1em 1em;
+}
+/* line 98, sass/modules/_07-maths-logic-linguistics-and-philosophy.scss */
+#contentContainer .statement {
+  margin: 1em 0 1em 0;
+}
+/* line 101, sass/modules/_07-maths-logic-linguistics-and-philosophy.scss */
+#contentContainer .statement p {
+  text-indent: 0;
+}
+/* line 104, sass/modules/_07-maths-logic-linguistics-and-philosophy.scss */
+#contentContainer .statement p + p {
+  text-indent: 1em;
+}
+/* line 65, sass/modules/_08-container-markers.scss */
+#contentContainer .part .sec .boxed-text .caption .title {
+  margin: 0 0 0 0;
+}
+/* line 73, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text {
+  margin: 1em 0.5em 1em 0.5em;
+  padding: 1em 0 1em 0;
+  -webkit-border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -o-border-radius: 0.25em;
+  -ms-border-radius: 0.25em;
+  border-radius: 0.25em;
+  border: 1px solid #b7b2ad;
+  background-color: #FFFFFF;
+  page-break-inside: avoid;
+}
+/* line 82, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .table-wrap {
+  margin: 1em 1em 1em 1em;
+}
+/* line 85, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .table-wrap .caption {
+  background-color: transparent;
+  line-height: 1.5;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+/* line 101, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .caption {
+  line-height: 1.3;
+  padding: 0.5em 1em 0.5em 1em;
+  margin: -1.05em 0 1em 0;
+  text-align: left;
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  -o-border-radius: 0.2em;
+  -ms-border-radius: 0.2em;
+  border-radius: 0.2em;
+}
+/* line 109, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .caption p {
+  padding: 0 0 0 0;
+}
+/* line 113, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .caption + p {
+  text-indent: 0;
+}
+/* line 117, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .caption .label {
+  margin: 0 0.29em 0 0;
+}
+/* line 120, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .caption .label + .title, #contentContainer .boxed-text .caption .label + p {
+  font-weight: normal;
+  padding: 0 0 0 0;
+}
+/* line 126, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .caption .title {
+  margin: 0 0 0 0;
+}
+/* line 134, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .fig-group .caption {
+  background-color: transparent;
+  line-height: 1.5;
+  padding: 0 1em 0 1em;
+  margin: 1em 0 0 0;
+}
+/* line 142, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .fig {
+  padding: 0 1em 0 1em;
+}
+/* line 145, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .fig .caption {
+  background-color: transparent;
+  line-height: 1.5;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+/* line 151, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .fig .caption .attrib {
+  margin: 0 0 0 0;
+  font-size: 1em;
+}
+/* line 157, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .fig img {
+  max-width: 100%;
+  margin: 0 0 0.5em 0;
+}
+/* line 163, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .attrib {
+  text-align: right;
+  margin: 0.5em 1em 0 1em;
+  font-size: 0.9375em;
+  line-height: 1.5;
+}
+/* line 170, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text p {
+  padding: 0 1em 0 1em;
+}
+/* line 175, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .list {
+  margin: 0.5em 2em 0.5em 2em;
+}
+/* line 178, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .list .list {
+  margin: 0.5em 1em 0.5em 1em;
+}
+/* line 183, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .bullet {
+  margin: 0.5em 1em 0.5em 1em;
+}
+/* line 189, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .list-item p, #contentContainer .boxed-text .disp-quote p {
+  padding: 0 0 0 0;
+}
+/* line 194, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .verse-group {
+  margin: 1em 1em 1em 2em;
+}
+/* line 198, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .disp-quote {
+  margin: 1em 2em 1em 2em;
+}
+/* line 201, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .disp-quote .list {
+  margin: 0.5em 0 0.5em 0;
+}
+/* line 207, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .sec {
+  margin: 1em 0 0 0;
+}
+/* line 211, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .A, #contentContainer .boxed-text .A-plus {
+  margin: 1em 1em 0 1em;
+  line-height: 1.6;
+  font-size: 1em;
+  text-align: left;
+  font-family: inherit;
+}
+/* line 218, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .A:first-child, #contentContainer .boxed-text .A-plus:first-child {
+  margin: 0 1em 0 1em;
+}
+/* line 223, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .B {
+  font-style: italic;
+  margin: 1em 1em 0 1em;
+  line-height: 1.6;
+  font-size: 1em;
+  text-align: left;
+  font-family: inherit;
+}
+/* line 233, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .xref.fig {
+  padding: 0;
+}
+/* line 238, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .def-list {
+  margin: 1em 1em 1em 1em;
+}
+/* line 243, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .def-list .def p {
+  padding: 0 0 0 0;
+}
+/* line 250, sass/modules/_08-container-markers.scss */
+#contentContainer .boxed-text .code {
+  padding: 0 1em 0 1em;
+}
+/* line 259, sass/modules/_08-container-markers.scss */
+#contentContainer .disp-quote .list-item {
+  font-size: 0.9375em;
+}
+/* line 262, sass/modules/_08-container-markers.scss */
+#contentContainer .disp-quote .list-item p {
+  font-size: 1em;
+}
+/* line 268, sass/modules/_08-container-markers.scss */
+#contentContainer .disp-quote .list-item .list .list-item {
+  font-size: 1em;
+}
+/* line 307, sass/modules/_08-container-markers.scss */
+#contentContainer .answer-set .answer {
+  margin: 0.5em 0 0.5em 1em;
+}
+/* line 24, sass/modules/_09-linking-elements.scss */
+#contentContainer a.xref {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+/* line 30, sass/modules/_09-linking-elements.scss */
+#contentContainer a.xref.boxed-text {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+  page-break-inside: auto;
+}
+/* line 39, sass/modules/_09-linking-elements.scss */
+#contentContainer a.xref.fn,
+#contentContainer a.xref.footnote,
+#contentContainer a.xref.endnote {
+  text-decoration: underline;
+  font-weight: bold;
+  border-top: 0;
+}
+/* line 48, sass/modules/_09-linking-elements.scss */
+#contentContainer a.xref.uri,
+#contentContainer a.xref.ext-link {
+  word-wrap: break-word;
+}
+/* line 57, sass/modules/_09-linking-elements.scss */
+#contentContainer a.xref.page {
+  display: inline;
+}
+/* line 62, sass/modules/_09-linking-elements.scss */
+#contentContainer a.xref.list {
+  margin: 0 0 0 0;
+}
+/* line 24, sass/modules/_10-media.scss */
+#contentContainer .fig.video, #contentContainer .fig.audio, #contentContainer .fig.animation, #contentContainer .fig.assessment, #contentContainer .fig.q-and-a, #contentContainer .fig.pop-up, #contentContainer .fig.slideshow {
+  -webkit-border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -o-border-radius: 0.25em;
+  -ms-border-radius: 0.25em;
+  border-radius: 0.25em;
+  border: 0.25em solid #b7b2ad;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-size: 4em 4em;
+}
+/* line 37, sass/modules/_10-media.scss */
+#contentContainer .fig.video .title, #contentContainer .fig.audio .title, #contentContainer .fig.animation .title, #contentContainer .fig.assessment .title, #contentContainer .fig.q-and-a .title, #contentContainer .fig.pop-up .title, #contentContainer .fig.slideshow .title {
+  margin: 0.5em 0 0 0;
+}
+/* line 43, sass/modules/_10-media.scss */
+#contentContainer .fig.video .caption .title, #contentContainer .fig.audio .caption .title, #contentContainer .fig.animation .caption .title, #contentContainer .fig.assessment .caption .title, #contentContainer .fig.q-and-a .caption .title, #contentContainer .fig.pop-up .caption .title, #contentContainer .fig.slideshow .caption .title {
+  font-weight: normal;
+  margin: 0 0 0 0.29em;
+}
+/* line 50, sass/modules/_10-media.scss */
+#contentContainer .fig.video {
+  background-image: url(../Images/icon_video_32x32.png);
+}
+/* line 54, sass/modules/_10-media.scss */
+#contentContainer .fig.audio {
+  background-image: url(../Images/icon_audio_32x32.png);
+}
+/* line 58, sass/modules/_10-media.scss */
+#contentContainer .fig.animation {
+  background-image: url(../Images/icon_animation_32x32.png);
+}
+/* line 62, sass/modules/_10-media.scss */
+#contentContainer .fig.assessment {
+  background-image: url(../Images/icon_assessment_32x32.png);
+}
+/* line 66, sass/modules/_10-media.scss */
+#contentContainer .fig.q-and-a {
+  background-image: url(../Images/icon_qanda_32x32.png);
+}
+/* line 70, sass/modules/_10-media.scss */
+#contentContainer .fig.pop-up {
+  background-image: url(../Images/icon_popup_32x32.png);
+}
+/* line 74, sass/modules/_10-media.scss */
+#contentContainer .fig.slideshow {
+  background-image: url(../Images/icon_slideshow_32x32.png);
+}
+/* line 76, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .preface header h1,
+#contentContainer .preface .header h1,
+#contentContainer .foreword header h1,
+#contentContainer .foreword .header h1,
+#contentContainer .ack header h1,
+#contentContainer .ack .header h1,
+#contentContainer .dedication header h1,
+#contentContainer .dedication .header h1,
+#contentContainer .other header h1,
+#contentContainer .other .header h1 {
+  font-size: 1.7500em;
+  text-align: center;
+  line-height: 1.3;
+  color: #000000;
+  font-weight: normal;
+  font-style: italic;
+  margin: 3em 0 1em 0;
+  padding: 0 0 0 0;
+}
+/* line 87, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .preface header h1 + .subtitle,
+#contentContainer .preface .header h1 + .subtitle,
+#contentContainer .foreword header h1 + .subtitle,
+#contentContainer .foreword .header h1 + .subtitle,
+#contentContainer .ack header h1 + .subtitle,
+#contentContainer .ack .header h1 + .subtitle,
+#contentContainer .dedication header h1 + .subtitle,
+#contentContainer .dedication .header h1 + .subtitle,
+#contentContainer .other header h1 + .subtitle,
+#contentContainer .other .header h1 + .subtitle {
+  margin: -1em 0 1em 0;
+}
+/* line 92, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .preface header .subtitle,
+#contentContainer .preface .header .subtitle,
+#contentContainer .foreword header .subtitle,
+#contentContainer .foreword .header .subtitle,
+#contentContainer .ack header .subtitle,
+#contentContainer .ack .header .subtitle,
+#contentContainer .dedication header .subtitle,
+#contentContainer .dedication .header .subtitle,
+#contentContainer .other header .subtitle,
+#contentContainer .other .header .subtitle {
+  text-align: center;
+  font-style: italic;
+}
+/* line 99, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .preface .contrib-group,
+#contentContainer .foreword .contrib-group,
+#contentContainer .ack .contrib-group,
+#contentContainer .dedication .contrib-group,
+#contentContainer .other .contrib-group {
+  text-align: center;
+  margin: 0 0 1em 0;
+}
+/* line 105, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .preface .contrib-group.authors .x,
+#contentContainer .foreword .contrib-group.authors .x,
+#contentContainer .ack .contrib-group.authors .x,
+#contentContainer .dedication .contrib-group.authors .x,
+#contentContainer .other .contrib-group.authors .x {
+  margin: 0 0.29em 0 0;
+}
+/* line 112, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .preface .contrib-group .contrib .name,
+#contentContainer .foreword .contrib-group .contrib .name,
+#contentContainer .ack .contrib-group .contrib .name,
+#contentContainer .dedication .contrib-group .contrib .name,
+#contentContainer .other .contrib-group .contrib .name {
+  font-weight: bold;
+}
+/* line 117, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .preface .contrib-group .contrib .name .surname + .suffix,
+#contentContainer .foreword .contrib-group .contrib .name .surname + .suffix,
+#contentContainer .ack .contrib-group .contrib .name .surname + .suffix,
+#contentContainer .dedication .contrib-group .contrib .name .surname + .suffix,
+#contentContainer .other .contrib-group .contrib .name .surname + .suffix {
+  padding: 0 0 0 0.29em;
+}
+/* line 122, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .preface .contrib-group .contrib .name + .degrees,
+#contentContainer .foreword .contrib-group .contrib .name + .degrees,
+#contentContainer .ack .contrib-group .contrib .name + .degrees,
+#contentContainer .dedication .contrib-group .contrib .name + .degrees,
+#contentContainer .other .contrib-group .contrib .name + .degrees {
+  padding: 0 0 0 0.29em;
+}
+/* line 135, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .blurb {
+  text-indent: 0;
+}
+/* line 138, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .blurb + .blurb {
+  text-indent: 1em;
+}
+/* line 145, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part p {
+  text-indent: 0;
+}
+/* line 150, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part header,
+#contentContainer .front-matter-part .header {
+  padding: 3em 0 1em 0;
+}
+/* line 155, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part header .FMT,
+#contentContainer .front-matter-part header .FMS,
+#contentContainer .front-matter-part .header .FMT,
+#contentContainer .front-matter-part .header .FMS {
+  font-size: 1.7500em;
+  text-align: center;
+  line-height: 1.3;
+  font-weight: normal;
+  font-style: italic;
+  padding: 0 0 0 0;
+}
+/* line 167, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part header .FMT-subtitle,
+#contentContainer .front-matter-part .header .FMT-subtitle {
+  text-align: center;
+  font-style: italic;
+}
+/* line 173, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part header .ST,
+#contentContainer .front-matter-part .header .ST {
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 1em 0 0 0;
+  font-weight: bold;
+  line-height: 1.3;
+  text-align: left;
+  text-indent: 0;
+}
+/* line 184, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part header .author,
+#contentContainer .front-matter-part .header .author {
+  text-align: center;
+}
+/* line 190, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part .edition {
+  margin: 0.5em 0 0.5em 0;
+  font-weight: bold;
+}
+/* line 196, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part .volume {
+  margin: 0.5em 0 0.5em 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+/* line 203, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part .edited-by {
+  margin: 1em 0 0 0;
+  font-style: italic;
+}
+/* line 210, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part .author {
+  font-weight: bold;
+}
+/* line 215, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part .aff {
+  font-style: italic;
+  font-size: 0.9375em;
+  line-height: 1.3;
+}
+/* line 222, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part .bio {
+  margin: 1em 0 0.5em 0;
+}
+/* line 229, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part.other p, #contentContainer .front-matter-part.introduction p {
+  text-indent: 2em;
+}
+/* line 233, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part.other .def p,
+#contentContainer .front-matter-part.other .def .p, #contentContainer .front-matter-part.introduction .def p,
+#contentContainer .front-matter-part.introduction .def .p {
+  text-indent: 0;
+}
+/* line 240, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part.other .fn p, #contentContainer .front-matter-part.introduction .fn p {
+  text-indent: 0;
+}
+/* line 243, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part.other .fn p + p, #contentContainer .front-matter-part.introduction .fn p + p {
+  text-indent: 1em;
+}
+/* line 252, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part.other header + p,
+#contentContainer .front-matter-part.other .header + p, #contentContainer .front-matter-part.introduction header + p,
+#contentContainer .front-matter-part.introduction .header + p {
+  text-indent: 0;
+}
+/* line 259, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part.other h1 + p, #contentContainer .front-matter-part.other h2 + p, #contentContainer .front-matter-part.other h3 + p, #contentContainer .front-matter-part.other h4 + p, #contentContainer .front-matter-part.other h5 + p, #contentContainer .front-matter-part.other h6 + p, #contentContainer .front-matter-part.introduction h1 + p, #contentContainer .front-matter-part.introduction h2 + p, #contentContainer .front-matter-part.introduction h3 + p, #contentContainer .front-matter-part.introduction h4 + p, #contentContainer .front-matter-part.introduction h5 + p, #contentContainer .front-matter-part.introduction h6 + p {
+  text-indent: 0;
+}
+/* line 268, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part.other .disp-quote p,
+#contentContainer .front-matter-part.other .footnote p,
+#contentContainer .front-matter-part.other .list-item p, #contentContainer .front-matter-part.introduction .disp-quote p,
+#contentContainer .front-matter-part.introduction .footnote p,
+#contentContainer .front-matter-part.introduction .list-item p {
+  text-indent: 0;
+}
+/* line 271, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .front-matter-part.other .disp-quote p + p,
+#contentContainer .front-matter-part.other .footnote p + p,
+#contentContainer .front-matter-part.other .list-item p + p, #contentContainer .front-matter-part.introduction .disp-quote p + p,
+#contentContainer .front-matter-part.introduction .footnote p + p,
+#contentContainer .front-matter-part.introduction .list-item p + p {
+  text-indent: 1em;
+}
+/* line 283, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .editorial-procedures p + p {
+  text-indent: 2em;
+}
+/* line 293, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .half-title-page .half-title-title {
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 1em 0 0 0;
+  font-weight: bold;
+  line-height: 1.3;
+  text-align: left;
+}
+/* line 302, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .half-title-page .half-title-title + .half-title-subtitle {
+  margin: 0 0 0.5em 0;
+}
+/* line 306, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .half-title-page .half-title-title:first-child {
+  margin: 0 0 1em 0;
+}
+/* line 312, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .half-title-page .half-title-subtitle {
+  margin: 0 0 0.5em 0;
+  font-style: italic;
+  line-height: 1.3;
+}
+/* line 319, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .half-title-page .half-title-edition {
+  margin: 0.5em 0 0.5em 0;
+  font-weight: bold;
+}
+/* line 325, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .half-title-page .half-title-volume {
+  margin: 0.5em 0 0.5em 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+/* line 332, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .half-title-page .half-title-edited-by {
+  margin: 1em 0 0 0;
+  font-style: italic;
+}
+/* line 338, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .half-title-page .half-title-author {
+  font-weight: bold;
+}
+/* line 347, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .series-page p {
+  text-indent: 0;
+  text-align: left;
+}
+/* line 352, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .series-page img {
+  margin: 0.5em 0 0.5em 0;
+}
+/* line 357, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .series-page h1, #contentContainer .series-page h2, #contentContainer .series-page h3 {
+  text-align: left;
+}
+/* line 361, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .series-page header,
+#contentContainer .series-page .header {
+  padding: 0 0 0 0;
+}
+/* line 365, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .series-page header .FMS,
+#contentContainer .series-page header .EMT,
+#contentContainer .series-page header .EMS,
+#contentContainer .series-page .header .FMS,
+#contentContainer .series-page .header .EMT,
+#contentContainer .series-page .header .EMS {
+  font-size: 1em;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 1em 0 0 0;
+  font-weight: bold;
+  line-height: 1.3;
+  text-align: left;
+  text-indent: 0;
+  font-family: inherit;
+}
+/* line 382, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .series-page .series-page-subtitle {
+  text-indent: 0;
+  margin: 0 0 0.5em 0;
+  font-style: italic;
+  line-height: 1.3;
+}
+/* line 390, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .series-page .series-blurb {
+  margin: 0.5em 0 0.5em 0;
+}
+/* line 395, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .series-page .series-page-edited-by {
+  margin: 1em 0 0 0;
+  font-style: italic;
+}
+/* line 401, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .series-page .list {
+  margin: 1em 0 0 0;
+  text-align: left;
+}
+/* line 405, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .series-page .list h1.list-title {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1.6;
+}
+/* line 413, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .series-page .list-item {
+  margin: 0 0 0 0;
+}
+/* line 422, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .series-page .A, #contentContainer .series-page .A-plus {
+  font-family: inherit;
+  margin: 1em 0 0.5em 0;
+  font-size: 1em;
+}
+/* line 434, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .series-page .ref-list .EMS {
+  font-size: 1em;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 1em 0 0 0;
+  font-weight: bold;
+  line-height: 1.3;
+  text-align: left;
+  text-indent: 0;
+  font-family: inherit;
+}
+/* line 448, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .series-page .ref {
+  border-top: 0;
+  text-align: left;
+}
+/* line 452, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .series-page .ref .label {
+  padding-right: 0.29em;
+}
+/* line 474, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .title-page {
+  padding: 0 1em 0 1em;
+}
+/* line 477, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .title-page p {
+  text-align: center;
+  -ms-word-break: normal;
+  word-break: normal;
+  word-break: break-word;
+  -webkit-hyphens: none;
+  -epub-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+/* line 483, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .title-page .title-page-title {
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 2em 0 0.5em 0;
+  font-weight: bold;
+  line-height: 1.3;
+}
+/* line 494, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .title-page .title-page-subtitle {
+  font-size: 2em;
+  margin: 0.5em 0 0.5em 0;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.3;
+}
+/* line 503, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .title-page .title-page-subtitle + .title-page-subtitle {
+  margin: -0.5em 1em 0.5em 1em;
+}
+/* line 509, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .title-page .title-page-edition {
+  font-size: 2em;
+  margin: 0.5em 0 0.5em 0;
+  line-height: 1.3;
+}
+/* line 518, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .title-page .title-page-volume {
+  font-size: 2em;
+  margin: 0.5em 0 0.5em 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+}
+/* line 529, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .title-page .title-page-series {
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 1em 0 0 0;
+  font-weight: bold;
+  line-height: 1.3;
+}
+/* line 539, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .title-page .title-page-series-editor {
+  font-weight: bold;
+  margin: 0.5em 0 0 0;
+}
+/* line 545, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .title-page .title-page-author {
+  font-weight: bold;
+  margin: 0.5em 0 0 0;
+}
+/* line 551, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .title-page .title-page-edited-by {
+  margin: 1em 0 0.5em 0;
+  font-style: italic;
+}
+/* line 557, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .title-page .title-page-address-line {
+  margin: 0 0 1em 0;
+  font-style: italic;
+  font-size: 0.9375em;
+  line-height: 1.3;
+}
+/* line 565, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .title-page .title-page-text {
+  margin: 0 0 1em 0;
+}
+/* line 574, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .title-page .logo-wrap {
+  margin: 4em auto 0 auto;
+  text-align: center;
+}
+/* line 581, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .imprint-page {
+  padding: 2em 1em 0 1em;
+}
+/* line 585, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .imprint-page p {
+  text-align: center;
+  -ms-word-break: normal;
+  word-break: normal;
+  word-break: break-word;
+  -webkit-hyphens: none;
+  -epub-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+/* line 591, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .imprint-page .logo-wrap {
+  margin: 1em auto 1em auto;
+  text-align: center;
+  display: block;
+}
+/* line 599, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .imprint-page .disclaimer {
+  font-size: 0.875em;
+  margin: 0.5em 1em;
+}
+/* line 605, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .imprint-page .catalog-data {
+  font-style: italic;
+}
+/* line 610, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .imprint-page .list {
+  font-size: 0.875em;
+}
+/* line 613, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .imprint-page .list h1.list-title {
+  font-weight: normal;
+  font-style: italic;
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1.6;
+  text-align: center;
+}
+/* line 622, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .imprint-page .list .list {
+  margin: 0.5em 0 0.5em 0;
+  font-size: 1em;
+  text-align: center;
+}
+/* line 630, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .imprint-page .list .list-item p {
+  margin: 0.5em 1em;
+}
+/* line 633, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .imprint-page .list .list-item p + p {
+  text-indent: 0;
+}
+/* line 643, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .dedication {
+  padding: 3.5em 0 0 0;
+}
+/* line 651, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .dedication p {
+  text-align: left;
+  margin: 0.5em 0 0.5em 0;
+}
+/* line 657, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .dedication .attrib {
+  margin: 0.5em 1em 0 1em;
+  font-size: 0.9375em;
+}
+/* line 661, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .dedication .attrib p {
+  text-align: right;
+}
+/* line 666, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .dedication .verse-group {
+  display: inline-block;
+}
+/* line 671, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .dedication .verse-group .verse-line p {
+  margin: 0 0 0 0;
+}
+/* line 680, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer body.epigraph {
+  padding: 3.5em 0 0 0;
+}
+/* line 683, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer body.epigraph .disp-quote {
+  margin: 0 0 0 0;
+}
+/* line 686, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer body.epigraph .disp-quote p {
+  font-size: 1em;
+  text-align: left;
+  margin: 0.5em 0 0.5em 0;
+}
+/* line 691, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer body.epigraph .disp-quote p + p {
+  text-indent: 0;
+}
+/* line 697, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer body.epigraph .epigraph {
+  padding: 0 0 0 0;
+  text-align: left;
+}
+/* line 701, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer body.epigraph .epigraph p {
+  margin: 0 0 0 0;
+}
+/* line 704, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer body.epigraph .epigraph p + p {
+  text-indent: 1em;
+}
+/* line 711, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer body.epigraph .attrib {
+  margin: 0.5em 1em 0 1em;
+  font-size: 0.9375em;
+}
+/* line 720, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc header,
+#contentContainer .toc .header {
+  padding: 3em 0 1em 0;
+}
+/* line 725, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc header .FMT,
+#contentContainer .toc .header .FMT {
+  font-size: 1.7500em;
+  text-align: center;
+  line-height: 1.3;
+  font-weight: normal;
+  font-style: italic;
+  padding: 0 0 0 0;
+}
+/* line 738, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .title-group .title {
+  margin: 1em 0 0.5em 0;
+  font-weight: bold;
+}
+/* line 744, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .toc-entry {
+  clear: both;
+}
+/* line 750, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .frontmatter,
+#contentContainer .toc .endmatter {
+  font-style: italic;
+  padding: 0 0 0 0;
+  margin: 0.25em 0 0.25em 0;
+}
+/* line 756, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .frontmatter .label,
+#contentContainer .toc .endmatter .label {
+  width: auto;
+  text-align: left;
+  float: none;
+  display: inline;
+}
+/* line 763, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .frontmatter .title,
+#contentContainer .toc .endmatter .title {
+  padding: 0 0 0 0;
+  display: inline;
+}
+/* line 768, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .frontmatter .subtitle,
+#contentContainer .toc .endmatter .subtitle {
+  display: inline;
+  margin: 0 0 0 0.29em;
+}
+/* line 773, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .frontmatter .toc-entry,
+#contentContainer .toc .endmatter .toc-entry {
+  padding: 0 0 0 1em;
+  margin: 0.25em 0 0.25em 0;
+}
+/* line 778, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .frontmatter p, #contentContainer .toc .frontmatter .toc-author,
+#contentContainer .toc .endmatter p,
+#contentContainer .toc .endmatter .toc-author {
+  text-indent: 1em;
+}
+/* line 783, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .frontmatter .italic,
+#contentContainer .toc .endmatter .italic {
+  font-style: normal;
+}
+/* line 788, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .label {
+  /*width: 3em; // CBT-359
+  text-align: right;
+  float: left;
+  display: block;*/
+  line-height: 1.3;
+  margin: 0 0.5em 0 0;
+  text-decoration: none;
+}
+/* line 800, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .title {
+  font-weight: normal;
+  margin: 0 0 0 0;
+  /*display: block;*/
+  line-height: 1.3;
+  /*padding: 0 0 0 3.5em;*/
+  text-align: left;
+}
+/* line 810, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .secAplus .title {
+  font-weight: bold;
+  margin: 0.5em 0 0.25em 0;
+}
+/* line 816, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .part {
+  margin: 0 0 0 0;
+  padding: 1em 0 1em 0;
+  text-align: left;
+  font-size: 1.25em;
+  line-height: 1.3;
+}
+/* line 824, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .part .label {
+  width: auto;
+  /*display: block;*/
+  display: inline;
+  text-align: left;
+  float: none;
+  text-decoration: none;
+}
+/* line 833, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .part .title {
+  /*display: block;*/
+  display: inline;
+  padding: 0 0 0 0;
+}
+/* line 839, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .part .subtitle {
+  display: block;
+  padding: 0 0 0 0;
+}
+/* line 844, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .part .toc-entry {
+  font-size: 0.8em;
+}
+/* line 848, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .part .toc-entry .label {
+  /*width: 3em; // CBT-359
+  text-align: right;
+  float: left;
+  display: block;*/
+}
+/* line 855, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .part .toc-entry .title {
+  /*display: block;
+  padding: 0 0 0 3.5em;*/
+}
+/* line 860, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .part .toc-entry .toc-entry {
+  font-size: 1em;
+}
+/* line 866, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .part .part {
+  border-top: 0;
+  text-align: left;
+  margin: 0 0 0 2em;
+}
+/* line 871, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .part .part .toc-entry {
+  font-size: 1em;
+  margin: 0 0 0 0;
+}
+/* line 875, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .part .part .toc-entry .label {
+  /*width: 3em; // CBT-359
+  text-align: right;
+  float: left;
+  display: block;*/
+}
+/* line 882, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .part .part .toc-entry .title {
+  /*display: block;
+  padding: 0 0 0 3.5em;*/
+}
+/* line 888, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .part .part .label {
+  width: auto;
+  display: inline;
+  text-align: left;
+  float: none;
+}
+/* line 895, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .part .part .title {
+  display: inline;
+  padding: 0 0 0 0;
+}
+/* line 903, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .chapter {
+  padding: 1em 0 0 0;
+  margin: 0.25em 0 0.25em 0;
+}
+/* line 907, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .chapter .label,
+#contentContainer .toc .chapter .title {
+  font-weight: bold;
+}
+/* line 914, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .toc-entry {
+  margin: 0.25em 0 0.25em 3.5em;
+}
+/* line 917, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .toc-entry .label,
+#contentContainer .toc .toc-entry .title {
+  width: auto;
+  text-align: left;
+  display: inline;
+  float: none;
+  padding: 0 0.29em 0 0;
+  margin: 0 0 0 0;
+}
+/* line 929, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .toc-entry .toc-entry {
+  margin: 0.25em 0 0.25em 1em;
+}
+/* line 933, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .toc-entry .title {
+  font-weight: normal;
+}
+/* line 938, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .toc-entry .subtitle {
+  padding: 0 0 0 1em;
+  font-style: italic;
+  text-align: left;
+}
+/* line 946, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .toc-entry.chapter .subtitle {
+  margin: 0 0 0 0;
+}
+/* line 954, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .toc-author {
+  /*padding: 0 0 0 3.5em;*/
+  padding: 0 0 0 0;
+  text-align: left;
+  text-indent: 0;
+}
+/* line 961, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc > .endmatter {
+  margin: 1em 0 0.25em 0;
+}
+/* line 964, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc > .endmatter ~ .endmatter {
+  margin: 0.25em 0 0.25em 0;
+}
+/* line 969, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .figure,
+#contentContainer .toc .map,
+#contentContainer .toc .table,
+#contentContainer .toc .plate {
+  padding: 0.25em 0 0.25em 0;
+  text-align: left;
+}
+/* line 977, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .toc-div {
+  /* CBT-406 */
+  margin: 1em 0;
+}
+/* line 980, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .toc-div .title-group {
+  padding-top: 1em;
+}
+/* line 984, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .toc .toc-div .figure,
+#contentContainer .toc .toc-div .map,
+#contentContainer .toc .toc-div .table,
+#contentContainer .toc .toc-div .plate {
+  margin-left: 0;
+}
+/* line 998, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .glossary p {
+  text-align: left;
+}
+/* line 1006, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .glossary .sec p:first-child {
+  text-indent: 0;
+}
+/* line 1016, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .contributors .list-item {
+  margin: 1em 0 1em 0;
+}
+/* line 1020, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .contributors p {
+  line-height: 1.5;
+  text-indent: 0;
+}
+/* line 1024, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .contributors p + p {
+  text-indent: 0;
+}
+/* line 1029, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .contributors .author,
+#contentContainer .contributors .name {
+  font-weight: bold;
+}
+/* line 1038, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .contributors .bio {
+  margin: 0 0 0 0;
+  text-indent: 0;
+}
+/* line 1048, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .named-book-part-body p:first-child {
+  text-indent: 0;
+}
+/* line 1060, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .review {
+  margin: 1em 0;
+}
+/* line 1063, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .review p {
+  text-indent: 0;
+}
+/* line 1066, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .review p + p {
+  text-indent: 2em;
+}
+/* line 1071, sass/modules/_11-covers-and-frontmatter.scss */
+#contentContainer .review .attrib {
+  font-size: 0.9375em;
+}
+/* line 21, sass/modules/_12-part-openers.scss */
+#contentContainer .part header,
+#contentContainer .part .header {
+  padding: 6em 1em 1em 1em;
+}
+/* line 26, sass/modules/_12-part-openers.scss */
+#contentContainer .part header h1,
+#contentContainer .part .header h1 {
+  font-size: 1.7500em;
+  text-align: center;
+  line-height: 1.3;
+  font-weight: bold;
+  font-style: normal;
+  margin: 0 0 0.5em 0;
+  padding: 0 0 0 0;
+}
+/* line 38, sass/modules/_12-part-openers.scss */
+#contentContainer .part header h1 .label,
+#contentContainer .part .header h1 .label {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 0.9375em;
+  display: block;
+  margin: 0.5em 0 0.5em 0;
+}
+/* line 45, sass/modules/_12-part-openers.scss */
+#contentContainer .part header h1 .label:after,
+#contentContainer .part .header h1 .label:after {
+  text-align: center;
+  margin: 1em 0 1em 0;
+  font-size: 0.5625em;
+  display: block;
+}
+/* line 57, sass/modules/_12-part-openers.scss */
+#contentContainer .part header h2,
+#contentContainer .part header .PST,
+#contentContainer .part .header h2,
+#contentContainer .part .header .PST {
+  font-size: 1em;
+  text-align: center;
+  line-height: 1.3;
+  font-style: italic;
+}
+/* line 67, sass/modules/_12-part-openers.scss */
+#contentContainer .part .contrib-group {
+  text-align: center;
+  margin: 0 0 1em 0;
+}
+/* line 73, sass/modules/_12-part-openers.scss */
+#contentContainer .part .abstract {
+  margin: 0 1em 0 1em;
+}
+/* line 76, sass/modules/_12-part-openers.scss */
+#contentContainer .part .abstract p {
+  text-align: left;
+  text-indent: 0;
+}
+/* line 80, sass/modules/_12-part-openers.scss */
+#contentContainer .part .abstract p + p {
+  text-indent: 1em;
+}
+/* line 89, sass/modules/_12-part-openers.scss */
+#contentContainer .part .sec .title {
+  text-align: center;
+  margin: 1em 1em 0 1em;
+}
+/* line 95, sass/modules/_12-part-openers.scss */
+#contentContainer .part .sec .subtitle {
+  text-align: center;
+  font-style: italic;
+  margin: 0.5em 1em 0 1em;
+}
+/* line 102, sass/modules/_12-part-openers.scss */
+#contentContainer .part .sec p {
+  text-align: left;
+  text-indent: 0;
+}
+/* line 106, sass/modules/_12-part-openers.scss */
+#contentContainer .part .sec p + p {
+  text-indent: 1em;
+}
+/* line 115, sass/modules/_12-part-openers.scss */
+#contentContainer .part .chapter p {
+  text-align: justify;
+}
+/* line 118, sass/modules/_12-part-openers.scss */
+#contentContainer .part .chapter p + p {
+  text-indent: 2em;
+}
+/* line 24, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter header,
+#contentContainer .chapter .header {
+  padding: 6em 1em 0 1em;
+}
+/* line 29, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter header h1, #contentContainer .chapter header .CT,
+#contentContainer .chapter .header h1,
+#contentContainer .chapter .header .CT {
+  font-size: 1.7500em;
+  text-align: center;
+  line-height: 1.3;
+  font-weight: bold;
+  font-style: normal;
+  margin: 0 0 0.5em 0;
+  padding: 0 0 0 0;
+}
+/* line 41, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter header h1 .label, #contentContainer .chapter header .CT .label,
+#contentContainer .chapter .header h1 .label,
+#contentContainer .chapter .header .CT .label {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 0.9375em;
+  display: block;
+  margin: 0.5em 0 0.5em 0;
+}
+/* line 51, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter header .CST,
+#contentContainer .chapter .header .CST {
+  text-align: center;
+  font-style: italic;
+  font-weight: normal;
+  margin: 0 0 0.5em 0;
+  font-size: 1em;
+}
+/* line 60, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter header:after,
+#contentContainer .chapter .header:after {
+  text-align: center;
+  margin: 1em 0 1em 0;
+  display: block;
+}
+/* line 70, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter .subtitle {
+  text-align: center;
+  font-style: italic;
+  font-weight: normal;
+  margin: 0 0 0.5em 0;
+  font-size: 1em;
+  display: block;
+}
+/* line 81, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter .alt-title {
+  font-size: 0.875em;
+  text-align: center;
+  margin: 1em 1em 1em 1em;
+}
+/* line 88, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter .chapter-author-affiliation {
+  font-weight: normal;
+  font-size: 1em;
+  text-transform: none;
+  letter-spacing: 0;
+  font-style: italic;
+}
+/* line 100, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter .chapter-intro,
+#contentContainer .chapter .editors-note,
+#contentContainer .chapter .abstract,
+#contentContainer .chapter .kwd-group {
+  margin: 0.5em 1em 0.5em 1em;
+  padding: 0.5em 0 1em 0;
+  text-align: left;
+  text-indent: 0;
+}
+/* line 110, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter .chapter-intro p,
+#contentContainer .chapter .editors-note p,
+#contentContainer .chapter .abstract p,
+#contentContainer .chapter .kwd-group p {
+  text-align: left;
+  text-indent: 0;
+}
+/* line 114, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter .chapter-intro p + p,
+#contentContainer .chapter .editors-note p + p,
+#contentContainer .chapter .abstract p + p,
+#contentContainer .chapter .kwd-group p + p {
+  text-indent: 1em;
+}
+/* line 121, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter .contrib-group {
+  text-align: center;
+  margin: 0 0 1em 0;
+}
+/* line 134, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter .contrib-group .contrib .name {
+  font-weight: bold;
+}
+/* line 139, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter .contrib-group .contrib .name .surname + .suffix {
+  padding: 0 0 0 0.29em;
+}
+/* line 144, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter .contrib-group .contrib .name + .degrees {
+  padding: 0 0 0 0.29em;
+}
+/* line 151, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter .abstract,
+#contentContainer .chapter .kwd-group,
+#contentContainer .chapter .dedication {
+  -ms-word-break: normal;
+  word-break: normal;
+  word-break: break-word;
+  -webkit-hyphens: none;
+  -epub-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+/* line 160, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter .toc {
+  margin: 0 0 1em 0;
+}
+/* line 164, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter .toc .abstract {
+  margin: 1em 0 0 0;
+  padding: 0 0 0 0;
+  border-bottom: 0;
+}
+/* line 172, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter .dedication {
+  font-size: 1em;
+  line-height: 1.6;
+  text-indent: 0;
+  text-align: center;
+  padding: 1em 0 1em 0;
+}
+/* line 185, sass/modules/_13-chapter-openers.scss */
+#contentContainer .chapter .sub-chapter header .title {
+  font-size: 1.7500em;
+  text-align: center;
+  line-height: 1.3;
+  font-weight: normal;
+  color: #333;
+}
+/* line 47, sass/modules/_14-endmatter.scss */
+#contentContainer .EMS,
+#contentContainer .EMT,
+#contentContainer .AT {
+  font-size: 1.7500em;
+  text-align: center;
+  line-height: 1.3;
+  color: #000000;
+  font-weight: normal;
+  font-style: italic;
+  margin: 3em 0 1em 0;
+  padding: 0 0 0 0;
+}
+/* line 63, sass/modules/_14-endmatter.scss */
+#contentContainer .back .EMS,
+#contentContainer .back .EMT,
+#contentContainer .back .AT,
+#contentContainer .back .title,
+#contentContainer .back .notes {
+  font-size: 1.2222em;
+  margin: 2em 0 1em 0;
+}
+/* line 72, sass/modules/_14-endmatter.scss */
+#contentContainer .back .H {
+  margin: 2em 0 1em 0;
+  text-align: left;
+  font-family: inherit;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1em;
+}
+/* line 84, sass/modules/_14-endmatter.scss */
+#contentContainer .endmatter h1.title,
+#contentContainer .glossary h1,
+#contentContainer .backmatter h1.EMT,
+#contentContainer .conclusion h1.EMT,
+#contentContainer .ref-list h1 {
+  font-size: 1.7500em;
+  text-align: center;
+  line-height: 1.3;
+  color: #000000;
+  font-weight: normal;
+  font-style: italic;
+  margin: 3em 0 1em 0;
+  padding: 0 0 0 0;
+}
+/* line 101, sass/modules/_14-endmatter.scss */
+#contentContainer h2.EMT {
+  text-align: center;
+  margin: 2em 1em 0.5em 1em;
+  font-weight: bold;
+  font-weight: 900;
+  font-size: 1.3750em;
+  font-style: normal;
+}
+/* line 107, sass/modules/_14-endmatter.scss */
+#contentContainer h2.EMT + .ref-list h3.EMT {
+  margin: 0.5em 0 1em 0;
+}
+/* line 112, sass/modules/_14-endmatter.scss */
+#contentContainer h3.EMT {
+  font-weight: bold;
+  margin: 1em 0 0 0;
+  text-align: left;
+  font-size: 1em;
+  font-family: inherit;
+  font-style: normal;
+}
+/* line 120, sass/modules/_14-endmatter.scss */
+#contentContainer h3.EMT + .ref-list h4.EMT, #contentContainer h3.EMT + .def-list h4.EMT {
+  margin: 0 0 0 0;
+}
+/* line 126, sass/modules/_14-endmatter.scss */
+#contentContainer h4.EMT {
+  font-style: italic;
+  text-align: left;
+  font-size: 1em;
+  font-family: inherit;
+  margin: 1em 0 0 0;
+}
+/* line 133, sass/modules/_14-endmatter.scss */
+#contentContainer h4.EMT + .def-list {
+  margin: 0 0 1em 0;
+}
+/* line 145, sass/modules/_14-endmatter.scss */
+#contentContainer .AT .label {
+  font-weight: bold;
+  font-style: normal;
+  display: block;
+}
+/* line 156, sass/modules/_14-endmatter.scss */
+#contentContainer .index header + p,
+#contentContainer .index .header + p {
+  text-indent: 0;
+}
+/* line 162, sass/modules/_14-endmatter.scss */
+#contentContainer .index-div {
+  margin: 1em 0 1em 4em;
+}
+/* line 165, sass/modules/_14-endmatter.scss */
+#contentContainer .index-div .title-group {
+  margin-left: -4em;
+}
+/* line 169, sass/modules/_14-endmatter.scss */
+#contentContainer .index-div .index-div {
+  margin: 1em 0 1em 0;
+}
+/* line 174, sass/modules/_14-endmatter.scss */
+#contentContainer .index-div .index-entry {
+  font-size: 0.9375em;
+  line-height: 1.5;
+  text-indent: -4em;
+  text-align: left;
+}
+/* line 183, sass/modules/_14-endmatter.scss */
+#contentContainer .index-div .index-entry > .index-entry {
+  margin: 0 0 0 1em;
+  font-size: 1em;
+}
+/* line 187, sass/modules/_14-endmatter.scss */
+#contentContainer .index-div .index-entry > .index-entry + .x {
+  margin-left: -3em;
+}
+/* line 219, sass/modules/_14-endmatter.scss */
+#contentContainer .index-div .index-entry + .x {
+  margin-left: -4em;
+}
+/* line 237, sass/modules/_14-endmatter.scss */
+#contentContainer .ref-list .EMT + .ref,
+#contentContainer .ref-list .EMS + .ref {
+  border-top: 0;
+}
+/* line 242, sass/modules/_14-endmatter.scss */
+#contentContainer .ref-list .ref {
+  text-align: left !important;
+  font-size: 0.9375em;
+  line-height: 1.5;
+  margin: 0.5em 0 0.5em 0;
+  padding: 0.5em 0 0 0;
+  text-indent: 0;
+}
+/* line 251, sass/modules/_14-endmatter.scss */
+#contentContainer .ref-list .ref:first-child {
+  border-top: 0;
+}
+/* line 259, sass/modules/_14-endmatter.scss */
+#contentContainer .ref-list .ref .label + a + .mixed-citation {
+  padding: 0 0 0 0.29em;
+}
+/* line 264, sass/modules/_14-endmatter.scss */
+#contentContainer .ref-list .ref .label + .mixed-citation {
+  padding: 0 0 0 0.29em;
+}
+/* line 273, sass/modules/_14-endmatter.scss */
+#contentContainer .ref-list .ref .title {
+  font-weight: bold;
+  margin: 1em 0.5em 0.5em 0.5em;
+  font-size: 1em;
+}
+/* line 283, sass/modules/_14-endmatter.scss */
+#contentContainer .ref-list header + .ref,
+#contentContainer .ref-list .header + .ref {
+  border-top: 0;
+}
+/* line 294, sass/modules/_14-endmatter.scss */
+#contentContainer .mixed-citation .source,
+#contentContainer .citation .source {
+  font-style: italic;
+}
+/* line 299, sass/modules/_14-endmatter.scss */
+#contentContainer .mixed-citation .volume,
+#contentContainer .citation .volume {
+  font-weight: bold;
+  margin: 0 0 0 0;
+  text-transform: none;
+  letter-spacing: 0;
+}
+/* line 314, sass/modules/_14-endmatter.scss */
+#contentContainer .endmatter header .title,
+#contentContainer .endmatter .header .title,
+#contentContainer .end-matter-part header .title,
+#contentContainer .end-matter-part .header .title {
+  text-align: left;
+  margin: 1em 1em 1em 1em;
+  font-size: 0.9375em;
+}
+/* line 326, sass/modules/_14-endmatter.scss */
+#contentContainer .app .contrib-group,
+#contentContainer .backmatter .contrib-group {
+  text-align: center;
+  margin: 0 0 1em 0;
+}
+/* line 337, sass/modules/_14-endmatter.scss */
+#contentContainer .app .contrib-group .contrib,
+#contentContainer .backmatter .contrib-group .contrib {
+  display: inline;
+}
+/* line 340, sass/modules/_14-endmatter.scss */
+#contentContainer .app .contrib-group .contrib .name,
+#contentContainer .backmatter .contrib-group .contrib .name {
+  font-weight: bold;
+  display: inline;
+}
+/* line 44, sass/modules/_15-editions.scss */
+#contentContainer .original-text .ST {
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 1em 0 0 0;
+  font-weight: bold;
+  line-height: 1.3;
+  text-align: left;
+  text-indent: 0;
+}
+/* line 61, sass/modules/_15-editions.scss */
+#contentContainer .document-group header,
+#contentContainer .document-group .header {
+  padding: 6em 1em 0 1em;
+}
+/* line 66, sass/modules/_15-editions.scss */
+#contentContainer .document-group header h1, #contentContainer .document-group header .CT,
+#contentContainer .document-group .header h1,
+#contentContainer .document-group .header .CT {
+  font-size: 1.7500em;
+  text-align: center;
+  line-height: 1.3;
+  font-weight: bold;
+  font-style: normal;
+  margin: 0 0 0.5em 0;
+  padding: 0 0 0 0;
+}
+/* line 77, sass/modules/_15-editions.scss */
+#contentContainer .document-group header h1 .label, #contentContainer .document-group header .CT .label,
+#contentContainer .document-group .header h1 .label,
+#contentContainer .document-group .header .CT .label {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 0.9375em;
+  display: block;
+  margin: 0.5em 0 0.5em 0;
+}
+/* line 86, sass/modules/_15-editions.scss */
+#contentContainer .document-group header .subtitle,
+#contentContainer .document-group .header .subtitle {
+  text-align: center;
+  line-height: 1.3;
+}
+/* line 96, sass/modules/_15-editions.scss */
+#contentContainer .document .DOCT {
+  text-align: left;
+  font-weight: bold;
+  margin: 2em 0 0.5em 0;
+}
+/* line 102, sass/modules/_15-editions.scss */
+#contentContainer .document .DOCT .label {
+  font-weight: normal;
+}
+/* line 106, sass/modules/_15-editions.scss */
+#contentContainer .document .DOCT .title {
+  margin: 0 0 0 0;
+}
+/* line 111, sass/modules/_15-editions.scss */
+#contentContainer .document .DOCT + .subtitle {
+  margin: -0.5em 0 0.5em 0;
+}
+/* line 116, sass/modules/_15-editions.scss */
+#contentContainer .document .subtitle {
+  margin: 0 0 0 0;
+}
+/* line 121, sass/modules/_15-editions.scss */
+#contentContainer .document .doc-date {
+  text-indent: 0;
+}
+/* line 133, sass/modules/_15-editions.scss */
+#contentContainer .sec .letter {
+  margin: 1em;
+}
+/* line 136, sass/modules/_15-editions.scss */
+#contentContainer .sec .letter p, #contentContainer .sec .letter .sim-p {
+  font-size: 0.9375em;
+}
+/* line 147, sass/modules/_15-editions.scss */
+#contentContainer .letter p {
+  font-size: 1em;
+}
+/* line 150, sass/modules/_15-editions.scss */
+#contentContainer .letter p.letter-date, #contentContainer .letter p.letter-yours, #contentContainer .letter p.letter-signatory, #contentContainer .letter p.letter-attrib {
+  text-align: right;
+  margin: 0.5em 0;
+}
+/* line 158, sass/modules/_15-editions.scss */
+#contentContainer .letter p.letter-address {
+  text-indent: 0;
+  text-align: right;
+}
+/* line 163, sass/modules/_15-editions.scss */
+#contentContainer .letter p.letter-salutation {
+  margin: 1em 0 0 0;
+  text-indent: 0;
+}
+/* line 168, sass/modules/_15-editions.scss */
+#contentContainer .letter p.letter-ps {
+  margin: 1em 0 0 0;
+  text-indent: 0;
+}
+/* line 178, sass/modules/_15-editions.scss */
+#contentContainer .letter .disp-quote,
+#contentContainer .letter .list-item,
+#contentContainer .letter .verse-line {
+  font-size: 1em;
+}
+/* line 187, sass/modules/_15-editions.scss */
+#contentContainer .doc-text {
+  margin-top: 1em;
+}
+/* line 195, sass/modules/_15-editions.scss */
+#contentContainer .doc-trans p {
+  font-style: italic;
+}
+/* line 203, sass/modules/_15-editions.scss */
+#contentContainer .doc-source p {
+  font-size: 0.9375em;
+  margin: 0.5em 0 1em 0;
+  font-weight: bold;
+}
+/* line 249, sass/modules/_15-editions.scss */
+#contentContainer .doc-commentary p {
+  font-size: 0.9375em;
+  margin: 1em 1em 1em 1em;
+  text-align: left;
+}
+/* line 17, sass/modules/_16-dictionaries.scss */
+#contentContainer .dictionary .dictionary-letter {
+  border-top: 1px solid #333;
+}
+/* line 20, sass/modules/_16-dictionaries.scss */
+#contentContainer .dictionary .dictionary-letter .title {
+  font-size: 3em;
+  margin: 1em 0 0 0;
+}
+/* line 26, sass/modules/_16-dictionaries.scss */
+#contentContainer .dictionary .dictionary-letter .dictionary-entry {
+  margin: 1em 0;
+  padding: 1em 0 0 0;
+}
+/* line 32, sass/modules/_16-dictionaries.scss */
+#contentContainer .dictionary .dictionary-letter .dictionary-entry .dictionary-content .dict-p {
+  text-indent: 0;
+  text-align: justify;
+}
+/* line 36, sass/modules/_16-dictionaries.scss */
+#contentContainer .dictionary .dictionary-letter .dictionary-entry .dictionary-content .dict-p + .dict-p {
+  text-indent: 1em;
+}
+/* line 44, sass/modules/_16-dictionaries.scss */
+#contentContainer .dictionary .dictionary-letter .dictionary-entry .dictionary-content .dict-p .list .list-item .dict-p {
+  display: inline;
+}
+/* line 50, sass/modules/_16-dictionaries.scss */
+#contentContainer .dictionary .dictionary-letter .dictionary-entry .dictionary-content .dict-p .preformat {
+  text-align: left;
+}
+/* line 58, sass/modules/_16-dictionaries.scss */
+#contentContainer .dictionary .dictionary-letter .dictionary-entry .dict-sec .title {
+  font-style: italic;
+  margin: 1em 0 0 0;
+}
+/* line 65, sass/modules/_16-dictionaries.scss */
+#contentContainer .dictionary .dictionary-letter .dictionary-entry .title {
+  margin: 0 0 0.5em 0;
+  display: block;
+  line-height: 1.6;
+  font-size: initial;
+  color: #000000;
+}
+/* line 74, sass/modules/_16-dictionaries.scss */
+#contentContainer .dictionary .dictionary-letter .dictionary-entry .subtitle {
+  font-weight: bold;
+}
+/* line 78, sass/modules/_16-dictionaries.scss */
+#contentContainer .dictionary .dictionary-letter .dictionary-entry p {
+  text-indent: 0;
+  text-align: left;
+}
+/* line 82, sass/modules/_16-dictionaries.scss */
+#contentContainer .dictionary .dictionary-letter .dictionary-entry p + p {
+  text-indent: 1em;
+}
+
+/*------------------------------------*\
+CAMBRIDGE CORE MIXINS
+\*------------------------------------*/
+/* line 37, sass/cambridge-core/_cambridge-core-mixins.scss */
+#contentContainer .def-list, #contentContainer .fig, #contentContainer .disp-formula {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
+}
+/* line 40, sass/cambridge-core/_cambridge-core-mixins.scss */
+#contentContainer .def-list:before, #contentContainer .fig:before, #contentContainer .disp-formula:before, #contentContainer .def-list:after, #contentContainer .fig:after, #contentContainer .disp-formula:after {
+  content: "";
+  display: table;
+}
+/* line 46, sass/cambridge-core/_cambridge-core-mixins.scss */
+#contentContainer .def-list:after, #contentContainer .fig:after, #contentContainer .disp-formula:after {
+  clear: both;
+}
+
+/* line 53, sass/cambridge-core/_cambridge-core-mixins.scss */
+#contentContainer a.xref.fig:before, #contentContainer a.xref.disp-formula:before, #contentContainer a.xref.fig:after, #contentContainer a.xref.disp-formula:after {
+  content: "";
+  display: initial;
+}
+/* line 59, sass/cambridge-core/_cambridge-core-mixins.scss */
+#contentContainer a.xref.fig:after, #contentContainer a.xref.disp-formula:after {
+  clear: none;
+}
+
+/*------------------------------------*\
+CAMBRIDGE CORE - SPECIAL FONTS
+\*------------------------------------*/
+/* For <styled-content> */
+@font-face {
+  font-family: "CUPMathematicalAlphanumericSymbols";
+  src: url("//dtd.cambridge.org/temp/special-fonts/CUPMathematicalAlphanumericSymbols.eot?") format("eot"), url("//dtd.cambridge.org/temp/special-fonts/CUPMathematicalAlphanumericSymbols.woff2") format("woff2"), url("//dtd.cambridge.org/temp/special-fonts/CUPMathematicalAlphanumericSymbols.woff") format("woff"), url("//dtd.cambridge.org/temp/special-fonts/CUPMathematicalAlphanumericSymbols.ttf") format("truetype");
+}
+@font-face {
+  font-family: "DejaVuSans";
+  src: url("//dtd.cambridge.org/temp/special-fonts/DejaVuSans.eot?") format("eot"), url("//dtd.cambridge.org/temp/special-fonts/DejaVuSans.woff2") format("woff2"), url("//dtd.cambridge.org/temp/special-fonts/DejaVuSans.woff") format("woff"), url("//dtd.cambridge.org/temp/special-fonts/DejaVuSans.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GFSNeohellenicStd";
+  src: url("//dtd.cambridge.org/temp/special-fonts/GFSNeohellenicStd.eot?") format("eot"), url("//dtd.cambridge.org/temp/special-fonts/GFSNeohellenicStd.woff2") format("woff2"), url("//dtd.cambridge.org/temp/special-fonts/GFSNeohellenicStd.woff") format("woff"), url("//dtd.cambridge.org/temp/special-fonts/GFSNeohellenicStd.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CUPMusicalSymbols";
+  src: url("//dtd.cambridge.org/temp/special-fonts/CUPMusicalSymbols.eot?") format("eot"), url("//dtd.cambridge.org/temp/special-fonts/CUPMusicalSymbols.woff2") format("woff2"), url("//dtd.cambridge.org/temp/special-fonts/CUPMusicalSymbols.woff") format("woff"), url("//dtd.cambridge.org/temp/special-fonts/CUPMusicalSymbols.ttf") format("truetype");
+}
+/* line 16, sass/cambridge-core/_cambridge-core-special-fonts.scss */
+.CUPMathematicalAlphanumericSymbols {
+  font-family: 'CUPMathematicalAlphanumericSymbols', sans-serif;
+}
+
+/* line 20, sass/cambridge-core/_cambridge-core-special-fonts.scss */
+.DejaVuSans {
+  font-family: 'DejaVuSans', sans-serif;
+}
+
+/* line 24, sass/cambridge-core/_cambridge-core-special-fonts.scss */
+.GFSNeohellenicStd {
+  font-family: 'GFSNeohellenicStd', sans-serif;
+}
+
+/* line 28, sass/cambridge-core/_cambridge-core-special-fonts.scss */
+.CUPMusicalSymbols {
+  font-family: 'CUPMusicalSymbols', sans-serif;
+}
+
+/* line 67, sass/cup-academic-core-JATS-NLM.scss */
+#contentContainer {
+  /*------------------------------------*\
+  MEDIA QUERIES FOR CAMBRIDGE CORE 
+  FROM FOUNDATION
+  \*------------------------------------*/
+  /* Foundation Variables */
+  /* The default font-size is set to 100% of the browser style sheet (usually 16px) */
+  /* for compatibility with browser-based text zoom or user-set defaults. */
+  /* $base-line-height is 24px while $base-font-size is 16px*/
+  /* This is the default html and body font-size for the base em value. */
+  /* Since the typical default browser font-size is 16px, that makes the calculation for grid size. */
+  /* If you want your base font-size to be a different size and not have it effect grid size too, */
+  /* set the value of $em-base to $base-font-size ($em-base: $base-font-size;) */
+  /* It strips the unit of measure and returns it */
+  /* New Syntax, allows to optionally calculate on a different base value to counter compounding effect of em's. */
+  /* Call with 1, 2, 3 or 4 parameters, 'px' is not required but supported */
+  /* em-calc(10 20 30px 40); */
+  /* Space delimited, if you want to delimit using comma's, wrap it in another pair of brackets */
+  /* em-calc((10, 20, 30, 40px)); */
+  /* Optionally call with a different base (eg: 8px) to calculate em. */
+  /* em-calc(16px 32px 48px, 8px); */
+  /* If you require to comma separate your list */
+  /* em-calc((16px, 32px, 48), 8px); */
+  /* Support for the old syntax */
+  /* 0, 640px */
+  /* 641px, 1024px */
+  /* 1025px, 1440px */
+  /* 1441px, 1920px */
+  /* 1921px, ... */
+  /*------------------------------------*\
+  CAMBRIDGE CORE - ACADEMIC
+  \*------------------------------------*/
+  /*------------------------------------*\
+  GLOBAL
+  \*------------------------------------*/
+  /*// Use these media queries to handle localised responsiveness
+  
+      @media only screen {
+          width: 100%;
+      }
+  
+      @media only screen and (min-width:40.0625em) {
+          width: 740px;
+      }
+  
+      @media only screen and (min-width:64.0625em) {
+          width: 960px;
+      }
+  }*/
+  /*------------------------------------*\
+  01 BASIC TEXT STYLES
+  \*------------------------------------*/
+  /*------------------------------------*\
+  02 HEADINGS
+  \*------------------------------------*/
+  /*------------------------------------*\
+  03 LISTS
+  \*------------------------------------*/
+  /*------------------------------------*\
+  04 NOTES
+  \*------------------------------------*/
+  /*------------------------------------*\
+  05 FIGURES AND IMAGES
+  \*------------------------------------*/
+  /*------------------------------------*\
+  06 TABLES
+  \*------------------------------------*/
+  /*------------------------------------*\
+  07 MATHS, LOGIC, LINGUISTICS AND PHILOSOPHY
+  \*------------------------------------*/
+  /*------------------------------------*\
+  08 CONTAINER MARKERS
+  \*------------------------------------*/
+  /*------------------------------------*\
+  09 LINKING ELEMENTS
+  \*------------------------------------*/
+  /*------------------------------------*\
+  10 MEDIA
+  \*------------------------------------*/
+  /*------------------------------------*\
+  11 COVERS AND FRONTMATTER
+  \*------------------------------------*/
+  /* TITLE PAGE */
+  /* TOC PAGE */
+  /*------------------------------------*\
+  12 PART OPENERS
+  \*------------------------------------*/
+  /*------------------------------------*\
+  13 CHAPTER OPENERS
+  \*------------------------------------*/
+  /*------------------------------------*\
+  14 ENDMATTER
+  \*------------------------------------*/
+  /*------------------------------------*\
+  15 EDITIONS
+  \*------------------------------------*/
+  /*------------------------------------*\
+  16 DICTIONARIES
+  \*------------------------------------*/
+  /*------------------------------------*\
+  17 ILR
+  \*------------------------------------*/
+  /*.article {
+      max-width: 979px;
+      margin: 0 auto;
+  }*/
+  /*------------------------------------*\
+  CAMBRIDGE CORE - JOURNALS
+  \*------------------------------------*/
+}
+/* line 9, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer header {
+  height: auto;
+}
+/* line 13, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer * {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+/* line 18, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer a {
+  color: #0072CF;
+  /* -webkit-text-fill-color: $primary-link-color;   Necessary for iBooks */
+  text-decoration: none;
+}
+/* line 23, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer a span {
+  color: #0072CF;
+}
+/* line 28, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer h1, #contentContainer h2, #contentContainer h3, #contentContainer h4, #contentContainer h5, #contentContainer h6 {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+}
+/* line 32, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer li, #contentContainer dt, #contentContainer dd, #contentContainer p, #contentContainer div {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+/* line 37, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .sc {
+  font-size: 1em;
+  font-weight: inherit;
+  padding: 0 0 0 0.2em;
+  text-transform: lowercase;
+  font-variant: small-caps;
+}
+/* line 49, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .title .sc:first-child {
+  padding: 0 0 0 0;
+}
+/* line 57, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer article.toc {
+  border-top: 0;
+  margin: 0;
+  padding: 0;
+}
+/* line 79, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .page {
+  display: none;
+}
+/* line 92, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .banner .title {
+  margin: 30px 0;
+  line-height: 40px;
+  text-align: center;
+}
+/* line 107, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .speech .speaker {
+  font-size: 0.8125em;
+  font-weight: normal;
+}
+/* line 112, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .speech div.verse-line {
+  padding: 0 0 0 2em;
+}
+/* line 117, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .continuation {
+  text-indent: 0 !important;
+}
+/* line 121, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer *[lang=ar] {
+  direction: rtl;
+  text-align: right !important;
+}
+/* line 128, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .disp-quote p, #contentContainer .disp-quote .p {
+  word-wrap: break-word;
+}
+/* line 139, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .A, #contentContainer .A-plus,
+#contentContainer .def-list h1,
+#contentContainer h1.list-title {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+}
+/* line 147, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .part header {
+  padding: 0 0 1em 0;
+}
+/* line 150, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .part header h2 {
+  font-size: 2.5000em;
+  margin: 0 0 0.5em 0;
+  font-weight: normal;
+  font-style: normal;
+  text-align: left;
+}
+/* line 157, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .part header h2 .label {
+  display: block;
+}
+/* line 165, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .part .chapter .A, #contentContainer .part .chapter .A-plus, #contentContainer .part .chapter .B, #contentContainer .part .chapter .C, #contentContainer .part .chapter .D, #contentContainer .part .chapter .E, #contentContainer .part .chapter .F {
+  text-align: left;
+}
+/* line 169, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .part .chapter .A, #contentContainer .part .chapter .A-plus {
+  margin: 2em 0 0.5em 0;
+}
+/* line 181, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .book-part.part header h2 {
+  color: #333333;
+}
+/* line 196, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter .sec .A, #contentContainer .chapter .sec .A-plus,
+#contentContainer .endmatter .sec .A,
+#contentContainer .endmatter .sec .A-plus,
+#contentContainer .backmatter .sec .A,
+#contentContainer .backmatter .sec .A-plus,
+#contentContainer .front-matter-part
+.frontmatter .sec .A,
+#contentContainer .front-matter-part
+.frontmatter .sec .A-plus {
+  margin: 2em 0 0.5em 0 !important;
+}
+/* line 201, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter .sec .A + .sec .B, #contentContainer .chapter .sec .A-plus + .sec .B,
+#contentContainer .endmatter .sec .A + .sec .B,
+#contentContainer .endmatter .sec .A-plus + .sec .B,
+#contentContainer .backmatter .sec .A + .sec .B,
+#contentContainer .backmatter .sec .A-plus + .sec .B,
+#contentContainer .front-matter-part
+.frontmatter .sec .A + .sec .B,
+#contentContainer .front-matter-part
+.frontmatter .sec .A-plus + .sec .B {
+  margin: 2em 0 0.5em 0 !important;
+}
+/* line 207, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter .sec .B,
+#contentContainer .endmatter .sec .B,
+#contentContainer .backmatter .sec .B,
+#contentContainer .front-matter-part
+.frontmatter .sec .B {
+  margin: 2em 0 0.5em 0;
+}
+/* line 211, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter .sec .C,
+#contentContainer .endmatter .sec .C,
+#contentContainer .backmatter .sec .C,
+#contentContainer .front-matter-part
+.frontmatter .sec .C {
+  margin: 1em 0 0.5em 0;
+}
+/* line 215, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter .sec .D,
+#contentContainer .endmatter .sec .D,
+#contentContainer .backmatter .sec .D,
+#contentContainer .front-matter-part
+.frontmatter .sec .D {
+  margin: 1em 0 0.5em 0;
+}
+/* line 220, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter header,
+#contentContainer .endmatter header,
+#contentContainer .backmatter header,
+#contentContainer .front-matter-part
+.frontmatter header {
+  height: auto;
+}
+/* line 223, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter header .subtitle,
+#contentContainer .endmatter header .subtitle,
+#contentContainer .backmatter header .subtitle,
+#contentContainer .front-matter-part
+.frontmatter header .subtitle {
+  display: block;
+  font-size: 0.7333em;
+}
+/* line 232, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .book-part .subtitle {
+  display: block;
+  font-size: 0.7333em;
+}
+/* line 240, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .A .subtitle, #contentContainer .A-plus .subtitle, #contentContainer .B .subtitle, #contentContainer .C .subtitle, #contentContainer .D .subtitle, #contentContainer .E .subtitle, #contentContainer .F .subtitle {
+  display: inline;
+  color: #333;
+}
+/* line 250, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter .sec .B {
+  font-size: 1.3750em;
+  font-weight: normal;
+  margin: 1em 0 0.5em 0;
+}
+/* line 256, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter .sec .C {
+  font-style: normal;
+}
+/* line 260, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter .sec .D {
+  font-style: italic;
+}
+/* line 264, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter .sec .E {
+  margin: 1em 0 0 0;
+  font-weight: normal;
+  line-height: 1.6;
+}
+/* line 272, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .sec .B + .sec .C {
+  margin: 1em 0 0.5em 0;
+}
+/* line 278, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer section h2.title {
+  text-align: left !important;
+}
+/* line 292, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .bullet .list-item .label {
+  display: none !important;
+}
+/* line 302, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .bullet .list-item .number .list-item:before,
+#contentContainer .bullet .list-item .roman-lower .list-item:before,
+#contentContainer .bullet .list-item .order .list-item:before {
+  display: none;
+}
+/* line 306, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .bullet .list-item .number .list-item .label,
+#contentContainer .bullet .list-item .roman-lower .list-item .label,
+#contentContainer .bullet .list-item .order .list-item .label {
+  display: inline !important;
+}
+/* line 316, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .bullet .list-item .simple .list-item:before {
+  display: none;
+}
+/* line 324, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .bullet .list-item .simple .list-item .bullet .list-item:before {
+  display: block;
+}
+/* line 336, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .bullet .list-item .fn .label,
+#contentContainer .bullet .list-item .caption .label,
+#contentContainer .bullet .list-item .title .label {
+  display: inline !important;
+}
+/* line 343, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .bullet .list-item .table-wrap .title {
+  margin: 0.5em 0;
+  font-weight: normal;
+}
+/* line 355, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .def-list .term {
+  float: left;
+  padding: 0.5em 0 0.5em 0;
+  width: 25%;
+  border-top: 1px dotted #c3bfbb;
+  clear: both;
+  box-sizing: border-box;
+}
+/* line 363, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .def-list .term:first-child {
+  border-top: 0;
+}
+/* line 368, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .def-list .def {
+  float: left;
+  padding: 0.5em 0 0.5em 2%;
+  width: 73%;
+  border-top: 1px dotted #c3bfbb;
+  border-bottom: 0;
+}
+/* line 375, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .def-list .def:first-of-type {
+  border-top: 0;
+}
+/* line 389, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fn-group {
+  border-top: 1px dotted #c3bfbb;
+  padding: 1em 6em 0 2em;
+  margin: 1em 0 1em 0;
+}
+@media only screen and (max-width: 40em) {
+  /* line 389, sass/cambridge-core/_cambridge-core-academic.scss */
+  #contentContainer .fn-group {
+    padding: 1em 2em 0 2em;
+  }
+}
+/* line 400, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fn-group h2,
+#contentContainer .fn-group .title {
+  margin: 1em 0 0.5em 0;
+}
+/* line 410, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fn-group .fn .label sup {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  vertical-align: baseline !important;
+}
+/* line 420, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fn {
+  border-top: 0 dotted #c3bfbb;
+  padding: 0 0 1em 0;
+  word-wrap: break-word;
+}
+/* line 426, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fn p {
+  padding: 0 0 0 0;
+}
+/* line 430, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fn .source {
+  color: #333;
+}
+/* line 438, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .textual-notes .margin-note {
+  border-left: 1px solid #cfccc8;
+}
+/* line 444, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .boxed-text.update {
+  border-top: 0.25em solid #cfccc8;
+}
+/* line 463, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .part .chapter .caption p, #contentContainer .part .chapter .caption .p {
+  text-align: left;
+}
+/* line 472, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig-group .fig {
+  float: left;
+  margin-right: 1em;
+}
+/* line 478, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig-group .fig .figure-thumb img {
+  float: none;
+  margin-right: 0;
+}
+/* line 484, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig-group .fig + .fig {
+  clear: left;
+}
+/* line 491, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig {
+  margin: 1em 0;
+}
+/* line 495, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig .label {
+  margin: 0.5em 0 0.5em 0;
+}
+/* line 498, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig .label:only-child {
+  display: block;
+}
+/* line 505, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig img.private-char {
+  display: inline;
+}
+/* line 517, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig .figure-thumb {
+  float: left;
+  margin-right: 1em;
+}
+@media only screen and (max-width: 40em) {
+  /* line 517, sass/cambridge-core/_cambridge-core-academic.scss */
+  #contentContainer .fig .figure-thumb {
+    float: none;
+  }
+}
+/* line 525, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig .figure-thumb img {
+  float: none;
+  margin-right: 0;
+}
+/* line 535, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig .caption {
+  margin-left: 366px;
+}
+@media only screen and (max-width: 40em) {
+  /* line 535, sass/cambridge-core/_cambridge-core-academic.scss */
+  #contentContainer .fig .caption {
+    margin-left: 0;
+  }
+}
+/* line 542, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig .caption .label {
+  display: inline;
+  margin: 0 0 0 0;
+}
+/* line 549, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig .caption .inline-formula img {
+  width: auto;
+  height: auto;
+  display: inline;
+  float: none;
+  margin-right: 0;
+}
+/* line 558, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig .caption .attrib {
+  margin-left: 0;
+}
+/* line 563, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig .fn {
+  border-top: 1px dotted #c3bfbb;
+  padding-top: 0.5em;
+  margin-top: 0.5em;
+}
+/* line 570, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig .attrib {
+  text-align: left;
+  margin-left: 366px;
+}
+@media only screen and (max-width: 40em) {
+  /* line 570, sass/cambridge-core/_cambridge-core-academic.scss */
+  #contentContainer .fig .attrib {
+    margin-left: 0;
+  }
+}
+/* line 584, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .table-wrap {
+  overflow-y: hidden;
+}
+/* line 590, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .table-wrap .table-wrap-foot .fn-group {
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  -o-column-count: auto;
+  -ms-column-count: auto;
+  column-count: auto;
+  border-top: 0 dotted #c3bfbb;
+}
+/* line 604, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer table th {
+  border-bottom: 1px solid #c3bfbb;
+  color: #333;
+}
+/* line 609, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer table td {
+  color: #333;
+}
+/* line 612, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer table td img {
+  vertical-align: top;
+}
+/* line 617, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer table thead,
+#contentContainer table tr.even,
+#contentContainer table tr.alt,
+#contentContainer table tr:nth-of-type(even) {
+  background: transparent;
+}
+/* line 624, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer table .center {
+  text-align: center;
+}
+/* line 628, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer table sup {
+  vertical-align: super;
+}
+/* line 632, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer table .left,
+#contentContainer table .right {
+  float: none !important;
+}
+/* line 640, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .array table {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+/* line 652, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .theorem,
+#contentContainer .definition,
+#contentContainer .proof {
+  border-left: 0.25em solid #cfccc8;
+}
+/* line 661, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .disp-formula .alternatives {
+  float: left;
+}
+/* line 672, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .inline-formula img {
+  height: 1em;
+}
+/* line 683, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .alternatives span.math-image img.math {
+  display: inline;
+  height: 1em;
+  width: auto;
+}
+/* line 700, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .disp-formula .alternatives span.math-image img.math {
+  display: inline-block;
+  height: auto;
+}
+/* line 717, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .boxed-text {
+  border: 1px solid #b7b2ad;
+  background-color: #faf9f9;
+}
+/* line 726, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .boxed-text .table-wrap .table-wrap-foot .fn {
+  border-bottom: 1px dotted #b7b2ad;
+}
+/* line 733, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .boxed-text .caption {
+  background-color: #dbd8d6;
+}
+/* line 749, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer a.xref {
+  color: #0072CF;
+}
+/* line 752, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer a.xref.fn {
+  text-decoration: none;
+}
+/* line 779, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .fig.video, #contentContainer .fig.audio, #contentContainer .fig.animation, #contentContainer .fig.assessment, #contentContainer .fig.q-and-a, #contentContainer .fig.pop-up, #contentContainer .fig.slideshow {
+  border: 0.25em solid #b7b2ad;
+  background-image: none;
+}
+/* line 813, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .preface header h1,
+#contentContainer .preface .header h1,
+#contentContainer .foreword header h1,
+#contentContainer .foreword .header h1,
+#contentContainer .ack header h1,
+#contentContainer .ack .header h1,
+#contentContainer .dedication header h1,
+#contentContainer .dedication .header h1,
+#contentContainer .toc header h1,
+#contentContainer .toc .header h1,
+#contentContainer .frontmatter header h1,
+#contentContainer .frontmatter .header h1,
+#contentContainer .endmatter header h1,
+#contentContainer .endmatter .header h1,
+#contentContainer .glossary header h1,
+#contentContainer .glossary .header h1,
+#contentContainer .abbreviations header h1,
+#contentContainer .abbreviations .header h1,
+#contentContainer .book-part header h1,
+#contentContainer .book-part .header h1,
+#contentContainer .backmatter header h1,
+#contentContainer .backmatter .header h1,
+#contentContainer .app header h1,
+#contentContainer .app .header h1,
+#contentContainer .contributors header h1,
+#contentContainer .contributors .header h1,
+#contentContainer .features header h1,
+#contentContainer .features .header h1 {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+}
+/* line 817, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .preface header h2, #contentContainer .preface header h3,
+#contentContainer .preface .header h2,
+#contentContainer .preface .header h3,
+#contentContainer .foreword header h2,
+#contentContainer .foreword header h3,
+#contentContainer .foreword .header h2,
+#contentContainer .foreword .header h3,
+#contentContainer .ack header h2,
+#contentContainer .ack header h3,
+#contentContainer .ack .header h2,
+#contentContainer .ack .header h3,
+#contentContainer .dedication header h2,
+#contentContainer .dedication header h3,
+#contentContainer .dedication .header h2,
+#contentContainer .dedication .header h3,
+#contentContainer .toc header h2,
+#contentContainer .toc header h3,
+#contentContainer .toc .header h2,
+#contentContainer .toc .header h3,
+#contentContainer .frontmatter header h2,
+#contentContainer .frontmatter header h3,
+#contentContainer .frontmatter .header h2,
+#contentContainer .frontmatter .header h3,
+#contentContainer .endmatter header h2,
+#contentContainer .endmatter header h3,
+#contentContainer .endmatter .header h2,
+#contentContainer .endmatter .header h3,
+#contentContainer .glossary header h2,
+#contentContainer .glossary header h3,
+#contentContainer .glossary .header h2,
+#contentContainer .glossary .header h3,
+#contentContainer .abbreviations header h2,
+#contentContainer .abbreviations header h3,
+#contentContainer .abbreviations .header h2,
+#contentContainer .abbreviations .header h3,
+#contentContainer .book-part header h2,
+#contentContainer .book-part header h3,
+#contentContainer .book-part .header h2,
+#contentContainer .book-part .header h3,
+#contentContainer .backmatter header h2,
+#contentContainer .backmatter header h3,
+#contentContainer .backmatter .header h2,
+#contentContainer .backmatter .header h3,
+#contentContainer .app header h2,
+#contentContainer .app header h3,
+#contentContainer .app .header h2,
+#contentContainer .app .header h3,
+#contentContainer .contributors header h2,
+#contentContainer .contributors header h3,
+#contentContainer .contributors .header h2,
+#contentContainer .contributors .header h3,
+#contentContainer .features header h2,
+#contentContainer .features header h3,
+#contentContainer .features .header h2,
+#contentContainer .features .header h3 {
+  color: #877F77;
+}
+/* line 829, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .front-matter-part header .FMT,
+#contentContainer .front-matter-part header .FMS,
+#contentContainer .front-matter-part .header .FMT,
+#contentContainer .front-matter-part .header .FMS {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+}
+/* line 834, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .front-matter-part header h2, #contentContainer .front-matter-part header h3,
+#contentContainer .front-matter-part .header h2,
+#contentContainer .front-matter-part .header h3 {
+  color: #877F77;
+}
+/* line 843, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .title-page header {
+  height: auto;
+}
+/* line 848, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .title-page .title-page-title {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  text-align: left;
+}
+/* line 854, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .title-page .title-page-subtitle {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  color: #877F77;
+  text-align: left;
+}
+/* line 861, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .title-page .title-page-edition {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  color: #877F77;
+}
+/* line 867, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .title-page .title-page-volume {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  color: #877F77;
+}
+/* line 880, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .toc header .FMT,
+#contentContainer .toc .header .FMT {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+}
+/* line 885, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .toc .label {
+  color: #877F77;
+}
+/* line 891, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .toc .part {
+  border-top: 1px dotted #c3bfbb;
+}
+/* line 902, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .part header,
+#contentContainer .part .header {
+  padding: 6em 0 1em 0;
+}
+/* line 907, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .part header h1,
+#contentContainer .part .header h1 {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  color: #877F77;
+}
+/* line 915, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .part header h1 .label:after,
+#contentContainer .part .header h1 .label:after {
+  content: '\25C8';
+  /* Diamond divider */
+  color: #9f9992;
+}
+/* line 923, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .part header .PST,
+#contentContainer .part .header .PST {
+  color: #877F77;
+}
+/* line 935, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter header,
+#contentContainer .chapter .header {
+  padding: 1em 0 0 0;
+}
+/* line 940, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter header h2, #contentContainer .chapter header h3,
+#contentContainer .chapter .header h2,
+#contentContainer .chapter .header h3 {
+  color: #877F77;
+  font-size: 1.7500em;
+  margin: 0 0 0.5em 0;
+  font-weight: normal;
+  text-align: left;
+}
+/* line 948, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter header h2 .label, #contentContainer .chapter header h3 .label,
+#contentContainer .chapter .header h2 .label,
+#contentContainer .chapter .header h3 .label {
+  font-weight: bold;
+  font-style: normal;
+  display: block;
+  text-align: left;
+}
+/* line 957, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter header .CST,
+#contentContainer .chapter .header .CST {
+  color: #877F77;
+}
+/* line 962, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter .contrib-group {
+  text-align: left;
+}
+/* line 967, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter .subtitle {
+  color: #877F77;
+}
+/* line 975, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter .chapter-intro,
+#contentContainer .chapter .editors-note,
+#contentContainer .chapter .abstract,
+#contentContainer .chapter .kwd-group {
+  border-bottom: 1px dotted #c3bfbb;
+}
+/* line 981, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .chapter .chapter-intro .title,
+#contentContainer .chapter .editors-note .title,
+#contentContainer .chapter .abstract .title,
+#contentContainer .chapter .kwd-group .title {
+  margin: 1.5em 0 0.5em 0;
+}
+/* line 993, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .EMS,
+#contentContainer .EMT,
+#contentContainer .AT {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+}
+/* line 999, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .endmatter h1.title,
+#contentContainer .glossary h1,
+#contentContainer .backmatter h1.EMT,
+#contentContainer .conclusion h1.EMT,
+#contentContainer .ref-list h1 {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+}
+/* line 1010, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .ref-list .ref {
+  border-top: 1px dotted #c3bfbb;
+}
+/* line 1013, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .ref-list .ref:first-of-type {
+  border-top: 0;
+}
+/* line 1017, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .ref-list .ref .source,
+#contentContainer .ref-list .ref .author,
+#contentContainer .ref-list .ref .issue {
+  color: #333333;
+}
+/* line 1025, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .prefix {
+  background: transparent;
+  color: inherit;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0;
+  display: inline;
+  height: auto;
+  text-align: left;
+  width: auto;
+  z-index: initial;
+}
+/* line 1050, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .document-group header h1, #contentContainer .document-group header .CT,
+#contentContainer .document-group .header h1,
+#contentContainer .document-group .header .CT {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  color: #877F77;
+}
+/* line 1060, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .document .sec {
+  border-top: 1px dotted #c3bfbb;
+}
+/* line 1071, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .book-part.characters section + .list {
+  margin-top: 1em;
+}
+/* line 1086, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .dictionary .dictionary-letter .title {
+  color: #877F77;
+}
+/* line 1090, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .dictionary .dictionary-letter .dictionary-entry {
+  border-top: 1px dotted #c3bfbb;
+}
+/* line 1100, sass/cambridge-core/_cambridge-core-academic.scss */
+#contentContainer .dictionary .dictionary-letter .dictionary-entry .title {
+  color: #333;
+}
+/* line 12, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .sub-article {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1pt dotted #cfccc8;
+}
+/* line 17, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .sub-article .front-stub {
+  margin: 1em 0;
+}
+/* line 20, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .sub-article .front-stub .authors {
+  font-weight: bold;
+}
+/* line 26, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .abstract {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1pt dotted #877F77;
+}
+/* line 36, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article em .sc.e26 {
+  padding-right: 0.2em;
+}
+/* line 42, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article h1, #contentContainer .article h2, #contentContainer .article h3, #contentContainer .article h4, #contentContainer .article h5, #contentContainer .article h6 {
+  text-align: left;
+  margin: 2em 0 0.5em 0;
+  font-weight: bold;
+}
+/* line 50, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .B,
+#contentContainer .article .def-list h2,
+#contentContainer .article h2.list-title {
+  font-weight: normal;
+  font-size: 1.3750em;
+}
+/* line 58, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .C,
+#contentContainer .article .def-list h3,
+#contentContainer .article h3.list-title {
+  font-style: normal;
+}
+/* line 65, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .D,
+#contentContainer .article .def-list h4,
+#contentContainer .article h4.list-title {
+  font-weight: bold;
+  font-style: italic;
+}
+/* line 73, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .E,
+#contentContainer .article .def-list h5,
+#contentContainer .article h5.list-title {
+  font-weight: normal;
+}
+/* line 80, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .F,
+#contentContainer .article .def-list h6,
+#contentContainer .article h6.list-title {
+  font-weight: normal;
+  font-style: normal;
+  padding-left: 2em;
+}
+/* line 88, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .sec .A + .sec .B, #contentContainer .article .sec .A-plus + .sec .B {
+  margin: 1em 0 0.5em 0;
+}
+/* line 92, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .sec .B + .sec .C {
+  margin: 1em 0 0.5em 0;
+}
+/* line 104, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .alt-title {
+  margin: 1em 0;
+}
+/* line 110, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .notes p:first-child {
+  text-indent: 0;
+}
+/* line 115, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .tex-math {
+  line-height: 1.6;
+}
+/* line 121, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .caption p {
+  text-align: left;
+  -ms-word-break: normal;
+  word-break: normal;
+  word-break: break-word;
+  -webkit-hyphens: none;
+  -epub-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+/* line 126, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .caption.tblcapt {
+  margin-left: 0;
+}
+/* line 131, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .preformat {
+  white-space: pre-wrap;
+  margin: 1em 0;
+  line-height: 1.6;
+}
+/* line 139, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article img.formula {
+  margin: 1em 0;
+}
+/* line 146, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .inline-formula img {
+  height: auto;
+}
+/* line 153, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .ref .article-title {
+  font-size: 1em;
+  font-weight: normal;
+}
+/* line 161, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .back .notes {
+  font-size: 1em;
+}
+/* line 173, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article .sec.ack {
+  margin-top: 1em;
+}
+/* line 182, sass/cambridge-core/_cambridge-core-journals.scss */
+#contentContainer .article.SGML ol.list {
+  list-style: decimal;
+  margin-left: 2em;
+}
+
+/*------------------------------------*\
+CAMBRIDGE CORE - SIDEBARS
+\*------------------------------------*/
+/* line 9, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #sideBar h4 {
+  font-size: 1.3750em;
+  padding-left: 0.3181em;
+  position: relative;
+  margin-bottom: 1em;
+}
+/* line 15, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #sideBar h4:after {
+  border-bottom: 0.18181em solid #0072cf;
+  width: 3em;
+  position: absolute;
+  bottom: -0.5454em;
+  left: 0.3636em;
+  content: "";
+}
+/* line 30, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav,
+.html-view #figs .sub-nav,
+.html-view #refs .sub-nav {
+  padding-top: 0;
+}
+/* line 33, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav li,
+.html-view #figs .sub-nav li,
+.html-view #refs .sub-nav li {
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  padding: 0.5em;
+  border: 1px solid transparent;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -o-border-radius: 5px 5px 5px 5px;
+  -ms-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+/* line 47, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav li.active,
+.html-view #figs .sub-nav li.active,
+.html-view #refs .sub-nav li.active {
+  background: rgba(0, 114, 207, 0.05);
+  border: 1px solid rgba(0, 114, 207, 0.2);
+}
+/* line 51, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav li.active a,
+.html-view #figs .sub-nav li.active a,
+.html-view #refs .sub-nav li.active a {
+  background: transparent;
+  font-weight: bold;
+  cursor: pointer;
+  color: #0072CF;
+}
+/* line 59, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav li .p,
+.html-view #figs .sub-nav li .p,
+.html-view #refs .sub-nav li .p {
+  display: block;
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+/* line 70, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav li ul li,
+.html-view #figs .sub-nav li ul li,
+.html-view #refs .sub-nav li ul li {
+  font-size: 1em !important;
+}
+/* line 76, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav .header,
+.html-view #figs .sub-nav .header,
+.html-view #refs .sub-nav .header {
+  margin-top: 0;
+}
+/* line 80, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav a,
+.html-view #figs .sub-nav a,
+.html-view #refs .sub-nav a {
+  color: #555;
+  display: block;
+  padding: 0 0 0 0;
+}
+/* line 85, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav a:hover,
+.html-view #figs .sub-nav a:hover,
+.html-view #refs .sub-nav a:hover {
+  color: #0072CF;
+}
+/* line 90, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav .content-list,
+.html-view #figs .sub-nav .content-list,
+.html-view #refs .sub-nav .content-list {
+  margin: 1em 0 0.5em 0;
+  font-weight: bold;
+  display: block;
+  font-size: 0.8750em;
+  float: none;
+}
+/* line 97, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav .content-list:first-of-type,
+.html-view #figs .sub-nav .content-list:first-of-type,
+.html-view #refs .sub-nav .content-list:first-of-type {
+  margin: 0.5em 0 0.5em 0;
+}
+/* line 101, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav .content-list .title,
+.html-view #figs .sub-nav .content-list .title,
+.html-view #refs .sub-nav .content-list .title {
+  margin: 0 0 0 0;
+}
+/* line 109, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav .content-list .subtitle,
+.html-view #figs .sub-nav .content-list .subtitle,
+.html-view #refs .sub-nav .content-list .subtitle {
+  font-weight: normal;
+  display: block;
+}
+/* line 114, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav .content-list .content-list,
+.html-view #figs .sub-nav .content-list .content-list,
+.html-view #refs .sub-nav .content-list .content-list {
+  margin: 0.5em 0 0.5em 0;
+  font-weight: normal;
+}
+/* line 118, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav .content-list .content-list .title,
+.html-view #figs .sub-nav .content-list .content-list .title,
+.html-view #refs .sub-nav .content-list .content-list .title {
+  font-weight: normal;
+}
+/* line 122, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav .content-list .content-list .content-list,
+.html-view #figs .sub-nav .content-list .content-list .content-list,
+.html-view #refs .sub-nav .content-list .content-list .content-list {
+  margin: 0.5em 0 0.5em 0.5em;
+}
+/* line 125, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #toc .sub-nav .content-list .content-list .content-list .title,
+.html-view #figs .sub-nav .content-list .content-list .content-list .title,
+.html-view #refs .sub-nav .content-list .content-list .content-list .title {
+  font-style: italic;
+}
+/* line 138, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #figs .sub-nav .content-list {
+  font-weight: normal;
+}
+/* line 141, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #figs .sub-nav .content-list a {
+  font-weight: bold;
+  line-height: 1.6;
+}
+/* line 145, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #figs .sub-nav .content-list a + img {
+  margin-top: 1em;
+}
+/* line 150, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #figs .sub-nav .content-list img {
+  width: 100%;
+  margin: 0 0 1em 0;
+  border: 1px solid #AAA;
+  -webkit-box-shadow: 0px 11px 15px -10px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 11px 15px -10px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0px 11px 15px -10px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0px 11px 15px -10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 11px 15px -10px rgba(0, 0, 0, 0.15);
+}
+/* line 168, sass/cambridge-core/_cambridge-core-sidebars.scss */
+.html-view #refs .sub-nav .content-list {
+  font-weight: normal;
+  margin: 0 0 0 0;
+}
