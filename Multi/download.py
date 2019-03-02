@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 import fix_yahoo_finance as yf
 import pandas as pd
-d1=pd.read_csv("BSE100.csv") 
+d1=pd.read_csv("BSE30.csv") 
 comp_names=d1["Security Name"].tolist()
  
 f='2016-12-18'
-t='2018-09-30'
+t='2019-01-31'
 new_array = [];
 total_data=list()
 for i in range(len(comp_names)):
@@ -24,7 +24,7 @@ df=pd.DataFrame(total_data)
 df = df.transpose()
 df.columns = new_array
 print df
-df.to_csv('final_list100.csv')
+df.to_csv('final_list30.csv')
 #print df
 #data = yf.download('INFY.BO',f,t)
 #print type(data)
