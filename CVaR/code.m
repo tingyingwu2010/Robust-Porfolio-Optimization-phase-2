@@ -2,7 +2,7 @@ clc;
 clear all;
 
 % Read the csv file (Change it to "final_list100.csv" for BSE100)
-table = readtable('./data_related/final_list100.csv');
+table = readtable('./data_related/final_list30.csv');
 % table = readtable('./data_related/final_list100.csv');
 
 stock_prices = table{:,2:end};
@@ -12,9 +12,14 @@ mu = mu';
 covariance = cov(stock_prices);
 % cnt = 0;
 % for i = 1:size(stock_prices,2)
-%    [h,p] = jbtest(stock_prices(:,i));
+%     ks_vec=stock_prices(:,i);
+%     m_ks=mean(ks_vec);
+%     sig_ks=std(ks_vec);
+%     ks_vec=ks_vec-m_ks;
+%     ks_vec=ks_vec/sig_ks;
+%     [h,p] = jbtest(ks_vec);
 %     if (h==1)
-%         cnt = cnt+1
+%         cnt = cnt+1;
 %     end
 %     
 % end
@@ -23,17 +28,17 @@ covariance = cov(stock_prices);
 
 % Uncomment if needed to use the simulated data
 
-% rng default  % For reproducibility
-% % m=1000;   % If #simulations is 1000
-% m=size(stock_prices,1); % If #simulations is same as market data
-% temp_data = mvnrnd(mu,covariance,m);
-% stock_prices=temp_data;
-% mu = mean(stock_prices);
-% mu = mu';
-% covariance = cov(stock_prices);
+rng default  % For reproducibility
+%m=1000;   % If #simulations is 1000
+m=size(stock_prices,1); % If #simulations is same as market data
+temp_data = mvnrnd(mu,covariance,m);
+stock_prices=temp_data;
+mu = mean(stock_prices);
+mu = mu';
+covariance = cov(stock_prices);
 
 k = @(e) sqrt((1-e)/e);
-% k = @(e) -1*norminv(e);
+%k = @(e) -1*norminv(e);
 e_range  = 0.001:5*10^-3:0.6
 % e_range = 0.0001:10^(-4):0.01
 
@@ -142,13 +147,13 @@ box on
 grid on
 plot(sd_vals_base, mean_vals_base,'-s','markers',mark_size);
 plot(sd_vals_wvar, mean_vals_wvar,'-o','markers',mark_size);
-lgd = legend('Base VaR','WCVaR');
+lgd = legend('Base VaR','Worst case VaR');
 lgd.Location = 'southeast';
 ylabel('Return');
 xlabel('Standard Deviation')
 
-saveas(F,'./JPEGs/bse100_market/ef_base_100.jpeg');
-saveas(F,'./EPSs/bse100_market/ef_wvar_100.eps','epsc');
+saveas(F,'./JPEGs/bse30_simulated/ef_exact_cheb.jpeg');
+saveas(F,'./EPSs/bse30_simulated/ef_exact_cheb.eps','epsc');
 
 hold off
 
@@ -163,13 +168,13 @@ box on
 grid on
 plot(e_range, base,'-o');
 plot(e_range, wvar,'-s');
-lgd = legend('Base VaR','WCVaR');
+lgd = legend('Base VaR','Worst case VaR');
 lgd.Location = 'southeast';
 ylabel('Sharpe Ratio');
 xlabel('\epsilon(Confidence level)');
 
 % change the names of the files and folders accordingly.
-saveas(F,'./JPEGs/bse100_market/sr_base_100.jpeg');
-saveas(F,'./EPSs/bse100_market/sr_wvar_100.eps','epsc');
+saveas(F,'./JPEGs/bse30_simulated/sr_exact_cheb.jpeg');
+saveas(F,'./EPSs/bse30_simulated/sr_exact_cheb.eps','epsc');
 hold off
 
