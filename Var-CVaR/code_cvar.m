@@ -39,7 +39,7 @@ covariance = cov(stock_prices);
 
 k = @(e) sqrt((1-e)/e);
 %k = @(e) -1*norminv(e);
-e_range  = 0.001:5*10^(-4):0.1;
+e_range  = 0.001:5*10^(-3):0.1;
 % e_range = 0.0001:10^(-4):0.01
 
 mean_vals_base = [];
@@ -52,10 +52,26 @@ for i=1:size(e_range,2)
     e = e_range(1,i);
     N=size(stock_prices,2);
     S=size(stock_prices,1);
+    
+    
+    %init=rand(N+1,1);
+%     A_f=[stock_prices,ones(S,1)];
+%     min_obj_f=@(y)(y(N+1)+(1/(S*e))*sum(max(A_f*y,zeros(S,1))) );
+%     A=(-1)*[eye(N),zeros(N,1)];
+%     b=zeros(N,1);
+%     A_eq=[ones(1,N),0];
+%     b_eq=1;
+    
+    
+    
+    
+    
+    
+    options = optimoptions(@fmincon,'Algorithm','sqp','MaxIterations',6000);
+    options.MaxFunctionEvaluations = 40000;
+    
     init=rand(N+S+2,1);
     min_obj_f = @(y) (y(N+S+2));
-    options = optimoptions(@fmincon,'Algorithm','sqp','MaxIterations',4000);
-    options.MaxFunctionEvaluations = 20000;
     A=zeros(N+2*S+1,N+S+2);
     b=zeros(N+2*S+1,1);
     
@@ -96,7 +112,7 @@ lgd = legend('Base CVaR');
 lgd.Location = 'southeast';
 ylabel('Return');
 xlabel('Standard Deviation')
-saveas(F,'ef_100_cvar.jpeg');
+saveas(F,'ef_100_cvar_cons.jpeg');
 %saveas(F,'./JPEGs/bse30_simulated/ef_exact_cheb.jpeg');
 %saveas(F,'./EPSs/bse30_simulated/ef_exact_cheb.eps','epsc');
 
@@ -117,7 +133,7 @@ lgd = legend('Base CVaR');
 lgd.Location = 'southeast';
 ylabel('Sharpe Ratio');
 xlabel('\epsilon(Confidence level)');
-saveas(F,'sr_100_cvar.jpeg');
+saveas(F,'sr_100_cvar_cons.jpeg');
 
 % change the names of the files and folders accordingly.
 %saveas(F,'./JPEGs/bse30_simulated/sr_exact_cheb.jpeg');
