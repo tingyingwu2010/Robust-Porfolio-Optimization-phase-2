@@ -3,7 +3,7 @@ clear all;
 
 % Read the csv file (Change it to "final_list100.csv" for BSE100)
 table = readtable('./data_related/final_list30.csv');
-%table = readtable('./data_related/final_list100.csv');
+% table = readtable('./data_related/final_list100.csv');
 
 stock_prices = table{:,2:end};
 stock_prices = diff(log(stock_prices));
@@ -33,14 +33,14 @@ covariance = cov(stock_prices);
 
 % Uncomment if needed to use the simulated data
 
-%rng default  % For reproducibility
-%m=1000;   % If #simulations is 1000
-% m=size(stock_prices,1); % If #simulations is same as market data
-%temp_data = mvnrnd(mu,covariance,m);
-%stock_prices=temp_data;
-%mu = mean(stock_prices);
-%mu = mu';
-%covariance = cov(stock_prices);
+rng default  % For reproducibility
+m=1000;   % If #simulations is 1000
+%m=size(stock_prices,1); % If #simulations is same as market data
+temp_data = mvnrnd(mu,covariance,m);
+stock_prices=temp_data;
+mu = mean(stock_prices);
+mu = mu';
+covariance = cov(stock_prices);
 
 
 e_range  = 0.001:5*10^(-3):0.1;
@@ -56,8 +56,7 @@ init = rand(N+S+2,1);
 
 for i=1:size(e_range,2)
     
-    e = e_range(1,i)
-    disp('base')
+    e = e_range(1,i);
     
 %     Constraints in Obj function.
     
@@ -165,7 +164,7 @@ S_vec(P,1)=S-sum(S_vec(1:(P-1),1));
 for i=1:size(e_range,2)
     
     e = e_range(1,i)
-    disp(P)
+    
 %     Constraints in Obj function.
     
     
@@ -237,27 +236,26 @@ for i=1:size(e_range,2)
 end
 
 
-    risk_free = log(1.06)/365;
-    base = (mean_vals_base - risk_free)./sd_vals_base;
-    wcvar = (mean_vals_wcvar - risk_free)./sd_vals_wcvar;
+risk_free = log(1.06)/365;
+base = (mean_vals_base - risk_free)./sd_vals_base;
+wcvar = (mean_vals_wcvar - risk_free)./sd_vals_wcvar;
 
 
-    F = figure(P); hold on;
-    box on
-    grid on
-    plot(e_range, base,'-o','markers',mark_size);
-    plot(e_range, wcvar,'-s','markers',mark_size);
-    lgd = legend('Base CVaR','Worst CVar');
-    lgd.Location = 'southeast';
-    ylabel('Sharpe Ratio');
-    xlabel('\epsilon(Confidence level)');
-    fnm = sprintf('./market/bse30/sr_30_cvar_cons_%d.jpeg',P);
-    saveas(F,fnm);
+F = figure(2); hold on;
+box on
+grid on
+plot(e_range, base,'-o');
+plot(e_range, wcvar,'-s');
+lgd = legend('Base CVaR','Worst CVar');
+lgd.Location = 'southeast';
+ylabel('Sharpe Ratio');
+xlabel('\epsilon(Confidence level)');
+saveas(F,'sr_30_cvar_cons_sim_2.jpeg');
 
-    % change the names of the files and folders accordingly.
-    %saveas(F,'./JPEGs/bse30_simulated/sr_exact_cheb.jpeg');
-    %saveas(F,'./EPSs/bse30_simulated/sr_exact_cheb.eps','epsc');
-    hold off
+% change the names of the files and folders accordingly.
+%saveas(F,'./JPEGs/bse30_simulated/sr_exact_cheb.jpeg');
+%saveas(F,'./EPSs/bse30_simulated/sr_exact_cheb.eps','epsc');
+hold off
 
 end
 
