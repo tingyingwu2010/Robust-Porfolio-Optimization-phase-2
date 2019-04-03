@@ -1,0 +1,65 @@
+ToDos:
+
+Deduce the actual "e_range" for all the figures. 
+	e_range = 0-0.1
+	Maintain consistency in number of points in between 0-0.1
+	VaR:
+		No Efficient Frontier
+		Only Chebyshev
+		Tables
+
+	CVaR:
+		No effieicient frontier
+		Run code for all p and generate tables.
+		Find the best p and use the same.
+
+2. Prepare eps colored files for both VaR and CVaR (for all combinations of market and simulated data) (Bilal ... by 5/4/2019)
+3. Prepare tables for both VaR and CVaR (for all combinations of market and simulated data) (Shashank ... by 4/4/2019)
+
+***Previous BTP corrections***
+
+
+VaR: (Bilal)
+1. Introduction (VaR as a risk measure why not std. deviation), VaR derivations (if any) ( ... by 7/4/2019)
+2. Formulate the problem for both base case VaR and Worst Case VaR (only those whose experimental results are available) ( ... by 7/4/2019)
+3. Any insights about the formulation. (Using separable uncertainty and why not others ... )
+4. Experimental figs and tables 
+5. Explain each of them like the last BTP Report.
+6. Conclusions and Comments for a larger picture.
+
+
+CVaR:
+
+1. Introduction (CVaR as a risk measure and why not VaR), CVaR derivations (if any) ( ... by 7/4/2019)
+2. Define coherent risk measures and Show that CVaR and WC-CVaR both are coherent risk measures. ( ... by 7/4/2019)
+3. Formulate the problem for both base case CVaR and WC-CVaR (only those whose experimental results are available) ( ... by 7/4/2019)
+4. Any insights on the formulation. (Using mixed uncertainty, why not others)
+5. Experimental figs and tables
+6. Explain each of them like the last BTP Report.
+7. Conclusion and comments for a larger picture.
+
+Last four points of VaR or CVaR should be completed in 13,14,15 April 2019
+
+
+Abstract
+
+
+Should be done by 15/4/19
+
+==========================================================
+
+Conclusions and Final say:
+
+1. Are worst case versions are really improvising than those of base case counterparts?
+	
+	If No, what might be the reason?
+	if Yes, What are the favourable conditions for this? Why those conditions are favourable?
+
+	(Above two questions turn the whole report and are most important for future reference)
+
+2. Pitch in a story to negate the Zhu paper.
+3. Overall recommendation of Worst Case versions. (Since, no work has been done in this area, we can make a few powerful statements with evidences from previous chapters).
+
+==========================================================
+
+Should be submitted to Prof. SPC by 17/4/2019.
