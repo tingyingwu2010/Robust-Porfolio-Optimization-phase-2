@@ -43,7 +43,7 @@ covariance = cov(stock_prices);
 %covariance = cov(stock_prices);
 
 
-e_range  = 0.001:5*10^(-3):0.1;
+e_range  = 0.0001:5*10^(-3):0.1;
 % e_range = 0.0001:10^(-4):0.01
 
 mean_vals_base = zeros(size(e_range,2),1);
@@ -107,7 +107,7 @@ end
 
 
 
-mark_size = 5;
+
 
 % Efficient Frontier
 
@@ -245,14 +245,14 @@ end
     F = figure(P); hold on;
     box on
     grid on
-    plot(e_range, base,'-o','markers',mark_size);
-    plot(e_range, wcvar,'-s','markers',mark_size);
+    plot(e_range, base,'-o');
+    plot(e_range, wcvar,'-s');
     lgd = legend('Base CVaR','Worst CVar');
     lgd.Location = 'southeast';
     ylabel('Sharpe Ratio');
     xlabel('\epsilon(Confidence level)');
-    fnm = sprintf('./market/bse30/sr_30_cvar_cons_%d.jpeg',P);
-    saveas(F,fnm);
+    fnm = sprintf('./EPSs/bse30_market/sr_30_cvar_%d.eps',P);
+    saveas(F,fnm,'epsc');
 
     % change the names of the files and folders accordingly.
     %saveas(F,'./JPEGs/bse30_simulated/sr_exact_cheb.jpeg');

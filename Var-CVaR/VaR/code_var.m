@@ -2,7 +2,7 @@ clc;
 clear all;
 
 % Read the csv file (Change it to "final_list100.csv" for BSE100)
-table = readtable('./data_related/final_list30.csv');
+table = readtable('./data_related/final_list100.csv');
 % table = readtable('./data_related/final_list100.csv');
 
 stock_prices = table{:,2:end};
@@ -29,7 +29,7 @@ covariance = cov(stock_prices);
 % Uncomment if needed to use the simulated data
 
 rng default  % For reproducibility
-%m=1000;   % If #simulations is 1000
+% m=1000;   % If #simulations is 1000
 m=size(stock_prices,1); % If #simulations is same as market data
 temp_data = mvnrnd(mu,covariance,m);
 stock_prices=temp_data;
@@ -39,7 +39,7 @@ covariance = cov(stock_prices);
 
 k = @(e) sqrt((1-e)/e);
 %k = @(e) -1*norminv(e);
-e_range  = 0.001:5*10^-3:0.6
+e_range  = 0.0001:5*10^-3:0.1;
 % e_range = 0.0001:10^(-4):0.01
 
 mean_vals_base = [];
@@ -141,21 +141,6 @@ end
 
 %% 
 
-mark_size = 5;
-F=figure(1); hold on;
-box on
-grid on
-plot(sd_vals_base, mean_vals_base,'-s','markers',mark_size);
-plot(sd_vals_wvar, mean_vals_wvar,'-o','markers',mark_size);
-lgd = legend('Base VaR','Worst case VaR');
-lgd.Location = 'southeast';
-ylabel('Return');
-xlabel('Standard Deviation')
-
-saveas(F,'./JPEGs/bse30_simulated/ef_exact_cheb.jpeg');
-saveas(F,'./EPSs/bse30_simulated/ef_exact_cheb.eps','epsc');
-
-hold off
 
 
 risk_free = log(1.06)/365;
@@ -174,7 +159,25 @@ ylabel('Sharpe Ratio');
 xlabel('\epsilon(Confidence level)');
 
 % change the names of the files and folders accordingly.
-saveas(F,'./JPEGs/bse30_simulated/sr_exact_cheb.jpeg');
-saveas(F,'./EPSs/bse30_simulated/sr_exact_cheb.eps','epsc');
+% saveas(F,'./JPEGs/bse30_simulated/sr_exact_cheb.jpeg');
+saveas(F,'./EPSs/bse100_simulated/sr_exact_cheb.eps','epsc');
 hold off
+
+
+% mark_size = 5;
+% F=figure(1); hold on;
+% box on
+% grid on
+% plot(sd_vals_base, mean_vals_base,'-s','markers',mark_size);
+% plot(sd_vals_wvar, mean_vals_wvar,'-o','markers',mark_size);
+% lgd = legend('Base VaR','Worst case VaR');
+% lgd.Location = 'southeast';
+% ylabel('Return');
+% xlabel('Standard Deviation')
+% 
+% saveas(F,'./JPEGs/bse30_simulated/ef_exact_cheb.jpeg');
+% saveas(F,'./EPSs/bse30_simulated/ef_exact_cheb.eps','epsc');
+% 
+% hold off
+
 
