@@ -258,6 +258,55 @@ end
     %saveas(F,'./JPEGs/bse30_simulated/sr_exact_cheb.jpeg');
     %saveas(F,'./EPSs/bse30_simulated/sr_exact_cheb.eps','epsc');
     hold off
+    
+    format short;
+
+    id_ra_range=0.0001:20*10^-3:0.1;
+    Tab=zeros(length(id_ra_range),8);
+    [tf,loc]=ismember(e_range,id_ra_range);
+    idx=[1:length(e_range)];
+    idx=idx(tf);
+    idx=idx(loc(tf));
+    Tab(1:end,1)=e_range(idx)';
+    Tab(1:end,2)=ones(length(id_ra_range),1).*risk_free;
+    Tab(1:end,3)=mean_vals_base(idx)';
+    Tab(1:end,4)=sd_vals_base(idx)';
+    Tab(1:end,5)=mean_vals_wcvar(idx)';
+    Tab(1:end,6)=sd_vals_wcvar(idx)';
+    Tab(1:end,7)=base(idx)';
+    Tab(1:end,8)=wcvar(idx)';
+
+
+
+    headings={'Risk_aversion','Riskfree','BaseCVar_u','BaseCVar_sig','WorstCaseCVar_u','WorstCaseCVar_sig','BaseCVar_SR','WorstCaseCVar_SR'};
+
+    Avg=zeros(1,3);
+    Avg(1,1)=mean(Tab(1:end,7));
+    Avg(1,2)=mean(Tab(1:end,8));
+
+    Avg(1,3)=Avg(1,2)-Avg(1,1);
+
+
+
+    % change the names of the files and folders accordingly.
+    
+    tab_loc= sprintf('./tables/bse30_market/tab_30_cvar_%d.csv',P);
+    headings=strjoin(headings, ',');
+    fid_tab=fopen(tab_loc,'w'); 
+    fprintf(fid_tab,'%s\n',headings);
+    fclose(fid_tab);
+    dlmwrite(tab_loc,Tab,'-append','delimiter', ',', 'precision', 3);
+
+
+
+    avg_headings={'BaseCVar_SR','WorstCaseCVar_SR','Diff_SR'};
+    % change the names of the files and folders accordingly.
+    avg_loc=sprintf('./tables/bse30_market/avg_30_cvar_%d.csv',P);
+    avg_headings = strjoin(avg_headings, ',');
+    fid_avg = fopen(avg_loc,'w'); 
+    fprintf(fid_avg,'%s\n',avg_headings);
+    fclose(fid_avg);
+    dlmwrite(avg_loc,Avg,'-append','delimiter', ',', 'precision', 3);
 
 end
 
