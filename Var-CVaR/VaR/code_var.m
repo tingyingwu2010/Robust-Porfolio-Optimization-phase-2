@@ -182,7 +182,7 @@ Tab(1:end,8)=wvar(idx)';
 
 
 
-headings={'Risk_aversion','Riskfree','BaseVar_u','BaseVar_sig','WorstCaseVar_u','WorstCaseVar_sig','BaseVar_SR','WorstCaseVar_SR'};
+headings={'ConfidenceLevel','RiskfreeRate','BaseVar_u','BaseVar_sig','WorstCaseVar_u','WorstCaseVar_sig','BaseVar_SR','WorstCaseVar_SR'};
 
 Avg=zeros(1,3);
 Avg(1,1)=mean(Tab(1:end,7));

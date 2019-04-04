@@ -278,7 +278,7 @@ end
 
 
 
-    headings={'Risk_aversion','Riskfree','BaseCVar_u','BaseCVar_sig','WorstCaseCVar_u','WorstCaseCVar_sig','BaseCVar_SR','WorstCaseCVar_SR'};
+    headings={'ConfidenceLevel','RiskfreeRate','BaseCVar_u','BaseCVar_sig','WorstCaseCVar_u','WorstCaseCVar_sig','BaseCVar_SR','WorstCaseCVar_SR'};
 
     Avg=zeros(1,3);
     Avg(1,1)=mean(Tab(1:end,7));
