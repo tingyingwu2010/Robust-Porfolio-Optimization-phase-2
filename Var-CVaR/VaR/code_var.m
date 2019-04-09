@@ -2,7 +2,7 @@ clc;
 clear all;
 
 % Read the csv file (Change it to "final_list100.csv" for BSE100)
-table = readtable('./data_related/final_list100.csv');
+table = readtable('./data_related/final_list30.csv');
 % table = readtable('./data_related/final_list100.csv');
 
 stock_prices = table{:,2:end};
@@ -28,14 +28,14 @@ covariance = cov(stock_prices);
 
 % Uncomment if needed to use the simulated data
 
-rng default  % For reproducibility
-% m=1000;   % If #simulations is 1000
-m=size(stock_prices,1); % If #simulations is same as market data
-temp_data = mvnrnd(mu,covariance,m);
-stock_prices=temp_data;
-mu = mean(stock_prices);
-mu = mu';
-covariance = cov(stock_prices);
+% rng default  % For reproducibility
+% % m=1000;   % If #simulations is 1000
+% m=size(stock_prices,1); % If #simulations is same as market data
+% temp_data = mvnrnd(mu,covariance,m);
+% stock_prices=temp_data;
+% mu = mean(stock_prices);
+% mu = mu';
+% covariance = cov(stock_prices);
 
 k = @(e) sqrt((1-e)/e);
 %k = @(e) -1*norminv(e);
@@ -160,7 +160,7 @@ xlabel('\epsilon(Confidence level)');
 
 % change the names of the files and folders accordingly.
 % saveas(F,'./JPEGs/bse30_simulated/sr_exact_cheb.jpeg');
-saveas(F,'./EPSs/bse100_simulated/sr_exact_cheb.eps','epsc');
+saveas(F,'./EPSs/bse30_market/sr_cheb.eps','epsc');
 hold off
 
 format short;
@@ -185,15 +185,15 @@ Tab(1:end,8)=wvar(idx)';
 headings={'ConfidenceLevel','RiskfreeRate','BaseVar_u','BaseVar_sig','WorstCaseVar_u','WorstCaseVar_sig','BaseVar_SR','WorstCaseVar_SR'};
 
 Avg=zeros(1,3);
-Avg(1,1)=mean(Tab(1:end,7));
-Avg(1,2)=mean(Tab(1:end,8));
+Avg(1,1)=mean(base);
+Avg(1,2)=mean(wvar);
 
 Avg(1,3)=Avg(1,2)-Avg(1,1);
 
 
 
 % change the names of the files and folders accordingly.
-tab_loc='./tables/bse100_simulated/tab_exact_cheb.csv';
+tab_loc='./tables/bse30_market/tab_cheb.csv';
 headings=strjoin(headings, ',');
 fid_tab=fopen(tab_loc,'w'); 
 fprintf(fid_tab,'%s\n',headings);
@@ -204,7 +204,7 @@ dlmwrite(tab_loc,Tab,'-append','delimiter', ',', 'precision', 3);
 
 avg_headings={'BaseVar_SR','WorstCaseVar_SR','Diff_SR'};
 % change the names of the files and folders accordingly.
-avg_loc='./tables/bse100_simulated/avg_exact_cheb.csv';
+avg_loc='./tables/bse30_market/avg_cheb.csv';
 avg_headings = strjoin(avg_headings, ',');
 fid_avg = fopen(avg_loc,'w'); 
 fprintf(fid_avg,'%s\n',avg_headings);
