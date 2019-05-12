@@ -1,0 +1,185 @@
+\chapter{Relevant Insights}
+
+\section{Robust Optimization in Mean-Variance Analysis}
+
+In this section, we analyze the different kinds of scenarios in the context of trends of the Sharpe Ratio. Recall that, we have considered the ``adjusted closing prices'' data of S\&P BSE 30 and S\&P BSE 100 to illustrate our analysis. Further, we have also generated simulated samples using the true mean and covariance matrix of log-returns obtained from the aforesaid actual market data of ``adjusted closing prices''. Since the number of instances in market data for the assets comprising the two indices, was very less, we simulated two sets of samples, one where the number of simulated samples matches the number of instances of real market data available, say $\zeta(<1000)$ and another where the number of simulated samples is large (a constant, which in our case was taken to be $1000$), irrespective of the number of stocks. The motivation behind this setup was to understand if the market data we obtained (which was limited) is able to capture the trends and results in better portfolio performance.
+
+\subsection{From the Standpoint of Number of Stocks}
+\begin{table}[!h]
+    \centering
+    \captionsetup{justification=centering}
+   \begin{tabular}{||p{6cm}|p{3cm}|p{3cm}||}
+   \hline
+  & \#stocks = 31 & \#stocks = 98 \\
+  \hline
+ \#generated\textunderscore simulations = 1000  & 0.2    &0.244\\
+ \#generated\textunderscore simulations = $\zeta$ & 0.218  & 0.233 \\
+ Market data & 0.2 & 0.194 \\
+ \hline
+\end{tabular}
+    \caption{The maximum average Sharpe ratio compared by varying the number of stocks in different kinds of scenarios.}
+    \label{tab:no_stocks}
+\end{table}
+
+We begin with a description of the results summarized in Table \ref{tab:no_stocks}, wherein for a particular row and a particular column, we presented the maximum possible Sharpe Ratio that was obtained for that particular scenario. For example, in case of the tabular entry for the case when $N=98$ where we simulated $\zeta$ samples using true mean vector and the true covariance matrix of S\&P BSE 100, we refer to Table \ref{tab:5} (which explains the simulation corresponding to S\&P BSE 100 with $\zeta$ simulated samples) and take the maximum of its last row \textit{i.e.}, maximum of average Sharpe ratios that was attained using the available robust and Mark models. 
+
+More the number of stocks, the better is the performance of the portfolios constructed using robust optimization. This claim can be supported via both qualitative and quantitative approaches. Qualitatively, the number of stocks in a portfolio represent its diversification. According to Modern Portfolio Theory (MPT), investors get the benefit of better performance from diversifying their portfolios as it reduces the risk of relying on only one security to generate returns. Value Research Online \cite{vro} provides us with the information that on an average basis, large-cap funds hold around 38 shares, mid-cap funds around 50-52 assets for balanced funds in which around 65-70\% of their assets are in equity. This is because of great stability of returns in case of companies with large market capitalization, whereas this is not the case with mid-cap companies. Hence diversification requirements drives greater percentages in equities in case of mid-cap funds. From the above table, we can quantitatively justify by observing that the Sharpe ratio was more for portfolios with larger number of stocks when compared to portfolios with smaller number of stocks. However, we observe opposite behavior for the market data which can be attributed to the following two reasons:
+\begin{enumerate}
+\item The insufficient availability of market data, when it comes to larger number of stocks.
+\item The error in the estimation of return and covariance matrix accumulating as the number of stocks increases, impacting the performance of the model \cite{Michaud}.
+\end{enumerate}
+
+
+
+\subsection{From the Standpoint of Number of Samples Generated}
+In this section, we solely focus on the performance when different number of samples were generated. We tabulated Table \ref{tab:no_samples} in the same way as we described in the preceding section. Here, we notice some interesting performance trends. One can observe that in the case of smaller number of stocks, the performance when same number of instances ($\zeta$) were simulated is better than the scenario when large (1000) number of simulations were generated. On the contrary, exactly opposite trend can be observed when higher number of stocks are taken into consideration. We explain this type of behaviour as follows (as mentioned above): In the available real market data, the number of instances available for larger number of stocks is relatively low. So, when more number of samples were generated, we observe higher Sharpe ratios when compared to $\zeta$ number of simulations. However, the reason behind such a pattern of opposite behavior when smaller number of stocks are considered is not obvious.
+\begin{table}[!h]
+    \centering
+    \captionsetup{justification=centering}
+   \begin{tabular}{||p{4cm}|p{4cm}|p{4cm}||}
+   \hline
+  & \#samples = 1000 & \#samples = $\zeta$ \\
+  \hline
+  \#stocks = 31  & 0.2    &0.218\\
+ \#stocks = 98 &   0.244  & 0.233 \\
+ \hline
+\end{tabular}
+    \caption{The maximum average Sharpe ratio compared by varying the number of stocks in different kinds of scenarios.}
+    \label{tab:no_samples}
+\end{table}
+
+\subsection{From the Standpoint of Type of the Data}
+Finally, we discuss about the performance of the portfolio from the standpoint of kind of data that we have used in this work. Accordingly, the relevant results are tabulated in Table \ref{tab:data_type}, from where the behavior is observed to be fairly consistent. For both the cases, the performance in case of the simulated data is better than in case of the real market data. This is clear from the fact that the real market data is difficult to model as it hardly follows any distribution, whereas the simulated data is generated from multivariate normal distribution with mean and covariances as the true values obtained from the data.
+
+\begin{table}[!h]
+    \centering
+    \captionsetup{justification=centering}
+   \begin{tabular}{||p{4cm}|p{4cm}|p{4cm}||}
+   \hline
+  & Simulated data & Real Market data \\
+  \hline
+  \#stocks = 31  & 0.218    &0.2\\
+ \#stocks = 98 &   0.244  & 0.194  \\
+ \hline
+\end{tabular}
+    \caption{The maximum average Sharpe ratio compared by varying the type of the data in different kinds of scenarios.}
+    \label{tab:data_type}
+\end{table}
+
+\section{Robust Optimization in VaR Minimization}
+
+In this section, we discuss regarding the practical viability of incorporating robust optimization in VaR minimization from the point of view of number of stocks, sample size and types of data. For the sake of convenience, we tabulate all the results obtained in preceding chapters in Table \ref{tab:var_conc}, where for a particular scenario, we tabulated the average Sharpe Ratio obtained over the chosen range of $\epsilon$.
+\begin{table}[!h]
+  \centering
+  \small
+    \captionsetup{justification=centering}
+  %\begin{tabular}{|l|l|l|l|l|l|l|}
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+   \multirow{2}{*}{} $N$ &
+      \multicolumn{3}{c|}{$N=31$} &
+      \multicolumn{3}{c|}{$N=98$}  \\
+    \hline
+    Type of & Market & Sim. data & Sim. data & Market & Sim. data & Sim. data \\
+    data & data & $\zeta$ samples & $1000$ samples & data & $\zeta$ samples & $1000$ samples \\
+    \hline
+    VaR & 0.111 & 0.0884 & 0.0987 & 0.119 & 0.0674 & 0.137 \\
+    \hline
+    WVaR & 0.0998 & 0.0765 & 0.0989 & 0.124 & 0.103 & 0.16 \\
+    \hline
+    
+  \end{tabular}
+  \caption{Comparison of the average Sharpe ratio for the VaR and WVaR models in various scenarios.}
+  \label{tab:var_conc}
+\end{table}
+% \begin{table}[!h]
+%   \centering
+%     \captionsetup{justification=centering}
+%   %\begin{tabular}{|l|l|l|l|l|l|l|}
+%   \begin{tabular}{ccccccc}
+%     % \hline
+%   \multirow{2}{*}{} &
+%       \multicolumn{3}{c}{$N=31$} &
+%       \multicolumn{3}{c}{$N=98$}  \\
+%     \hline 
+%     \hline
+%     & Market & Sim. data & Sim. data & Market & Sim. data & Sim. data \\
+%     & data & $\zeta$ samples & $1000$ samples & data & $\zeta$ samples & $1000$ samples \\
+%     \hline
+%     VaR & 0.111 & 0.0884 & 0.0987 & 0.119 & 0.0674 & 0.137 \\
+%     \hline
+%     WVaR & 0.0998 & 0.0765 & 0.0989 & 0.124 & 0.103 & 0.16 \\
+%     \hline
+    
+%   \end{tabular}
+%   \caption{Comparison of the average Sharpe ratio for the VaR and WVaR models in various scenarios.}
+%   \label{tab:var_conc2}
+% \end{table}
+\subsection{From the Standpoint of Number of Stocks}
+
+From the table \ref{tab:var_conc} we point out a common inference that irrespective of the type of the data, the WVaR model exhibits superior (inferior) performance than the Base VaR model in case of larger number of stocks ($N=98$) and (in case of smaller number of stocks ($N=31$)). The qualitative argument for this kind of behaviour cannot be attributed to the diversification of the portfolio because at times, VaR may not be sub-additive. We justify this behaviour on the lines of Michaud \cite{Michaud} and Ghaoui \cite{Michaud}. As Michaud points out that the errors in the estimation of mean and covariances of the asset returns accumulates as the number of stocks increases. This implies that the data uncertainty in case of larger number of stocks is more in comparison to smaller number of stocks. The Worst-case robust model can handle the data uncertainty in a better way than the Base VaR model \cite{ghaoui03}. Therefore, we observe an increment in the Sharpe Ratio for both the models, but the increment is more in case of WVaR model such that it outperforms the Base VaR in all types of data environments. In the scenario where the simulated data is taken into consideration, the same argument justifies the behaviour, as the estimated moments' pair are used as true moments' pair, for the generation of the data. So the error in the estimation of the mean and the variance of the asset returns effects the behaviour in the same way as in the market data.
+
+\subsection{From the Standpoint of Number of Simulations}
+
+When we observe the results from the perspective of number of simulations, we can draw some insightful conclusions. For the case $N=98$, the better performance of WVaR model is attributed to the reason above. But when $N=31$, one can observe that the performance of the optimal portfolio, when 1000 samples were simulated is more than that of the portfolio obtained when $\zeta$ number of samples were simulated. The reason for this sort of behaviour lies in the subroutine of the Non Parametric Bootstrap Algorithm, where we use sampling with replacement. Therefore more the number of samples, better are the bounds that one can obtain from the algorithm. So when we generate more number of samples (1000), the WVaR model which uses these bounds, performs better than the case where $\zeta$ number of samples are used for computing the bounds. In this setup, the increment in the number of simulation transits the robust portfolio from under-performing ($\zeta$ case) to be at par with the portfolio obtained from Base VaR model.
+
+
+\subsection{From the Standpoint of Type of the Data}
+
+As explained in the previous section, when $N=31$ the equivalent performance of the WVaR model with Base VaR model in case of simulated data can be attributed to the following reason: The real market data is difficult to model and may not follow any distribution, whereas the simulated data follows the multivariate normal distribution with their true moments' pair as the tuple of estimated mean and covariance matrix of the asset returns from the real market data. Therefore, the Base VaR model exhibits superior performance in the case of real market data. The reason for the out-performance of WVaR model over the Base VaR model when $N=98$ stocks are considered is discussed in the above sections.
+
+\section{Robust Optimization in CVaR Minimization}
+
+Similar to VaR minimization, we conduct the performance analysis of the Worst-Case CVaR with respect to its base case counterpart from different standpoints. Table \ref{tab:cvar_conc} presents the average Sharpe Ratio of the Base-Case CVaR and the Worst-Case CVaR models for each scenario based on the chosen value of $l$, as per the methodology discussed in the preceding chapter.
+
+\begin{table}[!h]
+  \centering
+  \small
+    \captionsetup{justification=centering}
+  %\begin{tabular}{|l|l|l|l|l|l|l|}
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+   \multirow{2}{*}{} $N$ &
+      \multicolumn{3}{c|}{$N=31$} &
+      \multicolumn{3}{c|}{$N=98$}  \\
+    \hline
+    Type of & Market & Sim. data & Sim. data & Market & Sim. data & Sim. data \\
+    data & data & $\zeta$ samples & $1000$ samples & data & $\zeta$ samples & $1000$ samples \\
+    \hline
+    CVaR & 0.0856 & 0.103 & 0.0929 & 0.121 & 0.0963 & 0.156 \\
+    \hline
+    WCVaR & 0.0611 & 0.106 & 0.0969 & 0.105 & 0.102 & 0.165 \\
+    \hline
+  \end{tabular}
+  \caption{Comparison of the average Sharpe ratio for the CVaR and WCVaR models in various scenarios.}
+  \label{tab:cvar_conc}
+\end{table}
+
+\subsection{From the Standpoint of Number of Stocks}
+
+We begin with a discussion of the results presented in Table \ref{tab:cvar_conc} from the standpoint of number of stocks. For the case involving market data, we observe that the CVaR models performs better than the WCVaR model in the scenario of less number of stocks ($N=31$). Even after increasing $N$ to 98, we draw the same inference. The reason behind this trend can be attributed to the lack of knowledge regarding the distribution of the returns in the real market data. Computation of CVaR assumes that the probability distribution is perfectly known and optimization of WCVaR is based on the assumption of the return distribution belonging to a mixture of some prior likelihood distributions. Since the market data hardly follows any distribution, so, there is a sense of ambiguity associated with optimizing CVaR and WCVaR using the discrete sampling technique (discussed in the previous chapter) for the market data. 
+
+On the other hand, we observe an expected trend for the case of simulated data with $1000$ samples. For $N=31$, the WCVaR model performs at par with the VaR model. As $N$ increases to $98$, the WCVaR model exhibits superior performance vis-\`a-vis the CVaR model. Since CVaR and WCVaR are coherent risk measures, so, increase in the number of stocks enhances diversification. As a result, an uptrend is observed in the performance of these two models for $N=98$. But, WCVaR, being a robust risk measure, diversifies over worst-case scenarios as well through mixture distribution uncertainty, as defined in equation (\ref{eq:6.8}). As a result, the WCVaR model performs better than the CVaR model when larger number of stocks are taken into consideration.
+
+However, in the case of simulated data with $\zeta$ samples, an unusual trend is observed, despite involving comparative inference similar to the previous case. On increasing $N$ to 98, we observe a decline in the performance of the CVaR and WCVaR models. The reason behind such observation is not obvious.
+
+
+
+
+% Dekh le.. maine complete to kar diya.. wrt to Type of data ka tu mere wale ko refer kar diyo. Ek baar padh ke.
+% Okay.
+
+\subsection{From the Standpoint of Number of Simulations}
+
+We now compare the performance of the two models based on the number of simulated samples. From Table \ref{tab:cvar_conc}, for the case involving $\zeta$ simulations, we infer that the WCVaR model performs at par with the CVaR model irrespective of the number of stocks. Same inference can be drawn with $1000$ simulated samples as well. Hence, we note equivalent performance of the two models in each simulation study.
+
+\subsection{From the Standpoint of Type of the Data}
+
+Due to similar reasons as in VaR minimization, an opposite trend is observed in the case of real market data (as discussed above)when the number of stocks is less ($N=31$). Similar observation is inferred for the market data on taking into account the larger number of stocks ($N=98$). 
+
+
+
+% \section{Conclusions}
+% Finally, we conclude by saying that robust models outperform plain vanilla Markowitz model by a significant margin.
+
+

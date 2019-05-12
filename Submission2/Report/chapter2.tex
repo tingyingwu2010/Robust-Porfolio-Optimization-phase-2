@@ -1,0 +1,114 @@
+\chapter{Robust Portfolio Optimization Models using Uncertainty Sets}
+
+All the real world optimizing problems inevitably have uncertain parameters embedded in them. In order to tackle such problems, a framework called \say{Stochastic Programming} \cite{stochastic_prog} is used, which can model such problems having uncertain parameters. These models take the probability distributions of the underlying data into consideration. To improve the stability of the solutions, robust methods such as re-sampling techniques, robust estimators and Bayesian approaches were developed. One of the approaches is \textbf{robust optimization}, which is used when the parameters are known to lie in a certain range. In this chapter, we discuss some robust models with worst-case optimization approaches for a given objective function within a predefined \say{uncertainty} set. 
+
+The concept of uncertainty sets was introduced by Soyster \cite{soyster}, where he uses a different definition for defining a feasible region of a convex programming problem. In this definition, the convex inequalities are replaced by convex sets with a condition that the finite sum of convex sets again should be within another convex set. In another way, he defines a new linear programming problem (LPP) with uncertain truth value, but it is bound to lie within a defined convex set. Later, El Ghaoui and Lebret \cite{elg_lsq} extend these uncertainty sets to define a robust formulation while tackling the least-squares problem having uncertain parameters, but they are bounded matrices. In their work, they describe the problem of finding a worst-case residual and refer to the solution as a robust least-squares solution. Furthermore, they show that it can be computed via semi-definite or second order cone programming. El Ghaoui, Oustry, and Lebret \cite{elg_semidefinite} further study how to integrate bounded uncertain parameters in semidefinite programming. They introduce robust-formulations for semidefinite programming and provide sufficient conditions to guarantee the existence of such robust solutions. Ben-Tal and Nemirovski \cite{bental_rc} mainly focus on the uncertainty related with \textit{hard} constraints and which are \textit{ought} to be satisfied, irrespective of the representation of the data. They suggest a methodology where they replace an actual uncertain linear programming problem by its robust counterpart. They show that the robust counterpart  of an LPP with the ellipsoidal uncertainty set is computationally attractive, as it reduces to a polynomial time solvable conic quadratic program. Additionally, they use interior points methods \cite{bental_interior} to compute the solutions efficiently. Along the same lines, Goldfarb and Iyengar \cite{Goldfarb}, focus on the robust convex quadratically constrained programs which are a subclass of the robust convex programs of Ben-Tal and Nemirovski \cite{bental_rc}. They mainly work on finding uncertainty sets which structures this subclass of programs as second-order cone programs. 
+
+In its early phases, the major thrust of the research involved introducing robust formulations and building uncertainty sets for robust counterparts of the LPP as they are computationally attractive. Once the basic framework of robust optimization was established, it is now applied across various domains such as learning, statistics, finance and numerous areas of engineering.
+
+\section{Uncertainty Sets}
+
+The determination of the structure of the uncertainty sets, so as to obtain computationally tractable solutions has been a key step in robust optimization. In the real world, even the distribution of asset returns has an uncertainty associated. In order to address this issue, a most frequently used technique is to find an estimate of the uncertain parameter and to define a geometrical bound around it. Empirically, historical data is used to compute the estimates of these uncertain parameters. For a given optimization problem, determining the geometry of the uncertainty set is a difficult task. In this section, we discuss a couple of popular types of uncertainty sets which are used in portfolio optimization. Accordingly, we first introduce the common notations.
+\begin{enumerate}
+\item $N$: Number of assets.
+\item $\displaystyle{\mathbf{x}}$: Weight vector for a portfolio.
+\item $\displaystyle{\boldsymbol{\mu}}$: Vector for expected return.
+\item $\displaystyle{\Sigma}$: Covariance matrix for asset returns.
+\item $\lambda$: Risk aversion.
+\item $\displaystyle{\mathcal{U}_{\mu,\Sigma}}$: General uncertainty set with $\mu$ and $\Sigma$ as uncertain parameters.
+\item $\displaystyle{\mathbf{1}}$: Unity vector of length $N$.
+\end{enumerate}
+The classical Markowitz model formulation with no short selling constraint is given by the following problem:
+\begin{equation}
+\label{eq:classical_markowitz}
+\max\limits_{\mathbf{x}}\left\{\boldsymbol{\mu}^{\top}\mathbf{x}-\lambda\mathbf{x^{\top}}\Sigma\mathbf{x}\right\}~\text{such that}~
+\mathbf{x^{\top}}\mathbf{1}=1~\text{and}~\mathbf{x}\geq 0.
+\end{equation}
+Most of the robust models deal with optimizing a given objective function with a predefined ``uncertainty set'' for obtaining computationally tractable solutions. For any general uncertainty set $\displaystyle{\mathcal{U}_{\mu,\Sigma}}$, the worst case classical Markowitz model formulation \cite{kim,halldorsson} with no short selling constraint is given as:
+\begin{equation}
+\label{eq:worst_case_classical_markowitz}
+\max\limits_{\mathbf{x}}\left\{\min\limits_{\left(\boldsymbol{\mu},\boldsymbol{\Sigma}\right)~\in~\mathcal{U}_{\mu,\Sigma}}\boldsymbol{\mu}^{\top}\mathbf{x}
+-\lambda\mathbf{x^{\top}}\Sigma\mathbf{x}\right\}~\text{such that}~\mathbf{x^{\top}}\mathbf{1}=1~\text{and}~\mathbf{x}~\geq 0,
+\end{equation}
+
+
+In literature, there are many extensions of uncertainty sets varying from simple polytopes to statistically derived conic-representable sets. A \textit{polytopic} \cite{fabozzi} uncertainty set which resembles a \say{box}, it is defined as
+\begin{equation}
+\label{eqn:box}
+U_{\mathbf{\delta}}(\hat{\mathbf{a}}) = \left\{ \mathbf{a} : | a_i - \hat{a_i}| \leq \delta_i, i = 1,2,3,...,N \right\},
+\end{equation}
+where $\mathbf{a} = (a_i, a_2, ..., a_N)$ is a vector of values of uncertain parameters of dimension $N$ and $\mathbf{\hat{a}} = (\hat{a_1}, \hat{a_2}, ... , \hat{a_N})$ is generally the estimate for $\mathbf{a}$.
+
+In order to capture more information from the data, the consideration of the second moment gives rise to another class of uncertainty sets, namely, ellipsoidal uncertainty sets. One of the most popular way of defining them \cite{fabozzi} is
+\begin{equation}
+\label{eqn:ellipse}
+U(\hat{\mathbf{a}}) = \left\{ \mathbf{a} : \mathbf{a} = \hat{\mathbf{a}} + \mathbf{P}^{1/2}\mathbf{u}, ||\mathbf{u}||\leq 1 \right\},
+\end{equation}
+where the choice of $\mathbf{P}$ is driven by the optimization problem. The main motivation behind the use of such kind of sets is that they come up naturally when one tries to estimate uncertain parameters using techniques like regression. Additionally, these sets take probabilistic properties into account. We further discuss how to model the uncertainties for some of the financial indicators.
+
+\subsection{Uncertainty in Expected Returns}
+Recently, many attempts have been made to model the uncertainty in the expected returns because of several reasons. When compared with variances and covariances, it is known that the effect on the performance of portfolio due to the estimation error is more in case of expected returns. Though it is unlikely that the future returns of the assets are equal to the estimated value of expected return, one can foresee that they will be within a certain range of the estimated return. Accordingly, one can define uncertainty sets in such a way so that expected values lie inside the geometric bound around the estimated value, say $\boldsymbol{\hat{\mu}}$.
+
+In a simple scenario, one can define possible intervals for the expected returns of each individual asset by using box uncertainty set. Mathematically, it can be expressed as \cite{kim}:
+\begin{equation}
+\label{eqn:box_2}
+U_{\boldsymbol{\delta}}(\boldsymbol{\hat{\mu}}) = \left\{ \boldsymbol{\mu}: | \mu_i - \hat{\mu_i}| \leq \delta_i, i = 1,2,3,...,N \right\},    
+\end{equation}
+where $N$ represents the number of stocks and $\delta_i$ represents the value which determines the confidence interval region for individual assets. Clearly from the above expression, for the asset $i$, the estimated error has an upper bound limit of $\delta_i$. 
+On incorporating the box uncertainty set (\ref{eqn:box_2}), the max-min robust formulation (\ref{eq:worst_case_classical_markowitz}) reduces to the following maximization problem:
+\begin{equation}
+\label{eqn:trans_eqn_box}
+\max_\mathbf{x} \quad \boldsymbol{\hat{\mu}}^{\top} \, \mathbf{x}-  \lambda \mathbf{x^{\top}}\Sigma \, \mathbf{x} - \boldsymbol{\delta}^{\top}|\mathbf{x}| \quad \text{such that } \mathbf{x^{\top}}\mathbf{1}  = 1 \text{ and } \mathbf{x} \geq 0,  
+\end{equation}
+
+The most popular choice is to use ellipsoidal uncertainty set, as it takes the second moments into account. Uncertainty in expected return using ellipsoidal uncertainty set is expressed as \cite{kim} :
+\begin{equation}
+\label{eqn:ellipsoidal}
+U_{\delta}(\boldsymbol{\hat{\mu}}) = \left\{ \boldsymbol{\mu} : (\boldsymbol{\mu} - \boldsymbol{\hat{\mu}})^{\top} \, \Sigma^{-1}_{\boldsymbol{\mu}} \, (\boldsymbol{\mu} - \boldsymbol{\hat{\mu}}) \leq \delta^2 \right\},
+\end{equation}
+where $\Sigma_\mu$ is a variance-covariance matrix of the estimation error of expected returns of the assets.
+The max-min robust formulation (\ref{eq:worst_case_classical_markowitz}) in conjunction with the ellipsoidal uncertainty set (\ref{eqn:ellipsoidal}) results in the following maximization problem:
+\begin{equation}
+\max_{\mathbf{x}} \left\{ \boldsymbol{\hat{\mu}}^{\top} \mathbf{x} - \lambda \mathbf{x}^{\top} \, \Sigma \, \mathbf{x} - \delta \sqrt{\mathbf{x}^{\top} \, \Sigma_{\boldsymbol{\mu}} \, \mathbf{x}} \right\} \text{such that } \mathbf{x^{\top}} \mathbf{1}  = 1 \text{ and } \mathbf{x} \geq 0.
+\end{equation}
+
+While dealing with the box uncertainty, it is assumed that the returns follow normal distribution as it eases the task of computing the desired confidence intervals for each individual asset. We define $\delta_{i}$ for $100(1-\alpha)\%$ confidence level as follows:
+\begin{equation}
+    \delta_{i}=\sigma_{i} \, z_\frac{\alpha}{2} \, n^{-\frac{1}{2}}
+\end{equation}
+where $z_{\frac{\alpha}{2}}$ represents the inverse of standard normal distribution, $\sigma_{i}$ is the standard deviation of returns of asset \textit{i} and \textit{n} is the number of observations of returns for asset \textit{i}.
+
+For the same reason, if the uncertainty set follows ellipsoid model, the underlying distribution is assumed to be tracing a $\chi^2$ distribution with the number of assets being the degrees of freedom (df). Accordingly, for $100(1-\alpha)\%$ confidence level, $\delta$ is defined in the following manner
+\begin{equation}
+    \delta^2=\chi_{N}^2(\alpha)
+\end{equation}
+where $\chi_{N}^2(\alpha)$ is the inverse of a chi square distribution with $N$ degrees of freedom.
+\subsection{Separable Uncertainty Set} \label{ssec:sep}
+As mentioned earlier, portfolio performance is more sensitive towards estimation error in mean returns of assets in comparison to variances and covariances of asset returns. This is one of the major reasons behind research works laying less emphasis upon the uncertainty set for covariance matrix of asset returns. The robust approaches discussed in previous section model only the expected returns using uncertainty sets. Hence, in order to also encapsulate the uncertainty in the covariances, box uncertainty set for the covariance matrix of returns is defined on similar lines as that for expected returns. Lower bound $\underline{\Sigma}_{ij}$ and upper bound $\overline{\Sigma}_{ij}$ can be specified for each entry $\Sigma_{ij}$ of the covariance matrix. Using this methodology, the constructed box uncertainty set for covariance matrix is expressed in the following form \cite{tutuncu} :
+\begin{equation}
+\begin{split}
+& U_{\Sigma}= \{\Sigma: \underline{\Sigma} \leq \Sigma \leq \overline{\Sigma}, \ \Sigma \succeq 0 \}. \\
+\end{split}
+\end{equation}
+In the above equation, the condition $\Sigma \succeq 0$ implies that $\Sigma$ is a symmetric positive semidefinite matrix. This condition is necessary in most of the robust optimization approaches, particularly those involving Markowitz model as the basic theoretical framework. 
+
+Tütüncü and Koenig \cite{tutuncu} discuss a method to solve the robust formulation of Markowitz optimization problem having non-negativity constraints upon the weights of assets. They define the uncertainty set for covariance matrix as per above equation and uncertainty set for expected returns as $U_{\boldsymbol{\mu}}= \{\boldsymbol{\mu}: \underline{\boldsymbol{\mu}} \leq \boldsymbol{\mu} \leq \overline{\boldsymbol{\mu}} \}$, where $\underline{\boldsymbol{\mu}}$ and $\overline{\boldsymbol{\mu}}$ represent lower and upper bounds on mean return vector $\boldsymbol{\mu}$ respectively.
+Consequently, the max-min robust formulation (\ref{eq:worst_case_classical_markowitz}) can be formulated as the following maximization problem:
+\begin{equation}
+\begin{split}
+& \max_{\mathbf{x}} \left\{ \underline{\boldsymbol{\mu}}^{\top} \mathbf{x} - \lambda \mathbf{x^{\top}} \, \overline{\Sigma} \, \mathbf{x} \right\} \text{such that } \mathbf{x^{\top}} \mathbf{1}  = 1 \text{ and } \mathbf{x} \geq 0.  \\
+\end{split}
+\end{equation}
+Above approach involves the use of \say{separable} uncertainty sets, which implies, the uncertainty sets for mean returns and covariance matrix are defined independent of each other.
+\subsection{Joint Uncertainty Set}
+  There are certain drawbacks associated with separable uncertainty sets. Lu \cite{lu} argues that such kind of uncertainty sets don't take the knowledge of actual confidence level into consideration. Secondly, separable uncertainty sets don't incorporate the joint behavior of mean returns and covariance matrix. As a result, these uncertainty sets are completely or partially similar to box uncertainty sets. This is one of the major reasons behind robust portfolios being conservative or highly non-diversified as observed in numerous computations. In order to address these drawbacks, Lu proposes a \say{joint uncertainty set}. This uncertainty set is constructed as per desired confidence level using a statistical procedure that takes the factor model \cite{goldfarb2} for asset returns into consideration.
+
+Delage and Ye \cite{delage} define a joint uncertainty set that takes into consideration the uncertainty in distribution of asset returns as well as moments (mean returns and covariance matrix of returns). The proposed uncertainty set having confidence parameters, $\gamma_{1} \geq 0$ and $\gamma_{2} \geq 1$, is given by:
+\begin{equation}
+\begin{split}
+    & (\boldsymbol{\mu} - \boldsymbol{\hat{\mu}})^{\top} \ \hat{\Sigma}^{-1} \ (\boldsymbol{\mu} - \boldsymbol{\hat{\mu}}) \leq \gamma_{1}, \\
+    & E[(\mathbf{r} - \boldsymbol{\hat{\mu}})(\mathbf{r} - \boldsymbol{\hat{\mu}})^{\top}] \leq \gamma_{2}\hat{\Sigma}. \\
+\end{split}
+\end{equation}
+In the above equation, $\boldsymbol{\hat{\mu}}$ and $\hat{\Sigma}$ represent the estimates of mean return vector and covariance matrix of asset returns respectively, and $\mathbf{r}$ is the random return vector. Using this uncertainty set, they formulate the portfolio optimization problem as a Distributionally Robust Stochastic Program (DRSR). Accordingly, they demonstrate that the problem is computationally tractable by solving it as a semidefinite program. 
+

@@ -1,0 +1,17 @@
+\chapter{Conclusion}
+
+\section{Concluding Remarks for Robust Optimization in Mean-Variance Analysis}
+
+
+Robust optimization is an emerging area of portfolio optimization. Various questions have been raised on the advantages of robust methods over the Markowitz model. Through computational analysis of various robust optimization approaches followed by a discussion from different standpoints, we try to address this skepticism. We observe that robust optimization with ellipsoidal uncertainty set performs superior or equivalent as compared to the Markowitz model, in the case of simulated data, similar to the results reported by Santos \cite{santos}. In addition, we observe favorable results in the case of market data as well. Better performance of the robust formulation having separable uncertainty set in comparison to the Markowitz model is in line with the previous study on the same robust model by T{\"u}t{\"u}nc{\"u} and Koenig \cite{tutuncu}. Empirical results presented in this work advocate enhanced practical use of the robust models involving ellipsoidal uncertainty set and separable uncertainty set and accordingly, these models can be regarded as possible alternatives to the classical mean-variance analysis in a practical setup.
+
+\section{Concluding Remarks for Robust Optimization in VaR and CVaR Minimization}
+
+Akin to mean variance analysis, there is a problem of lack of robustness in the classical formulations of VaR and CVaR minimization. We discuss and assess the performance of the robust counterparts for these optimization problems that have been formulated to address this concern. Motivated by the results by Ghaoui et al. \cite{ghaoui03}, we formulate the worst case robust version of the VaR model using separable uncertainty set. Regardless of the type of the data, be it from real market or from a simulated environment, we observe favourable results for the worst case VaR model with Sharpe ratio as the performance measure when the portfolio comprises higher number of stocks. 
+
+In contrast to the results reported by Zhu \cite{zhu}, we observe that the base case CVaR performs better than the robust counterpart (formulated by incorporating mixture distribution uncertainty) in the case of Market data irrespective of the number of stocks comprising in the optimal portfolio. This could be attributed to the following two reasons:
+\begin{itemize}
+    \item Incorporation of different weight constraints in our optimization problem.
+    \item Unlike Zhu, our work uses Sharpe Ratio as a performance measure.
+\end{itemize}
+On the other hand, in the case of simulated data, we draw a favourable inference by noting superior or equivalent performance of the worst case CVaR vis-\`a-vis the base case CVaR. In accordance with these results, we advocate for consideration of worst case models as a viable alternative to their classical counterparts especially in the case of higher number of stocks and in a simulated environment.

@@ -1,0 +1,181 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage{amsthm,amssymb,mathrsfs,setspace,amsmath}%latexsym,footmisc
+
+% \usepackage{pstcol}
+% \usepackage{play}
+\usepackage{epsfig}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{dirtytalk}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage[hyphens,spaces,obeyspaces]{url}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{multirow}
+
+\usepackage[dvipsnames]{xcolor}
+%\usepackage[grey,times]{quotchap}
+\usepackage[nottoc]{tocbibind}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%
+
+\usepackage[mathscr]{euscript}
+\let\euscr\mathscr \let\mathscr\relax% just so we can load this and rsfs
+\usepackage[scr]{rsfso}
+\newcommand{\powerset}{\raisebox{.15\baselineskip}{\Large\ensuremath{\wp}}}
+
+
+\input xy
+\xyoption{all}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{notation}[theorem]{Notation}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\renewcommand{\baselinestretch}{1.5}
+
+
+
+
+\begin{document}
+
+%\pagenumbering{arabic} \setcounter{page}{1}
+
+% --------------- Title page -----------------------
+
+\begin{titlepage}
+\enlargethispage{3cm}
+
+\begin{center}
+
+\vspace*{-2cm}
+
+\textbf{\Large ROBUST PORTFOLIO OPTIMIZATION:\\
+A STUDY OF BSE 30 AND BSE 100}
+
+\vfill
+
+ A Project Report Submitted \\
+ in Partial Fulfilment of the Requirements  \\
+  for the Degree of  \\[10pt]
+
+ {\Large \bf BACHELOR OF TECHNOLOGY}\\[5pt]
+ in \\
+ {\large \bf Mathematics and Computing}
+
+ \vfill
+
+{\large \emph{by}}\\[5pt]
+{\large\bf {Mohammed Bilal Girach}}\\[5pt]
+{\large (Roll No. 150123024)} \\ [5pt]
+{\large\bf {Shashank Oberoi}}\\[5pt]
+{\large (Roll No. 150123047)}
+
+\vfill
+\includegraphics[height=2.5cm]{iitglogo}
+
+\vspace*{0.5cm}
+
+{\em\large to the}\\[10pt]
+{\bf\large DEPARTMENT OF MATHEMATICS} \\[5pt]
+{\bf\large \mbox{INDIAN INSTITUTE OF TECHNOLOGY GUWAHATI}}\\[5pt]
+{\bf\large GUWAHATI - 781039, INDIA}\\[10pt]
+{\it\large April 2019}
+\end{center}
+
+\end{titlepage}
+
+\clearpage
+
+% --------------- Certificate page -----------------------
+\pagenumbering{roman} \setcounter{page}{2}
+\begin{center}
+{\Large{\bf{CERTIFICATE}}}
+\end{center}
+%\thispagestyle{empty}
+
+
+\noindent
+This is to certify that the work contained in this project report entitled 
+“\textbf{Robust Portfolio Optimization: A Study of BSE 30 and BSE 100}” submitted by \textbf{Mohammed Bilal Girach (Roll No. 150123024)} and \textbf{Shashank Oberoi (Roll No. 150123047)} 
+to the Department of Mathematics, Indian Institute of Technology Guwahati towards partial requirement of
+\textbf{Bachelor of Technology} in Mathematics and Computing has been carried out by them under
+my supervision. \\
+
+\noindent
+It is also certified that, along with literature survey, a few new results are established using computational implementations carried out by the students under the project.\\
+
+\noindent
+Turnitin Similarity: 10 \%
+%
+
+\vspace{4cm}
+
+\noindent Guwahati - 781 039 \hfill (Dr. Siddhartha Pratim Chakrabarty)
+
+\noindent April 2019 \hfill Project Supervisor
+
+\clearpage
+
+% --------------- Abstract page -----------------------
+\begin{center}
+{\Large{\bf{ABSTRACT}}}
+\end{center}
+
+
+We begin with a discussion on the classical Markowitz portfolio optimization, its drawbacks and consequent motivation of the alternate approach of robust portfolio optimization. This is followed by presenting several robust optimization models. Using uncertainty sets, we then present computational results for market data obtained from S\&P BSE 30 and S\&P BSE 100 followed by a simulation based study using true mean and covariance of asset returns. We undertake a comparison of performance of the robust optimization approaches as compared to Markowitz optimization. We present the extension of the robust optimization framework in the case of VaR and CVaR minimization. On similar lines as the mean-variance analysis, we perform an empirical study of VaR and CVaR vis-\`a-vis their robust counterparts, namely, Worst-Case VaR and Worst-Case CVaR, using the market data as well as simulated data. After discussing the practical usefulness of the robust optimization approaches from various standpoints, we infer various takeaways. The robust approaches outperform the Markowitz model in the case of simulated data as well as the real market setup. The robust models in the case of VaR and CVaR minimization exhibit superior performance with respect to their base versions in the cases involving higher number of stocks and simulated setup respectively.
+
+
+% We finally discuss the advantages of the robust optimization from the standpoint of number of stocks, number of samples and types of data.
+
+\clearpage
+
+
+
+\tableofcontents
+\clearpage
+\listoffigures
+\listoftables
+
+
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% =========== Main chapters starts here. Type in separate files and include the filename here. ==
+% ============================
+
+\input chapter1.tex
+\input chapter2.tex
+\input chapter3.tex
+\input chapter4.tex
+\input chapter5.tex
+\input chapter6.tex
+\input chapter7.tex
+
+\bibliographystyle{plain}
+\bibliography{bib.bib}
+
+\end{document}
+
