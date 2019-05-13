@@ -33,14 +33,14 @@ covariance = cov(stock_prices);
 
 % Uncomment if needed to use the simulated data
 
-rng default  % For reproducibility
-m=1000;   % If #simulations is 1000
-% m=size(stock_prices,1); % If #simulations is same as market data
-temp_data = mvnrnd(mu,covariance,m);
-stock_prices=temp_data;
-mu = mean(stock_prices);
-mu = mu';
-covariance = cov(stock_prices);
+% rng default  % For reproducibility
+% m=1000;   % If #simulations is 1000
+% % m=size(stock_prices,1); % If #simulations is same as market data
+% temp_data = mvnrnd(mu,covariance,m);
+% stock_prices=temp_data;
+% mu = mean(stock_prices);
+% mu = mu';
+% covariance = cov(stock_prices);
 
 
 e_range  = 0.0001:5*10^(-3):0.1;
@@ -251,7 +251,7 @@ end
     lgd.Location = 'southeast';
     ylabel('Sharpe Ratio');
     xlabel('\epsilon');
-    fnm = sprintf('./EPSs/bse30_simulated/sr_1000_%d.eps',P);
+    fnm = sprintf('./EPSs/bse30_market/sr_cvar_%d.eps',P);
     saveas(F,fnm,'epsc');
 
     % change the names of the files and folders accordingly.
@@ -325,7 +325,7 @@ end
 
 
 clc;
-clear all;
+clear;
 
 % Read the csv file (Change it to "final_list100.csv" for BSE100)
 table = readtable('./data_related/final_list100.csv');
@@ -359,14 +359,14 @@ covariance = cov(stock_prices);
 
 % Uncomment if needed to use the simulated data
 
-rng default  % For reproducibility
-m=1000;   % If #simulations is 1000
-% m=size(stock_prices,1); % If #simulations is same as market data
-temp_data = mvnrnd(mu,covariance,m);
-stock_prices=temp_data;
-mu = mean(stock_prices);
-mu = mu';
-covariance = cov(stock_prices);
+% rng default  % For reproducibility
+% m=1000;   % If #simulations is 1000
+% % m=size(stock_prices,1); % If #simulations is same as market data
+% temp_data = mvnrnd(mu,covariance,m);
+% stock_prices=temp_data;
+% mu = mean(stock_prices);
+% mu = mu';
+% covariance = cov(stock_prices);
 
 
 e_range  = 0.0001:5*10^(-3):0.1;
@@ -577,7 +577,7 @@ end
     lgd.Location = 'southeast';
     ylabel('Sharpe Ratio');
     xlabel('\epsilon');
-    fnm = sprintf('./EPSs/bse100_simulated/sr_1000_%d.eps',P);
+    fnm = sprintf('./EPSs/bse100_market/sr_cvar_%d.eps',P);
     saveas(F,fnm,'epsc');
 
     % change the names of the files and folders accordingly.
