@@ -33,30 +33,14 @@ covariance = cov(stock_prices);
 
 % Uncomment if needed to use the simulated data
 
-rng default  % For reproducibility
+% rng default  % For reproducibility
 % m=1000;   % If #simulations is 1000
-m=size(stock_prices,1); % If #simulations is same as market data
-temp_data = mvnrnd(mu,covariance,m);
-stock_prices=temp_data;
-mu = mean(stock_prices);
-mu = mu';
-covariance = cov(stock_prices);
-
-n_stocks = size(stock_prices,2);
-Y = min(stock_prices - mu',0);
-semi_covar = zeros(n_stocks, n_stocks);
-covar = zeros(n_stocks, n_stocks);
-for i = 1:n_stocks
-    temp = Y(:,i);
-    temp_c = stock_prices(:,i) - mu';
-    temp_mat = temp.*Y;
-    temp_mat_c = temp_c.*(stock_prices-mu');
-    tot_sum = sum(temp_mat)./(size(stock_prices,1)-1);
-    tot_sum_c = sum(temp_mat_c)./(size(stock_prices,1)-1);
-    semi_covar(i,:) = tot_sum;
-    covar(i,:) = tot_sum_c;
-end
-
+% % m=size(stock_prices,1); % If #simulations is same as market data
+% temp_data = mvnrnd(mu,covariance,m);
+% stock_prices=temp_data;
+% mu = mean(stock_prices);
+% mu = mu';
+% covariance = cov(stock_prices);
 
 
 e_range  = 0.0001:5*10^(-3):0.1;
@@ -116,7 +100,7 @@ for i=1:size(e_range,2)
     [y,fval,exitflag,output] = fmincon(min_obj_f,init,A,b,A_eq,b_eq,[],[],[],options);
     x=y(1:N);
     mean_vals_base(i) = mu'*x;
-    sd_vals_base(i) = sqrt(x'*semi_covar*x);
+    sd_vals_base(i) = sqrt(x'*covariance*x);
     
 end
 
@@ -248,7 +232,7 @@ for i=1:size(e_range,2)
     [y,fval,exitflag,output] = fmincon(min_obj_f,init,A,b,A_eq,b_eq,[],[],[],options);
     x=y(1:N);
     mean_vals_wcvar(i) = mu'*x;
-    sd_vals_wcvar(i) = sqrt(x'*semi_covar*x);
+    sd_vals_wcvar(i) = sqrt(x'*covariance*x);
     
 end
 
@@ -265,9 +249,9 @@ end
     plot(e_range, wcvar,'-s');
     lgd = legend('CVaR','WCVaR');
     lgd.Location = 'southeast';
-    ylabel('Sortino Ratio');
+    ylabel('Sharpe Ratio');
     xlabel('\epsilon');
-    fnm = sprintf('./EPSs/bse30_simulated/sr_exact_cvar_%d.eps',P);
+    fnm = sprintf('./EPSs/bse30_market/sr_cvar_%d.eps',P);
     saveas(F,fnm,'epsc');
 
     % change the names of the files and folders accordingly.
@@ -306,24 +290,24 @@ end
 
     % change the names of the files and folders accordingly.
     
-    tab_loc= sprintf('./tables/bse30_simulated/tab_exact_cvar_%d.csv',P);
-    headings=strjoin(headings, ',');
-    fid_tab=fopen(tab_loc,'w'); 
-    fprintf(fid_tab,'%s\n',headings);
-    fclose(fid_tab);
-    dlmwrite(tab_loc,Tab,'-append','delimiter', ',', 'precision', 3);
-
-
-
-    avg_headings={'BaseCVar_SR','WorstCaseCVar_SR','Diff_SR'};
-    % change the names of the files and folders accordingly.
-    avg_loc=sprintf('./tables/bse30_simulated/avg_exact_cvar_%d.csv',P);
-    avg_headings = strjoin(avg_headings, ',');
-    fid_avg = fopen(avg_loc,'w'); 
-    fprintf(fid_avg,'%s\n',avg_headings);
-    fclose(fid_avg);
-    dlmwrite(avg_loc,Avg,'-append','delimiter', ',', 'precision', 3);
-
+%     tab_loc= sprintf('./tables/bse30_simulated/tab_1000_cvar_%d.csv',P);
+%     headings=strjoin(headings, ',');
+%     fid_tab=fopen(tab_loc,'w'); 
+%     fprintf(fid_tab,'%s\n',headings);
+%     fclose(fid_tab);
+%     dlmwrite(tab_loc,Tab,'-append','delimiter', ',', 'precision', 3);
+% 
+% 
+% 
+%     avg_headings={'BaseCVar_SR','WorstCaseCVar_SR','Diff_SR'};
+%     % change the names of the files and folders accordingly.
+%     avg_loc=sprintf('./tables/bse30_simulated/avg_1000_cvar_%d.csv',P);
+%     avg_headings = strjoin(avg_headings, ',');
+%     fid_avg = fopen(avg_loc,'w'); 
+%     fprintf(fid_avg,'%s\n',avg_headings);
+%     fclose(fid_avg);
+%     dlmwrite(avg_loc,Avg,'-append','delimiter', ',', 'precision', 3);
+% 
 end
 
 
@@ -375,29 +359,14 @@ covariance = cov(stock_prices);
 
 % Uncomment if needed to use the simulated data
 
-rng default  % For reproducibility
-m=1000;   % If #simulations is 1000
-% m=size(stock_prices,1); % If #simulations is same as market data
-temp_data = mvnrnd(mu,covariance,m);
-stock_prices=temp_data;
-mu = mean(stock_prices);
-mu = mu';
-covariance = cov(stock_prices);
-
-n_stocks = size(stock_prices,2);
-Y = min(stock_prices - mu',0);
-semi_covar = zeros(n_stocks, n_stocks);
-covar = zeros(n_stocks, n_stocks);
-for i = 1:n_stocks
-    temp = Y(:,i);
-    temp_c = stock_prices(:,i) - mu';
-    temp_mat = temp.*Y;
-    temp_mat_c = temp_c.*(stock_prices-mu');
-    tot_sum = sum(temp_mat)./(size(stock_prices,1)-1);
-    tot_sum_c = sum(temp_mat_c)./(size(stock_prices,1)-1);
-    semi_covar(i,:) = tot_sum;
-    covar(i,:) = tot_sum_c;
-end
+% rng default  % For reproducibility
+% m=1000;   % If #simulations is 1000
+% % m=size(stock_prices,1); % If #simulations is same as market data
+% temp_data = mvnrnd(mu,covariance,m);
+% stock_prices=temp_data;
+% mu = mean(stock_prices);
+% mu = mu';
+% covariance = cov(stock_prices);
 
 
 e_range  = 0.0001:5*10^(-3):0.1;
@@ -457,7 +426,7 @@ for i=1:size(e_range,2)
     [y,fval,exitflag,output] = fmincon(min_obj_f,init,A,b,A_eq,b_eq,[],[],[],options);
     x=y(1:N);
     mean_vals_base(i) = mu'*x;
-    sd_vals_base(i) = sqrt(x'*semi_covar*x);
+    sd_vals_base(i) = sqrt(x'*covariance*x);
     
 end
 
@@ -589,7 +558,7 @@ for i=1:size(e_range,2)
     [y,fval,exitflag,output] = fmincon(min_obj_f,init,A,b,A_eq,b_eq,[],[],[],options);
     x=y(1:N);
     mean_vals_wcvar(i) = mu'*x;
-    sd_vals_wcvar(i) = sqrt(x'*semi_covar*x);
+    sd_vals_wcvar(i) = sqrt(x'*covariance*x);
     
 end
 
@@ -606,7 +575,7 @@ end
     plot(e_range, wcvar,'-s');
     lgd = legend('CVaR','WCVaR');
     lgd.Location = 'southeast';
-    ylabel('Sortino Ratio');
+    ylabel('Sharpe Ratio');
     xlabel('\epsilon');
     fnm = sprintf('./EPSs/bse100_market/sr_cvar_%d.eps',P);
     saveas(F,fnm,'epsc');
@@ -647,23 +616,23 @@ end
 
     % change the names of the files and folders accordingly.
     
-    tab_loc= sprintf('./tables/bse100_market/tab_cvar_%d.csv',P);
-    headings=strjoin(headings, ',');
-    fid_tab=fopen(tab_loc,'w'); 
-    fprintf(fid_tab,'%s\n',headings);
-    fclose(fid_tab);
-    dlmwrite(tab_loc,Tab,'-append','delimiter', ',', 'precision', 3);
-
-
-
-    avg_headings={'BaseCVar_SR','WorstCaseCVar_SR','Diff_SR'};
-    % change the names of the files and folders accordingly.
-    avg_loc=sprintf('./tables/bse100_market/avg_cvar_%d.csv',P);
-    avg_headings = strjoin(avg_headings, ',');
-    fid_avg = fopen(avg_loc,'w'); 
-    fprintf(fid_avg,'%s\n',avg_headings);
-    fclose(fid_avg);
-    dlmwrite(avg_loc,Avg,'-append','delimiter', ',', 'precision', 3);
+%     tab_loc= sprintf('./tables/bse100_simulated/tab_1000_cvar_%d.csv',P);
+%     headings=strjoin(headings, ',');
+%     fid_tab=fopen(tab_loc,'w'); 
+%     fprintf(fid_tab,'%s\n',headings);
+%     fclose(fid_tab);
+%     dlmwrite(tab_loc,Tab,'-append','delimiter', ',', 'precision', 3);
+% 
+% 
+% 
+%     avg_headings={'BaseCVar_SR','WorstCaseCVar_SR','Diff_SR'};
+%     % change the names of the files and folders accordingly.
+%     avg_loc=sprintf('./tables/bse100_simulated/avg_1000_cvar_%d.csv',P);
+%     avg_headings = strjoin(avg_headings, ',');
+%     fid_avg = fopen(avg_loc,'w'); 
+%     fprintf(fid_avg,'%s\n',avg_headings);
+%     fclose(fid_avg);
+%     dlmwrite(avg_loc,Avg,'-append','delimiter', ',', 'precision', 3);
 
 end
 

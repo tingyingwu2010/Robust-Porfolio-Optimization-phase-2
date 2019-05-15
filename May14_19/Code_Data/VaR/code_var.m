@@ -2,7 +2,7 @@ clc;
 clear all;
 
 % Read the csv file (Change it to "final_list100.csv" for BSE100)
-table = readtable('./data_related/final_list100.csv');
+table = readtable('./data_related/final_list30.csv');
 % table = readtable('./data_related/final_list100.csv');
 
 stock_prices = table{:,2:end};
@@ -37,21 +37,6 @@ covariance = cov(stock_prices);
 % mu = mu';
 % covariance = cov(stock_prices);
 
-n_stocks = size(stock_prices,2);
-Y = min(stock_prices - mu',0);
-semi_covar = zeros(n_stocks, n_stocks);
-covar = zeros(n_stocks, n_stocks);
-for i = 1:n_stocks
-    temp = Y(:,i);
-    temp_c = stock_prices(:,i) - mu';
-    temp_mat = temp.*Y;
-    temp_mat_c = temp_c.*(stock_prices-mu');
-    tot_sum = sum(temp_mat)./(size(stock_prices,1)-1);
-    tot_sum_c = sum(temp_mat_c)./(size(stock_prices,1)-1);
-    semi_covar(i,:) = tot_sum;
-    covar(i,:) = tot_sum_c;
-end
-
 k = @(e) sqrt((1-e)/e);
 %k = @(e) -1*norminv(e);
 e_range  = 0.0001:5*10^-3:0.1;
@@ -78,12 +63,11 @@ for i=1:size(e_range,2)
     [x,fval,exitflag,output] = fmincon(maxim,init,A,b,ones(1,size(stock_prices,2)),1,[],[],[],options);
     
     mean_vals_base = [mean_vals_base, mu'*x];
-    sd_vals_base = [sd_vals_base, sqrt(x'*semi_covar*x)];
-    sqrt(x'*semi_covar*x)
-    sqrt(x'*covariance*x)
-    sqrt(x'*covar*x)
+    sd_vals_base = [sd_vals_base, sqrt(x'*covariance*x)];
     
 end
+
+
 %% Worst Case VaR
 
 mean_vals_wvar = [];
@@ -150,7 +134,7 @@ for i=1:size(e_range,2)
     [x,fval,exitflag,output] = fmincon(maxim,init,A,b,ones(1,size(stock_prices,2)),1,[],[],[],options);
     
     mean_vals_wvar = [mean_vals_wvar, mu'*x];
-    sd_vals_wvar = [sd_vals_wvar, sqrt(x'*semi_covar*x)];
+    sd_vals_wvar = [sd_vals_wvar, sqrt(x'*covariance*x)];
     
 end
 
@@ -171,12 +155,12 @@ plot(e_range, base,'-o');
 plot(e_range, wvar,'-s');
 lgd = legend('VaR','WVaR');
 lgd.Location = 'southeast';
-ylabel('Sortino Ratio');
+ylabel('Sharpe Ratio');
 xlabel('\epsilon');
 
 % change the names of the files and folders accordingly.
 % saveas(F,'./JPEGs/bse30_simulated/sr_exact_cheb.jpeg');
-saveas(F,'./EPSs/bse100_market/sr_cheb.eps','epsc');
+saveas(F,'./EPSs/bse30_market/sr_cheb.eps','epsc');
 hold off
 
 format short;
