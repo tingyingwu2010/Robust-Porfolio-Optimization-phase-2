@@ -7,7 +7,7 @@ Despite its popularity as a measure of downside risk, VaR has received a fair am
 Conditional Value-at-Risk (CVaR), introduced by Rockafellar and Uryasev \cite{rockafellar1,rockafellar2}, has addressed various concerns centred around VaR. For continuous distributions, CVaR is the expected loss conditioned on the loss outcomes exceeding VaR. For $\epsilon \in (0,1)$ , CVaR, at confidence level $1-\epsilon$, is defined as:
 \begin{equation}
 \label{eq:6.1}
-CVaR_{\epsilon}(\mathbf{x}) \triangleq \frac{1}{\epsilon} \, \int \limits_{-\mathbf{r}^{\top}\mathbf{x} \geq VaR_{\epsilon}(\mathbf{x})} p(\mathbf{r})  d\mathbf{r}
+CVaR_{\epsilon}(\mathbf{x}) \triangleq \frac{1}{\epsilon} \, \int \limits_{-\mathbf{r}^{\top}\mathbf{x} \geq VaR_{\epsilon}(\mathbf{x})} -\mathbf{r}^{\top}\mathbf{x} \, \, p(\mathbf{r})  d\mathbf{r},
 \end{equation}
 where $\mathbf{r}$ is the random return vector having probability density function $p(\mathbf{r})$ and $\mathbf{x}$ is the weight vector for a portfolio. In recent years, CVaR has emerged as a viable risk measure in portfolio optimization problems over its use in reducing downside risk. Since CVaR is a coherent risk measure, it follows the property of sub-additivity. Therefore, CVaR can be minimized through investment in a diversified portfolio. Unlike VaR, CVaR takes into consideration the impact of losses beyond the confidence level ($1-\epsilon$) \cite{capinski_risk}. Also, the minimization of CVaR is a convex optimization problem \cite{lim}.
 
@@ -53,7 +53,7 @@ In the above equation, $[t]^{+}=\max \{t,0\}$. The problem of approximation of t
 \label{eq:6.6}
  F_{\epsilon}(\mathbf{x},\gamma) \approx \gamma \, + \, \frac{1}{S \, \epsilon} \, \sum_{i=1}^{S} [-\mathbf{r}_{i}^{\top}\mathbf{x}-\gamma]^{+} 
 \end{equation}
-In accordance with above approximation, the problem of minimization of classical CVaR, assuming no short-selling constraints, can be formulated as the following Linear Programming Problem (LLP) \cite{rockafellar1,zhu}:
+In accordance with above approximation, the problem of minimization of classical CVaR, assuming no short-selling constraints, can be formulated as the following Linear Programming Problem (LPP) \cite{rockafellar1,zhu}:
 \begin{equation}
 \label{eq:6.7}
 \begin{split}
@@ -85,7 +85,7 @@ Similar to the case involving classical CVaR in previous subsection, $F_{\epsilo
 \label{eq:6.10}
 F_{\epsilon}^{j}(\mathbf{x},\gamma) \approx \gamma \, + \, \frac{1}{S_{j} \, \epsilon} \, \sum_{i=1}^{S_{j}} [-\mathbf{r}_{i,j}^{\top}\mathbf{x}-\gamma]^{+}
 \end{equation}
-In the above equation, $\mathbf{r}_{i,j}$ is the $i^{th}$ sample of the return with respect to $j^{th}$ likelihood distribution and $S_{j}$ is the number of samples corresponding to $j^{th}$ likelihood distribution. Accordingly, assuming non-negative weights, the problem of minimization of WCVaR over a feasible set of portfolios can be formulated as the following LLP \cite{zhu}:
+In the above equation, $\mathbf{r}_{i,j}$ is the $i^{th}$ sample of the return with respect to $j^{th}$ likelihood distribution and $S_{j}$ is the number of samples corresponding to $j^{th}$ likelihood distribution. Accordingly, assuming non-negative weights, the problem of minimization of WCVaR over a feasible set of portfolios can be formulated as the following LPP \cite{zhu}:
 \begin{equation}
 \label{eq:6.11}
 \begin{split}

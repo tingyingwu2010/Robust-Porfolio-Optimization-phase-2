@@ -153,10 +153,10 @@ box on
 grid on
 plot(e_range, base,'-o');
 plot(e_range, wvar,'-s');
-lgd = legend('Base VaR','Worst case VaR');
+lgd = legend('VaR','WVaR');
 lgd.Location = 'southeast';
 ylabel('Sharpe Ratio');
-xlabel('\epsilon(Confidence level)');
+xlabel('\epsilon');
 
 % change the names of the files and folders accordingly.
 % saveas(F,'./JPEGs/bse30_simulated/sr_exact_cheb.jpeg');

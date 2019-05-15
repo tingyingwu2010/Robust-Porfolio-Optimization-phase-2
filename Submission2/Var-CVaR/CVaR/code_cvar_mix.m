@@ -1,5 +1,5 @@
 clc;
-clear all;
+clear;
 
 % Read the csv file (Change it to "final_list100.csv" for BSE100)
 table = readtable('./data_related/final_list30.csv');
@@ -33,14 +33,14 @@ covariance = cov(stock_prices);
 
 % Uncomment if needed to use the simulated data
 
-rng default  % For reproducibility
-m=1000;   % If #simulations is 1000
-% m=size(stock_prices,1); % If #simulations is same as market data
-temp_data = mvnrnd(mu,covariance,m);
-stock_prices=temp_data;
-mu = mean(stock_prices);
-mu = mu';
-covariance = cov(stock_prices);
+% rng default  % For reproducibility
+% m=1000;   % If #simulations is 1000
+% % m=size(stock_prices,1); % If #simulations is same as market data
+% temp_data = mvnrnd(mu,covariance,m);
+% stock_prices=temp_data;
+% mu = mean(stock_prices);
+% mu = mu';
+% covariance = cov(stock_prices);
 
 
 e_range  = 0.0001:5*10^(-3):0.1;
@@ -247,11 +247,11 @@ end
     grid on
     plot(e_range, base,'-o');
     plot(e_range, wcvar,'-s');
-    lgd = legend('Base CVaR','Worst CVar');
+    lgd = legend('CVaR','WCVaR');
     lgd.Location = 'southeast';
     ylabel('Sharpe Ratio');
-    xlabel('\epsilon(Confidence level)');
-    fnm = sprintf('./EPSs/bse30_simulated/sr_1000_%d.eps',P);
+    xlabel('\epsilon');
+    fnm = sprintf('./EPSs/bse30_market/sr_cvar_%d.eps',P);
     saveas(F,fnm,'epsc');
 
     % change the names of the files and folders accordingly.
@@ -290,24 +290,24 @@ end
 
     % change the names of the files and folders accordingly.
     
-    tab_loc= sprintf('./tables/bse30_simulated/tab_1000_cvar_%d.csv',P);
-    headings=strjoin(headings, ',');
-    fid_tab=fopen(tab_loc,'w'); 
-    fprintf(fid_tab,'%s\n',headings);
-    fclose(fid_tab);
-    dlmwrite(tab_loc,Tab,'-append','delimiter', ',', 'precision', 3);
-
-
-
-    avg_headings={'BaseCVar_SR','WorstCaseCVar_SR','Diff_SR'};
-    % change the names of the files and folders accordingly.
-    avg_loc=sprintf('./tables/bse30_simulated/avg_1000_cvar_%d.csv',P);
-    avg_headings = strjoin(avg_headings, ',');
-    fid_avg = fopen(avg_loc,'w'); 
-    fprintf(fid_avg,'%s\n',avg_headings);
-    fclose(fid_avg);
-    dlmwrite(avg_loc,Avg,'-append','delimiter', ',', 'precision', 3);
-
+%     tab_loc= sprintf('./tables/bse30_simulated/tab_1000_cvar_%d.csv',P);
+%     headings=strjoin(headings, ',');
+%     fid_tab=fopen(tab_loc,'w'); 
+%     fprintf(fid_tab,'%s\n',headings);
+%     fclose(fid_tab);
+%     dlmwrite(tab_loc,Tab,'-append','delimiter', ',', 'precision', 3);
+% 
+% 
+% 
+%     avg_headings={'BaseCVar_SR','WorstCaseCVar_SR','Diff_SR'};
+%     % change the names of the files and folders accordingly.
+%     avg_loc=sprintf('./tables/bse30_simulated/avg_1000_cvar_%d.csv',P);
+%     avg_headings = strjoin(avg_headings, ',');
+%     fid_avg = fopen(avg_loc,'w'); 
+%     fprintf(fid_avg,'%s\n',avg_headings);
+%     fclose(fid_avg);
+%     dlmwrite(avg_loc,Avg,'-append','delimiter', ',', 'precision', 3);
+% 
 end
 
 
@@ -325,7 +325,7 @@ end
 
 
 clc;
-clear all;
+clear;
 
 % Read the csv file (Change it to "final_list100.csv" for BSE100)
 table = readtable('./data_related/final_list100.csv');
@@ -359,14 +359,14 @@ covariance = cov(stock_prices);
 
 % Uncomment if needed to use the simulated data
 
-rng default  % For reproducibility
-m=1000;   % If #simulations is 1000
-% m=size(stock_prices,1); % If #simulations is same as market data
-temp_data = mvnrnd(mu,covariance,m);
-stock_prices=temp_data;
-mu = mean(stock_prices);
-mu = mu';
-covariance = cov(stock_prices);
+% rng default  % For reproducibility
+% m=1000;   % If #simulations is 1000
+% % m=size(stock_prices,1); % If #simulations is same as market data
+% temp_data = mvnrnd(mu,covariance,m);
+% stock_prices=temp_data;
+% mu = mean(stock_prices);
+% mu = mu';
+% covariance = cov(stock_prices);
 
 
 e_range  = 0.0001:5*10^(-3):0.1;
@@ -573,11 +573,11 @@ end
     grid on
     plot(e_range, base,'-o');
     plot(e_range, wcvar,'-s');
-    lgd = legend('Base CVaR','Worst CVar');
+    lgd = legend('CVaR','WCVaR');
     lgd.Location = 'southeast';
     ylabel('Sharpe Ratio');
-    xlabel('\epsilon(Confidence level)');
-    fnm = sprintf('./EPSs/bse100_simulated/sr_1000_%d.eps',P);
+    xlabel('\epsilon');
+    fnm = sprintf('./EPSs/bse100_market/sr_cvar_%d.eps',P);
     saveas(F,fnm,'epsc');
 
     % change the names of the files and folders accordingly.
@@ -616,23 +616,23 @@ end
 
     % change the names of the files and folders accordingly.
     
-    tab_loc= sprintf('./tables/bse100_simulated/tab_1000_cvar_%d.csv',P);
-    headings=strjoin(headings, ',');
-    fid_tab=fopen(tab_loc,'w'); 
-    fprintf(fid_tab,'%s\n',headings);
-    fclose(fid_tab);
-    dlmwrite(tab_loc,Tab,'-append','delimiter', ',', 'precision', 3);
-
-
-
-    avg_headings={'BaseCVar_SR','WorstCaseCVar_SR','Diff_SR'};
-    % change the names of the files and folders accordingly.
-    avg_loc=sprintf('./tables/bse100_simulated/avg_1000_cvar_%d.csv',P);
-    avg_headings = strjoin(avg_headings, ',');
-    fid_avg = fopen(avg_loc,'w'); 
-    fprintf(fid_avg,'%s\n',avg_headings);
-    fclose(fid_avg);
-    dlmwrite(avg_loc,Avg,'-append','delimiter', ',', 'precision', 3);
+%     tab_loc= sprintf('./tables/bse100_simulated/tab_1000_cvar_%d.csv',P);
+%     headings=strjoin(headings, ',');
+%     fid_tab=fopen(tab_loc,'w'); 
+%     fprintf(fid_tab,'%s\n',headings);
+%     fclose(fid_tab);
+%     dlmwrite(tab_loc,Tab,'-append','delimiter', ',', 'precision', 3);
+% 
+% 
+% 
+%     avg_headings={'BaseCVar_SR','WorstCaseCVar_SR','Diff_SR'};
+%     % change the names of the files and folders accordingly.
+%     avg_loc=sprintf('./tables/bse100_simulated/avg_1000_cvar_%d.csv',P);
+%     avg_headings = strjoin(avg_headings, ',');
+%     fid_avg = fopen(avg_loc,'w'); 
+%     fprintf(fid_avg,'%s\n',avg_headings);
+%     fclose(fid_avg);
+%     dlmwrite(avg_loc,Avg,'-append','delimiter', ',', 'precision', 3);
 
 end
 
