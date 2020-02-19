@@ -2,6 +2,8 @@
 # import fix_yahoo_finance as yf
 import yfinance as yf
 import pandas as pd
+import math
+import numpy as np
 # d1=pd.read_csv("SnP100.csv")
 d1=pd.read_csv("SnP500.csv")
 comp_names=d1["Security Name"].tolist()
@@ -15,7 +17,7 @@ for i in range(len(comp_names)):
     # comp_symbol=comp_names[i].strip()+'.BO'
     comp_symbol=comp_names[i].strip()
     # if (comp_symbol == 'IDEA.BO' or comp_symbol == 'CONCOR.BO' or comp_symbol == 'HDFCLIFE.BO'):
-        # continue
+    #     continue
     print(comp_symbol)
     try:
         data = yf.download(comp_symbol,f,t)
@@ -28,6 +30,11 @@ for i in range(len(comp_names)):
         continue
     print(len(data))
     adj_close=data["Adj Close"].tolist()
+    
+    if True in np.isnan(adj_close):
+        print("NaN values for ticker symbol: "+comp_symbol)
+        continue
+   
     total_data.append(adj_close)
     print(len(adj_close))
     new_array.append(comp_symbol)
