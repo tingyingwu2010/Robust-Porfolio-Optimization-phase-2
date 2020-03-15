@@ -8,20 +8,20 @@ import numpy as np
 # d1=pd.read_csv("SnP500.csv")
 # d1=pd.read_csv("Nikkei225.csv")
 # d1=pd.read_csv("JPXNikkei400.csv")
-# d1=pd.read_csv("ftse100.csv")
-d1=pd.read_csv("ftse350.csv")
+d1=pd.read_csv("ftse100.csv")
+# d1=pd.read_csv("ftse350.csv")
 
 comp_names=d1["Security Name"].tolist()
  
-f='2016-12-18'
-# f='2017-12-18'
+# f='2016-12-18'
+f='2017-12-18'
 t='2018-09-30'
 new_array = [];
 total_data=list()
 for i in range(len(comp_names)):
     # comp_symbol=comp_names[i].strip()+'.BO'
-    # comp_symbol=comp_names[i].strip()
-    comp_symbol=comp_names[i].strip()+'.L'
+    comp_symbol=comp_names[i].strip()
+    # comp_symbol=comp_names[i].strip()+'.L'
     # comp_symbol=comp_names[i].strip()+'.T'
     # comp_symbol=str(comp_names[i]).strip()+'.T'
     # if (comp_symbol == 'IDEA.BO' or comp_symbol == 'CONCOR.BO' or comp_symbol == 'HDFCLIFE.BO'):
@@ -42,6 +42,12 @@ for i in range(len(comp_names)):
     if True in np.isnan(adj_close):
         print("NaN values for ticker symbol: "+comp_symbol)
         continue
+    # print(adj_close)
+    is_price_negative=any(n < 0 for n in adj_close)
+    if (is_price_negative):
+        print("Negative Stock values for ticker symbol: "+comp_symbol)
+        continue
+
    
     total_data.append(adj_close)
     print(len(adj_close))
@@ -55,7 +61,7 @@ print(df)
 # df.to_csv('final_snp100.csv')
 # df.to_csv('final_snp500.csv')
 # df.to_csv('final_nikkei225.csv')
-df.to_csv('final_ftse350.csv')
+df.to_csv('final_ftse100.csv')
 
 
 #print df
