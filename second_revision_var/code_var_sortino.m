@@ -2,7 +2,7 @@ clc;
 clear all;
 
 % Read the csv file (Change it to "final_list100.csv" for BSE100)
-table = readtable('./data_related/final_ftse100.csv');
+table = readtable('./data_related/final_ftse350.csv');
 % table = readtable('./data_related/final_list100.csv');
 
 stock_prices = table{:,2:end};
@@ -176,7 +176,7 @@ xlabel('\epsilon');
 
 % change the names of the files and folders accordingly.
 % saveas(F,'./JPEGs/ftse100_market/sr_exact_cheb.jpeg');
-saveas(F,'./EPSs/ftse100_market/sr_exact_cheb.eps','epsc');
+saveas(F,'./EPSs/ftse350_market/sr_cheb.eps','epsc');
 hold off
 
 format short;
@@ -209,7 +209,7 @@ Avg(1,3)=Avg(1,2)-Avg(1,1);
 
 
 % change the names of the files and folders accordingly.
-tab_loc='./tables/ftse100_market/tab_exact_cheb.csv';
+tab_loc='./tables/ftse350_market/tab_cheb.csv';
 headings=strjoin(headings, ',');
 fid_tab=fopen(tab_loc,'w'); 
 fprintf(fid_tab,'%s\n',headings);
@@ -220,7 +220,7 @@ dlmwrite(tab_loc,Tab,'-append','delimiter', ',', 'precision', 3);
 
 avg_headings={'BaseVar_SR','WorstCaseVar_SR','Diff_SR'};
 % change the names of the files and folders accordingly.
-avg_loc='./tables/ftse100_market/avg_exact_cheb.csv';
+avg_loc='./tables/ftse350_market/avg_cheb.csv';
 avg_headings = strjoin(avg_headings, ',');
 fid_avg = fopen(avg_loc,'w'); 
 fprintf(fid_avg,'%s\n',avg_headings);
