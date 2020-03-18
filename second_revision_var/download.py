@@ -26,9 +26,7 @@ for i in range(len(comp_names)):
     # comp_symbol=str(comp_names[i]).strip()+'.T'
     # if (comp_symbol == 'IDEA.BO' or comp_symbol == 'CONCOR.BO' or comp_symbol == 'HDFCLIFE.BO'):
     #     continue
-    if (comp_symbol == 'ATST.L' or comp_symbol == 'RCP.L'):
-        continue
-    # print(comp_symbol)
+    print(comp_symbol)
     try:
         data = yf.download(comp_symbol,f,t)
     except:
@@ -40,14 +38,14 @@ for i in range(len(comp_names)):
         continue
     print(len(data))
     adj_close=data["Adj Close"].tolist()
-    print(adj_close)
+    
     if True in np.isnan(adj_close):
         print("NaN values for ticker symbol: "+comp_symbol)
         continue
     # print(adj_close)
     is_price_negative=any(n <= 0 for n in adj_close)
     if (is_price_negative):
-        print("Negative or Zero Stock values for ticker symbol: "+comp_symbol)
+        print("Negative Stock values for ticker symbol: "+comp_symbol)
         continue
 
    
@@ -58,9 +56,7 @@ for i in range(len(comp_names)):
 df=pd.DataFrame(total_data)
 
 df = df.transpose()
-
 df.columns = new_array
-df=df.dropna(1)
 print(df)
 # df.to_csv('final_snp100.csv')
 # df.to_csv('final_snp500.csv')
