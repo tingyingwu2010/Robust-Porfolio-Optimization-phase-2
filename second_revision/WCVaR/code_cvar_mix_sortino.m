@@ -33,14 +33,14 @@ covariance = cov(stock_prices);
 
 % Uncomment if needed to use the simulated data
 
-% rng default  % For reproducibility
+rng default  % For reproducibility
 % m=1000;   % If #simulations is 1000
-% % m=size(stock_prices,1); % If #simulations is same as market data
-% temp_data = mvnrnd(mu,covariance,m);
-% stock_prices=temp_data;
-% mu = mean(stock_prices);
-% mu = mu';
-% covariance = cov(stock_prices);
+m=size(stock_prices,1); % If #simulations is same as market data
+temp_data = mvnrnd(mu,covariance,m);
+stock_prices=temp_data;
+mu = mean(stock_prices);
+mu = mu';
+covariance = cov(stock_prices);
 
 n_stocks = size(stock_prices,2);
 Y = min(stock_prices - mu',0);
@@ -267,7 +267,7 @@ end
     lgd.Location = 'southeast';
     ylabel('Sortino Ratio');
     xlabel('\epsilon');
-    fnm = sprintf('./EPSs/snp100/sr_%d.eps',P);
+    fnm = sprintf('./EPSs/snp100/sr_actual_%d.eps',P);
     saveas(F,fnm,'epsc');
 
     % change the names of the files and folders accordingly.
@@ -306,7 +306,7 @@ end
 
     % change the names of the files and folders accordingly.
     
-    tab_loc= sprintf('./tables/snp100/tab_%d.csv',P);
+    tab_loc= sprintf('./tables/snp100/tab_actual_%d.csv',P);
     headings=strjoin(headings, ',');
     fid_tab=fopen(tab_loc,'w'); 
     fprintf(fid_tab,'%s\n',headings);
@@ -317,7 +317,7 @@ end
 
     avg_headings={'BaseCVar_SR','WorstCaseCVar_SR','Diff_SR'};
     % change the names of the files and folders accordingly.
-    avg_loc=sprintf('./tables/snp100/avg_%d.csv',P);
+    avg_loc=sprintf('./tables/snp100/avg_actual_%d.csv',P);
     avg_headings = strjoin(avg_headings, ',');
     fid_avg = fopen(avg_loc,'w'); 
     fprintf(fid_avg,'%s\n',avg_headings);
@@ -376,7 +376,7 @@ covariance = cov(stock_prices);
 % Uncomment if needed to use the simulated data
 
 % rng default  % For reproducibility
-% m=1000;   % If #simulations is 1000
+% m=1000;   % If #simulations is 1000 
 % % m=size(stock_prices,1); % If #simulations is same as market data
 % temp_data = mvnrnd(mu,covariance,m);
 % stock_prices=temp_data;
