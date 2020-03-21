@@ -5,23 +5,24 @@ import pandas as pd
 import math
 import numpy as np
 # d1=pd.read_csv("SnP100.csv")
-# d1=pd.read_csv("SnP500.csv")
+d1=pd.read_csv("SnP500.csv")
 # d1=pd.read_csv("Nikkei225.csv")
 # d1=pd.read_csv("JPXNikkei400.csv")
 # d1=pd.read_csv("ftse100.csv")
-d1=pd.read_csv("ftse350.csv")
+# d1=pd.read_csv("ftse350.csv")
 
 comp_names=d1["Security Name"].tolist()
  
 f='2016-12-18'
 # f='2017-12-18'
-t='2018-09-30'
+# t='2018-09-30'
+t='2019-02-28'
 new_array = [];
 total_data=list()
 for i in range(len(comp_names)):
     # comp_symbol=comp_names[i].strip()+'.BO'
-    # comp_symbol=comp_names[i].strip()
-    comp_symbol=comp_names[i].strip()+'.L'
+    comp_symbol=comp_names[i].strip()
+    # comp_symbol=comp_names[i].strip()+'.L'
     # comp_symbol=comp_names[i].strip()+'.T'
     # comp_symbol=str(comp_names[i]).strip()+'.T'
     # if (comp_symbol == 'IDEA.BO' or comp_symbol == 'CONCOR.BO' or comp_symbol == 'HDFCLIFE.BO'):
@@ -40,7 +41,7 @@ for i in range(len(comp_names)):
         continue
     print(len(data))
     adj_close=data["Adj Close"].tolist()
-    print(adj_close)
+    
     if True in np.isnan(adj_close):
         print("NaN values for ticker symbol: "+comp_symbol)
         continue
@@ -50,6 +51,7 @@ for i in range(len(comp_names)):
         print("Negative or Zero Stock values for ticker symbol: "+comp_symbol)
         continue
 
+    print(adj_close)
    
     total_data.append(adj_close)
     print(len(adj_close))
@@ -63,9 +65,9 @@ df.columns = new_array
 df=df.dropna(1)
 print(df)
 # df.to_csv('final_snp100.csv')
-# df.to_csv('final_snp500.csv')
+df.to_csv('final_snp500.csv')
 # df.to_csv('final_nikkei225.csv')
-df.to_csv('final_ftse350.csv')
+# df.to_csv('final_ftse350.csv')
 
 
 #print df
