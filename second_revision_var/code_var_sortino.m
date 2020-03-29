@@ -2,7 +2,7 @@ clc;
 clear all;
 
 % Read the csv file (Change it to "final_list100.csv" for BSE100)
-table = readtable('./data_related/final_ftse350.csv');
+table = readtable('./data_related/final_snp500.csv');
 % table = readtable('./data_related/final_list100.csv');
 
 stock_prices = table{:,2:end};
@@ -115,27 +115,33 @@ for i=1:iterations
     
 end
 
-for i = 1:size(stock_prices,2)
+% for i = 1:size(stock_prices,2)
+% 
+%     temp = sort(mu_matrix(i,:));
+%     lower_mu(i,1) = temp(iterations*0.025);
+%     upper_mu(i,1) = temp(iterations*0.975);
+%     
+% end
 
-    temp = sort(mu_matrix(i,:));
-    lower_mu(i,1) = temp(iterations*0.025);
-    upper_mu(i,1) = temp(iterations*0.975);
-    
-end
+sorted_mu_matrix=sort(mu_matrix,2);
+lower_mu=sorted_mu_matrix(:,iterations*0.025);
+upper_mu=sorted_mu_matrix(:,iterations*0.975);
 
+% for i = 1:size(stock_prices,2)
+% 
+%     for j=1:size(stock_prices,2)
+%         
+%        temp = sort(cov_matrix(i,j,:));
+%        lower_cov(i,j) = temp(iterations*0.025);
+%        upper_cov(i,j) = temp(iterations*0.975);
+%       
+%     end
+%     
+% end
 
-for i = 1:size(stock_prices,2)
-
-    for j=1:size(stock_prices,2)
-        
-       temp = sort(cov_matrix(i,j,:));
-       lower_cov(i,j) = temp(iterations*0.025);
-       upper_cov(i,j) = temp(iterations*0.975);
-      
-    end
-    
-end
-
+sorted_cov_matrix=sort(cov_matrix,3);
+lower_cov=sorted_cov_matrix(:,:,iterations*0.025);
+upper_cov=sorted_cov_matrix(:,:,iterations*0.975);
 
 for i=1:size(e_range,2)
     
@@ -176,7 +182,7 @@ xlabel('\epsilon');
 
 % change the names of the files and folders accordingly.
 % saveas(F,'./JPEGs/ftse100_market/sr_exact_cheb.jpeg');
-saveas(F,'./EPSs/ftse350_market/sr_cheb.eps','epsc');
+saveas(F,'./EPSs/snp500_simulated/sr_exact_cheb.eps','epsc');
 hold off
 
 format short;
@@ -209,7 +215,7 @@ Avg(1,3)=Avg(1,2)-Avg(1,1);
 
 
 % change the names of the files and folders accordingly.
-tab_loc='./tables/ftse350_market/tab_cheb.csv';
+tab_loc='./tables/snp500_simulated/tab_exact_cheb.csv';
 headings=strjoin(headings, ',');
 fid_tab=fopen(tab_loc,'w'); 
 fprintf(fid_tab,'%s\n',headings);
@@ -220,7 +226,7 @@ dlmwrite(tab_loc,Tab,'-append','delimiter', ',', 'precision', 3);
 
 avg_headings={'BaseVar_SR','WorstCaseVar_SR','Diff_SR'};
 % change the names of the files and folders accordingly.
-avg_loc='./tables/ftse350_market/avg_cheb.csv';
+avg_loc='./tables/snp500_simulated/avg_exact_cheb.csv';
 avg_headings = strjoin(avg_headings, ',');
 fid_avg = fopen(avg_loc,'w'); 
 fprintf(fid_avg,'%s\n',avg_headings);
