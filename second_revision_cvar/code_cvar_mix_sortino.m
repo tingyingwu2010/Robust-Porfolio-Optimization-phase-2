@@ -2,8 +2,7 @@ clc;
 clear;
 
 % Read the csv file (Change it to "final_list100.csv" for BSE100)
-% table = readtable('./data_related/final_snp100.csv');
-table = readtable('./data_related/final_ftse100.csv');
+table = readtable('./data_related/final_list30.csv');
 %table = readtable('./data_related/final_list100.csv');
 
 stock_prices = table{:,2:end};
@@ -268,12 +267,7 @@ end
     lgd.Location = 'southeast';
     ylabel('Sortino Ratio');
     xlabel('\epsilon');
-<<<<<<< HEAD:second_revision_cvar/WCVaR/code_cvar_mix_sortino.m
-    fnm = sprintf('./EPSs/snp100/sr_actual_%d.eps',P);
-=======
-    fnm = sprintf('./EPSs/ftse100_simulated/sr_%d.eps',P);
-%     fnm = sprintf('./EPSs/snp100/sr_%d.eps',P);
->>>>>>> abe91f7747d5f4c7159394650842025e233db46b:second_revision_cvar/code_cvar_mix_sortino.m
+    fnm = sprintf('./EPSs/bse30_simulated/sr_%d.eps',P);
     saveas(F,fnm,'epsc');
 
     % change the names of the files and folders accordingly.
@@ -312,11 +306,7 @@ end
 
     % change the names of the files and folders accordingly.
     
-<<<<<<< HEAD:second_revision_cvar/WCVaR/code_cvar_mix_sortino.m
-    tab_loc= sprintf('./tables/snp100/tab_actual_%d.csv',P);
-=======
-    tab_loc= sprintf('./tables/ftse100_simulated/tab_%d.csv',P);
->>>>>>> abe91f7747d5f4c7159394650842025e233db46b:second_revision_cvar/code_cvar_mix_sortino.m
+    tab_loc= sprintf('./tables/bse30_simulated/tab_%d.csv',P);
     headings=strjoin(headings, ',');
     fid_tab=fopen(tab_loc,'w'); 
     fprintf(fid_tab,'%s\n',headings);
@@ -327,11 +317,7 @@ end
 
     avg_headings={'BaseCVar_SR','WorstCaseCVar_SR','Diff_SR'};
     % change the names of the files and folders accordingly.
-<<<<<<< HEAD:second_revision_cvar/WCVaR/code_cvar_mix_sortino.m
-    avg_loc=sprintf('./tables/snp100/avg_actual_%d.csv',P);
-=======
-    avg_loc=sprintf('./tables/ftse100_simulated/avg_%d.csv',P);
->>>>>>> abe91f7747d5f4c7159394650842025e233db46b:second_revision_cvar/code_cvar_mix_sortino.m
+    avg_loc=sprintf('./tables/bse30_simulated/avg_%d.csv',P);
     avg_headings = strjoin(avg_headings, ',');
     fid_avg = fopen(avg_loc,'w'); 
     fprintf(fid_avg,'%s\n',avg_headings);
@@ -358,7 +344,7 @@ clc;
 clear;
 
 % Read the csv file (Change it to "final_list100.csv" for BSE100)
-table = readtable('./data_related/final_ftse350.csv');
+table = readtable('./data_related/final_list30.csv');
 %table = readtable('./data_related/final_list100.csv');
 
 stock_prices = table{:,2:end};
@@ -389,7 +375,6 @@ covariance = cov(stock_prices);
 
 % Uncomment if needed to use the simulated data
 
-<<<<<<< HEAD:second_revision_cvar/WCVaR/code_cvar_mix_sortino.m
 % rng default  % For reproducibility
 % m=1000;   % If #simulations is 1000 
 % % m=size(stock_prices,1); % If #simulations is same as market data
@@ -398,16 +383,6 @@ covariance = cov(stock_prices);
 % mu = mean(stock_prices);
 % mu = mu';
 % covariance = cov(stock_prices);
-=======
-rng default  % For reproducibility
-% m=1000;   % If #simulations is 1000
-m=size(stock_prices,1); % If #simulations is same as market data
-temp_data = mvnrnd(mu,covariance,m);
-stock_prices=temp_data;
-mu = mean(stock_prices);
-mu = mu';
-covariance = cov(stock_prices);
->>>>>>> abe91f7747d5f4c7159394650842025e233db46b:second_revision_cvar/code_cvar_mix_sortino.m
 % 
 n_stocks = size(stock_prices,2);
 Y = min(stock_prices - mu',0);
@@ -633,7 +608,7 @@ end
     lgd.Location = 'southeast';
     ylabel('Sortino Ratio');
     xlabel('\epsilon');
-    fnm = sprintf('./EPSs/ftse350_simulated/sr_%d.eps',P);
+    fnm = sprintf('./EPSs/bse30_market/sr_%d.eps',P);
     saveas(F,fnm,'epsc');
 
     % change the names of the files and folders accordingly.
@@ -672,7 +647,7 @@ end
 
     % change the names of the files and folders accordingly.
     
-    tab_loc= sprintf('./tables/ftse350_simulated/tab_%d.csv',P);
+    tab_loc= sprintf('./tables/bse30_market/tab_%d.csv',P);
     headings=strjoin(headings, ',');
     fid_tab=fopen(tab_loc,'w'); 
     fprintf(fid_tab,'%s\n',headings);
@@ -683,7 +658,7 @@ end
 
     avg_headings={'BaseCVar_SR','WorstCaseCVar_SR','Diff_SR'};
     % change the names of the files and folders accordingly.
-    avg_loc=sprintf('./tables/ftse350_simulated/avg_%d.csv',P);
+    avg_loc=sprintf('./tables/bse30_market/avg_%d.csv',P);
     avg_headings = strjoin(avg_headings, ',');
     fid_avg = fopen(avg_loc,'w'); 
     fprintf(fid_avg,'%s\n',avg_headings);
