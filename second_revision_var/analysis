@@ -1,0 +1,34 @@
+VaR-WVaR
+
+From the standpoint of the number of stocks:
+In Paper we say, smaller number of stocks perform inferior to that of higher number of stocks.
+
+Current observation:
+
+From tables:
+
+BSE30vsBSE100
+In real data, n=31 is superior
+In simulated data, n=98 is superior
+
+FTSE100vsFTSE350
+In both cases, smaller number is superior
+
+Nikkei225 vs Nikkei400:
+In both cases, larger number is superior
+
+SNP100vsSNP500
+In real data, snp500 is superior
+In simulated data, snp100 is superior.
+
+From figures:
+WVar outperforms VaR for bse30, bse10, ftse100, snp100, snp500 (both market and simulated).
+VaR outperforms WVaR for ftse350, nikkei225, nikkei400 (both market and simulated)
+So, the standpoint is not met.
+
+From the standpoint of type of data:
+
+In paper we say, base VaR and the WVaR models exhibits superior performance in the case of real market data
+than the simulated data.
+Here also our standpoint is not met. 
+In all cases except snp500, results in simulated data are better than the real market data (from the avg values in the tables).
