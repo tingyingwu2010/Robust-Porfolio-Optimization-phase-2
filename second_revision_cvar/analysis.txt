@@ -1,0 +1,62 @@
+CVaR-WCVaR
+
+From the standpoint of the number of stocks:
+
+In paper we say that for market data, performance of both CVaR and WCVaR improve as number of stocks increases. But, CVaR continues to outperform WCVar. 
+For simulated data, performance of both CVaR and WCVaR decline with increase in stocks. But, WCVaR continues to outperform CVaR.
+
+Current observation:
+
+From tables:
+
+BSE30vsBSE100
+
+bse30_market: 0.0938,0.0837,-0.0101 (l=5)
+bse30_simulated: 0.095,0.104,0.00891 (l=3)
+bse100_market: 0.0815,0.0507,-0.0308 (l=2)
+bse100_simulated: 0.0956,0.0968,0.00123 (l=2)
+
+In real data, performance declines with increase in N. (CVaR continues to outperform)
+In simulated data, performance almost remains same with increase in N. (WCVaR continues to outperform marginally)
+
+FTSE100vsFTSE350
+
+ftse100_market: 0.0293,0.0273,-0.00197 (l=4)
+ftse100_simulated: 0.0899,0.0899,1.38e-05 (l=2)
+ftse350_market: 0.0044,0.0265,0.0221 (l=2)
+ftse350_simulated: 0.0444,0.0438,-0.000604 (l=2)
+
+In real data, performance declines with increase in N. (WCVaR outperforms with increase in N)
+In simulated data, performance declines with increase in N. (WCVaR continues to perform almost equivalent wrt. CVaR)
+
+Nikkei225 vs Nikkei400:
+
+nikkei225_market: -0.0202,0.00195,0.0221 (l=5)
+nikkei225_simulated: -0.0052,-0.00337,0.00183 (l=3)
+nikkei400_market: 0.0724,0.0246,-0.0479 (l=2)
+nikkei400_simulated: 0.0332,0.0351,0.00196 (l=4)
+
+In real data, performance improves with increase in N. (CVaR outperforms with increase in N)
+In simulated data, performance improves with increase in N. (WCVaR continues to outperform marginally)
+
+SNP100vsSNP500
+
+snp100_market: 0.0464,0.0469,0.000489 (l=3)
+snp100_simulated: 0.101,0.0919,-0.00865 (l=2)
+snp500_market: 0.0464,0.0395,-0.00693 (l=2)
+snp500_simulated: 0.0429,0.0447,0.00181 (l=5)
+
+In real data, performance almost remains same with increase in N. (CVaR outperforms marginally with increase in N)
+In simulated data, performance declines with increase in N. (WCVaR outperforms marginally with increase in N)
+
+From figures:
+# To Do
+
+From the standpoint of type of data:
+# To Do
+
+In paper we observe from Table 20 that base CVaR and the WCVaR models exhibit superior performance in the case of simulated data than the market data and so, is the outperformance of WCVaR wrt. CVaR.
+
+
+Here also our standpoint is not met. 
+In all cases except snp500, results in simulated data are better than the real market data (from the avg values in the tables).
