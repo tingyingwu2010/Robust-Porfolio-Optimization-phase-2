@@ -1,36 +1,56 @@
 VaR-WVaR
 
 From the standpoint of the number of stocks:
-In Paper we say, smaller number of stocks perform inferior to that of higher number of stocks.
+In Paper we say, smaller number of stocks perform inferior to that of higher number of stocks due to diversification and blame non sub-additiveness of VaR.
 
 Current observation:
 
 From tables:
 
 BSE30vsBSE100
-In real data, n=31 is superior
-In simulated data, n=98 is superior
+In real data, performance decreases with increase in N (WVaR continues to outperform VaR)
+In simulated data, performance increases with increase in N (WVaR continues to outperform VaR)
 
 FTSE100vsFTSE350
-In both cases, smaller number is superior
+In real data, performance decreases with increase in N (WVaR outperformas in smaller case and underperforms in larger case, seems its goes extreme, in samller case the SR is +ve, and WVaR has highest value and in larger case, SR is -ve and WVaR has highest -ve value)
+In simulated data, same as real data.
 
 Nikkei225 vs Nikkei400:
-In both cases, larger number is superior
+In real data, performance increases with increease in N (VaR continues to outperform WVaR)
+In simulated data, performance increases with increase in N (WVaR outperforms in smaller case (they've -ve SR) and underperforms in larger case (they've +SR), seems some kind of mirroring is happening, like mulplication with -1, explain FTSE real data scenario too)
+
 
 SNP100vsSNP500
-In real data, snp500 is superior
-In simulated data, snp100 is superior.
+In real data, performance increases with increase in N (WVaR continues to outperform VaR)
+In simulated data, performance decreases with increase in N (WVaR continues to outperform VaR)
 
 From figures:
-WVar outperforms VaR for bse30, bse10, ftse100, snp100, snp500 (both market and simulated).
-VaR outperforms WVaR for ftse350, nikkei225, nikkei400 (both market and simulated)
+WVar outperforms VaR for bse30, bse100, ftse100, snp100, snp500 (both market and simulated).
+VaR outperforms WVaR for ftse350, nikkei225 (equivalent in simulated), nikkei400 (both market and simulated)
 So, the standpoint is not met.
 
 From the standpoint of type of data:
 
-In paper we say, base VaR and the WVaR models exhibits superior performance in the case of real market data
-than the simulated data.
+In paper we say, base VaR and the WVaR models exhibits superior performance in the case of real market data than the simulated data. (For N= 98, the outperformance of WCvAR wrt VaR is more in simulated data than market, for N=31, the outperformance of VaR wrt WVaR is more in market data then real data)
+
 #### In paper, from table 19, we also observe that outperformance of WVar wrt VaR is more in the case of simulated data. We need to include this 
 more specifically in the explanation in the paper. ####
+
+From the tables:
+
+BSE30vsBSE100:
+CVaR and WCVaR exhibit superior performance in the case of simulated data than the market data (The out-performsnce of WVaR wrt VaR is more in simulated than market for bse30)
+
+FTSE100vsFTSE350:
+CVaR and WCVaR exhibit superior performance in the case of simulated data than the market data (The out-performsnce of WVaR wrt VaR is more in simulated than market for ftse100, theutperforamnce of VaR wer WVaR is more in simulated than market for ftse350)
+
+Nikkei225 vs Nikkei400:
+CVaR and WCVaR exhibit superior performance in the case of simulated data than the market data (The outperformance of VaR wrt WVaR is more in simulated than market for Nikkei400, WVar underperforms in market and outperforms in simulated for Nikkei225)
+
+SNP100vsSNP500:
+CVaR and WCVaR exhibit superior performance in case of simulated data than market data for snp100.
+CVaR and WCVaR exhibit superior performance in case of market data than simulated data for snp500.
+(The outperformance of WVar wrt VaR is almost equivalent in both market and simulated for snp 100, the outperformance of WVaR wrt VaR is more in market data than simulated for snp500)
+
 Here also our standpoint is not met. 
 In all cases except snp500, results in simulated data are better than the real market data (from the avg values in the tables).
